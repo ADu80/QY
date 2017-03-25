@@ -1,0 +1,281 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="keywords" content="广州棋游网络有限公司,棋游网络,棋牌,棋牌类游戏公司那家强,游戏公司,棋牌类游戏公司,棋牌游戏，科技官网" />
+<meta name="description" content="广州棋游网络科技有限公司致力于棋牌游戏的开发和运营的游戏企业。企业成立于2016年，主营手机游戏的研发、代理发行等业务。自主研发的手机棋牌游戏《棋乐无穷》准备上线。《棋乐无穷》是一款休闲类棋牌游戏，游戏画面清新脱俗，内容丰富多彩。游戏包含各种特色的棋牌游戏，丰富多样的玩法让玩家其乐无穷。" />
+<title>广州棋游网络有限公司</title>
+<link rel="stylesheet" href="css/cssreset.css"> 
+<link rel="stylesheet" href="css/mycss.css">
+<link rel="stylesheet" href="css/iconfont.css">
+<link rel="shortcut icon" href="../images/favicon.ico"/>
+</head>
+<body>
+<div class="wrap" ng-app="WebSite">
+  <div class="header">
+      <div class="header_in">
+        <h1 class="logo"><img src="images/logo.png" width="249" alt=""/></h1>
+        <p class="icon_pic">	
+            <span class="iconfont icon-sousuo" onClick="window.location.href='html/m_search.html'"></span>	
+            <span class="iconfont icon-list"></span>	
+        </p>
+      </div>	
+  </div>
+  <div class="navigation">
+    <ul>
+        <li><a href="m_index.html">首页</a></li>
+        <li><a href="html/m_gamemore.html">游戏</a></li>
+        <li><a href="html/m_news.html">公告</a></li>
+        <!--<li><a href="html/m_mall.html">商城</a></li>-->
+        <li><a href="html/m_search.html">搜索</a></li>
+        <li><a href="html/m_commonproblem.html">常见问题</a></li>
+        <li><a href="login.html" class="color">登录</a></li>
+    </ul>
+  </div> 
+  <div class="banner">
+  	<ul>
+  		<li></li>
+  	</ul>
+  </div>
+  <div class="con_wrap" ng-controller="HotGame">
+  	<div class="news" ng-controller="news">
+    	<div class="news_in">
+            <span class="iconfont icon-laba"></span>
+            <p>
+                <a ng-repeat="newsList in NewsInfo" href="html/m_article.html?id={{newsList.NewsID}}">{{newsList.Subject}}</a>
+            </p>
+        </div>
+    </div>
+   	<div class="Game">
+        <div class="GameTop">
+            <h2 class="GameTitle">热门游戏</h2>
+            <p>
+                <span>更多</span><span class="iconfont icon-more color"></span>
+            </p>
+        </div>
+        
+        <div class="Game_in">	
+            <div class="GameContent" ng-repeat="Name in names|limitTo:10">	
+            	<dl>
+            		<dt><img src="{{Name.ImgUrl}}" alt="游戏图片"/></dt>
+            		<dd>
+                    	<h3>{{Name.GameName}}</h3>
+                        <p>
+                        	<span>45.4M</span>
+                            <a href="{{Name.DownLoadAddr}}" class="DownloadBox">免费安装</a>
+                        </p>
+                    </dd>
+            	</dl>
+            </div>
+        </div>
+    </div>
+   	<div class="Game Activity">
+        <div class="GameTop">
+            <h2 class="GameTitle">最新活动</h2>
+            <p>
+                <span>更多</span><span class="iconfont icon-more color"></span>
+            </p>
+        </div>
+        <div class="Activity_in">
+        	<ul>
+        		<li></li>
+        	</ul>
+            <ol>
+            	<li class="current"></li>
+            	<li></li>
+            	<li></li>
+            </ol>
+        </div>
+    </div>
+   	<div class="Game Recharge">
+        <div class="GameTop">
+            <h2 class="GameTitle">充值中心</h2>
+<!--            <p>
+                <span>更多</span><span class="iconfont icon-more color"></span>
+            </p>
+-->        </div>
+        <div class="Recharge_in">
+        	<div class="RechargeContent">
+            	<form>	
+                    <div class="YourId"><span>充值账号：</span><input type="text" placeholder="请输入充值账号"></div>
+                    <div class="RechargeMoney"><span>充值金额：</span>
+                        <div class="Much">
+                            <span>1元</span>
+                            <span>5元</span>
+                            <span>10元</span>
+                            <span>20元</span>
+                            <span>50元</span>
+                            <div class="other">其他：<input type="text" placeholder="充值金额"></div>
+                        </div>
+                    </div>
+                    <div class="PayStyle"><span>支付方式：</span>
+                        <div class="PayStyle_in">	
+                            <span class="Alipay"></span><span class="WechatPay current"></span>
+                        </div>
+                    </div>
+                    <input type="submit" value="立即充值" class="PayNow">
+                </form>
+            </div>
+        </div>
+    </div>
+   	<!--<div class="Game Award">
+        <div class="GameTop">
+            <h2 class="GameTitle">奖品兑换</h2>
+        </div>
+        <div class="Award_in">
+            <div class="MallContent_in">
+                <dl>
+                    <dt><img src="images/mall_01.jpg"/></dt>
+                    <dd>
+                        <p class="MallName">酷比魔方iwork1X 11.6英寸四核</p>
+                        <p class="color">兑换积分:550万</p>
+                        <p class="btnLink">
+                            <a href="html/m_mall_details.html" class="details">详情</a>
+                            <a href="html/m_mall_adress.html" class="exchange">立即兑换</a>
+                        </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><img src="images/mall_02.jpg"/></dt>
+                    <dd>
+                        <p class="MallName">酷比魔方iwork1X 11.6英寸四核</p>
+                        <p class="color">兑换积分:550万</p>
+                        <p class="btnLink">
+                            <a href="html/m_mall_details.html" class="details">详情</a>
+                            <a href="html/m_mall_adress.html" class="exchange">立即兑换</a>
+                        </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><img src="images/mall_03.jpg"/></dt>
+                    <dd>
+                        <p class="MallName">酷比魔方iwork1X 11.6英寸四核</p>
+                        <p class="color">兑换积分:550万</p>
+                        <p class="btnLink">
+                            <a href="html/m_mall_details.html" class="details">详情</a>
+                            <a href="html/m_mall_adress.html" class="exchange">立即兑换</a>
+                        </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><img src="images/mall_04.jpg"/></dt>
+                    <dd>
+                        <p class="MallName">酷比魔方iwork1X 11.6英寸四核</p>
+                        <p class="color">兑换积分:550万</p>
+                        <p class="btnLink">
+                            <a href="html/m_mall_details.html" class="details">详情</a>
+                            <a href="html/m_mall_adress.html" class="exchange">立即兑换</a>
+                        </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><img src="images/mall_05.jpg"/></dt>
+                    <dd>
+                        <p class="MallName">酷比魔方iwork1X 11.6英寸四核</p>
+                        <p class="color">兑换积分:550万</p>
+                        <p class="btnLink">
+                            <a href="html/m_mall_details.html" class="details">详情</a>
+                            <a href="html/m_mall_adress.html" class="exchange">立即兑换</a>
+                        </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><img src="images/mall_04.jpg"/></dt>
+                    <dd>
+                        <p class="MallName">酷比魔方iwork1X 11.6英寸四核</p>
+                        <p class="color">兑换积分:550万</p>
+                        <p class="btnLink">
+                            <a href="html/m_mall_details.html" class="details">详情</a>
+                            <a href="html/m_mall_adress.html" class="exchange">立即兑换</a>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>-->
+   	<div class="Game RankList">
+        <div class="GameTop">
+            <h2 class="GameTitle">游戏排行榜</h2>
+<!--            <p>
+                <span>更多</span><span class="iconfont icon-more color"></span>
+            </p>
+-->        </div>
+        <div class="RankList_in">
+        	<div class="RankListContent">
+                <dl ng-repeat="GameInfo in GameInfos | orderBy: 'RankID'">
+                    <dt>
+                    	<span class="num">{{GameInfo.RankID}}</span>
+                        <img src="{{GameInfo.ImgUrl}}" alt="">
+                    	<div class="details">	
+                        	<h3>{{GameInfo.GameName}}</h3>
+                            <div class="hotdetails">
+                                <p class="hottimes" ng-model="StarNum">
+                                    <span class="iconfont icon-star"></span>
+                                    <span class="iconfont icon-star"></span>
+                                    <span class="iconfont icon-star"></span>
+                                    <span class="iconfont icon-star"></span>
+                                </p>
+                                <span class="Downloadtimes">{{GameInfo.DownloadCount}}次下载</span>
+                            </div>
+                            <p class="txt">{{GameInfo.GameDes|limitTo:10}}</p>
+                        </div>
+                    </dt>
+                    <dd>
+                        <div class="download">
+                        	<a class="iconfont icon-download" href="{{GameInfo.DownLoadAddr}}"></a>
+                        </div>
+                    </dd>
+                </dl>
+                <div class="RankListfooter">
+                	<p>已经到底部了哦n(*≧▽≦*)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+  	<p class="footer_in">广州棋游网络有限公司 版权证书 软件产品登记证书 
+    ICP许可证：粤ICP备16097719号 [粤ICP备16097719号]</p>
+  </div>
+</div>
+<script src="js/jquery1.10.2.min.js"></script>
+<script src="js/style.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/m_common.js"></script>
+<script src="js/GameInfo.js"></script>
+
+<script>
+$(function(){	
+	$('.GameContent dl').each(function(index, element) {
+        if(index%2 == 0){	
+			$('.GameContent dl').eq(index).css({'border-right':'1px solid #F2F2F2'})
+		}
+/*		var num=index+1;
+		$('.GameContent dl:eq('+ index +') dt').css({'background':'url(../images/game'+ num +'.png) no-repeat center center','background-size':'contain'})
+*/    });
+	
+	$('.MallContent_in dl').each(function(index, element) {
+        if(index%2 != 0){	
+			$('.MallContent_in dl').eq(index).css({'float':'right','margin-right':'0'})
+		}
+    });
+;(function(){	
+	var timer=null;
+	var num=0;
+	timer=setInterval(function(){
+		num = num + 1	
+		$('.news p').animate({"margin-top":-40 *num +"px"},1000)
+		var height=$('.news p').height();
+		var marT=num*40;
+		if(marT==height){	
+			num = 0; 
+		}	
+	},3000)
+})();
+
+})
+</script>
+</body>
+</html>

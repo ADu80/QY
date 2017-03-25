@@ -1,0 +1,125 @@
+﻿<div ms-controller="#vmodel#" class="vmodel roles">
+    <div class="vpage page-list visible">
+        <div class="panel search">
+        </div>
+        <div class="panel table">
+            <div class="bar bar-btn">
+                <a class="btn btn-curd" ms-click="@openAddDialog | stop"><span class="iconfont icon-xinzeng"></span>新增</a>
+                <a class="btn btn-curd" ms-click="@openEditDialog | stop"><span class="iconfont icon-xiugai"></span>修改</a>
+                <a class="btn btn-curd" ms-click="@del | stop"><span class="iconfont icon-shanchu"></span>删除</a>
+            </div>
+            <div class="datalist">
+                <xmp ms-widget="[{is:'ms-grid',id:'grid_roles',fillGrid:@fillGrid},@config]">
+                    <table slot="table">
+                        <thead>
+                            <tr class="th">
+                                <th class="row-check"><input type="checkbox" ms-duplex-checked="@allchecked" data-duplex-changed="@checkAll"></th>
+                                <th>
+                                    角色编号
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('RoleID') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('RoleID') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    角色名称
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('RoleName') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('RoleName') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    描述
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('Description') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('Description') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    操作人
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('Operator') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('Operator') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    创建时间
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('Created') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('Created') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    修改时间
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('Modified') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('Modified') | stop"></span>
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--ms-click="@onGridSelectedRowChanged(i,r)"-->
+                            <tr class="tb" ms-for="(i,r) in @datasource" ms-click="@onNewRoleChanged(i,r)" ms-class="[r.selected&&'selected']">
+                                <td class="row-check"><input type="checkbox" ms-attr="r.RoleID==1 && {disabled:'disabled'}" ms-duplex-checked="r.checked" data-duplex-changed="@checkOne"></td>
+                                <td>{{r.RoleID}}</td>
+                                <td>{{r.RoleName}}</td>
+                                <td>{{r.Description}}</td>
+                                <td>{{r.Operator}}</td>
+                                <td class="col-datetime">{{r.Created}}</td>
+                                <td class="col-datetime">{{r.Modified}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </xmp>
+            </div>
+        </div>
+    </div>
+    <div ms-class="['vpage','page-edit','add']" ms-effect="{is:'dialog',action:@dialogAddAnimation}">
+        <div class="box">
+            <div class="controlbox"><span ms-text="@editBoxTitle"></span><a class="btn-close" ms-click="@closeAddDialog | stop">x</a></div>
+            <div class="content">
+                <form id="form_role" ms-on-submit="@submit | prevent">
+                    <div class="row">
+                        <div class="col"><label class="md">角色名称：</label><input type="text" name="RoleName" ms-duplex-value="@newRole.RoleName" /></div>
+                        <div class="col"><label class="md">描述：</label><input type="text" name="Description" ms-duplex-value="@newRole.Description" /></div>
+                    </div>
+                    <div class="row nodisplay">
+                        <div class="col"><label class="md">操作人：</label><input type="text" name="Operator" ms-duplex-value="@newRole.Operator" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="md">创建时间：</label><input type="date" name="Created" ms-duplex-value="@newRole.Created" /></div>
+                        <div class="col"><label class="md">修改时间：</label><input type="date" name="Modified" ms-duplex-value="@newRole.Modified" /></div>
+                    </div>
+                    <div class="row bar-btn">
+                        <input type="submit" class="btn btn-update" value="保存" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div ms-class="['vpage','page-edit','edit']" ms-effect="{is:'dialog',action:@dialogEditAnimation}">
+        <div class="box">
+            <div class="controlbox"><span ms-text="@editBoxTitle"></span><a class="btn-close" ms-click="@closeEditDialog | stop">x</a></div>
+            <div class="content">
+                <form id="form_role" ms-on-submit="@submit | prevent">
+                    <input type="hidden" name="RoleID" ms-duplex-value="@selectedRole.RoleID" />
+                    <div class="row">
+                        <div class="col"><label class="md">角色名称：</label><input type="text" name="RoleName" ms-duplex-value="@selectedRole.RoleName" /></div>
+                        <div class="col"><label class="md">描述：</label><input type="text" name="Description" ms-duplex-value="@selectedRole.Description" /></div>
+                    </div>
+                    <div class="row nodisplay">
+                        <div class="col"><label class="md">操作人：</label><input type="text" name="Operator" ms-duplex-value="@selectedRole.Operator" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="md">创建时间：</label><input type="date" name="Created" ms-duplex-value="@selectedRole.Created" /></div>
+                        <div class="col"><label class="md">修改时间：</label><input type="date" name="Modified" ms-duplex-value="@selectedRole.Modified" /></div>
+                    </div>
+                    <div class="row bar-btn">
+                        <input type="submit" class="btn btn-update" value="保存" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

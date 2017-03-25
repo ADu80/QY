@@ -1,0 +1,75 @@
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.WebServices.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.WebServices.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Business.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\DataAccess.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\DbEntity.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\DbHelper.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Data.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Entity.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Facade.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.IData.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Kernel.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Utils.dll
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Kernel.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Utils.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Business.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\DataAccess.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\DbEntity.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\DbHelper.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Data.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Entity.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.Facade.pdb
+C:\Work Space\QPAgent\Game.WebServices\bin\Debug\Game.IData.pdb
+C:\Work Space\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.csprojResolveAssemblyReference.cache
+C:\Work Space\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.dll
+C:\Work Space\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.WebServices.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.WebServices.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Business.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\DataAccess.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\DbEntity.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\DbHelper.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Data.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Entity.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Facade.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.IData.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Kernel.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Utils.dll
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Kernel.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Utils.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Business.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\DataAccess.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\DbEntity.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\DbHelper.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Data.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Entity.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.Facade.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\bin\Debug\Game.IData.pdb
+F:\dhz\qy\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.csprojResolveAssemblyReference.cache
+F:\dhz\qy\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.dll
+F:\dhz\qy\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.WebServices.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.WebServices.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Business.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\DataAccess.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\DbEntity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\DbHelper.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Data.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Entity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Facade.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.IData.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Kernel.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Utils.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Kernel.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Utils.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Business.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\DataAccess.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\DbEntity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\DbHelper.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Data.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Entity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.Facade.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\bin\Debug\Game.IData.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.csprojResolveAssemblyReference.cache
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Game.WebServices\obj\Debug\Game.WebServices.pdb

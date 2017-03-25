@@ -1,0 +1,344 @@
+﻿@charset "utf-8";a,blockquote,body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,img,input,li,ol,option,p,pre,select,span,table,td,textarea,th,tt,ul{border:0;margin:0;padding:0;list-style:none;outline:0}
+body{background:#e9e9e9 url(../images/body_bg.jpg) no-repeat center 137px;font-family:"微软雅黑";font-size:14px;color:#555}
+a{color:#555;text-decoration:none}
+a:hover{color:#ff7800}
+.color{color:#ff7800}
+.login_wrap{width:100%;height:100%;background:rgba(0,0,0,.6);position:fixed;z-index:9999;display:none}
+.login_wrap.current{display:block}
+.loginBox{width:250px;height:330px;background:#fff;position:absolute;left:50%;top:50%;margin-top:-165px;margin-left:-175px;overflow:hidden}
+.login_wechat{font-size:22px;text-align:center;margin-top:24px}
+.loginBox img{display:block;width:183px;margin:30px auto;overflow:hidden}
+.login_page{font-size:12px;text-align:center;overflow:hidden}
+.error{width:20px;height:20px;display:block;position:absolute;top:1px;right:1px;background:url(../images/error.png);cursor:pointer}
+.title_desc{height:57px;background:url(../images/title_bg.jpg) repeat-x;font-size:20px;line-height:57px;color:#f7f7f7}
+.title_desc span{background:url(../images/title_leader.jpg) no-repeat 7px center;padding-left:35px}
+#top{height:40px;background:#10374f;border-top:2px solid #1e2c43;border-bottom:1px solid #0b2536;color:#eeefef;font-size:12px}
+.top{width:1000px;height:40px;margin:0 auto}
+.topLeft{float:left;margin-left:12px;height:40px;line-height:40px}
+.topLeft span{float:left;margin-right:22px;background:url(../images/sprite.png) no-repeat top left}
+.topLeft .tel{background-position:0 0;padding-left:26px}
+.topLeft .money{background-position:0 -38px;padding-left:26px;cursor:pointer}
+.topLeft .money a{color:#eeefef}
+.topLeft .money a:hover{color:#eeefef}
+.topRight{float:right}
+.topRight span{line-height:40px;height:20px;padding:0 12px 0 12px}
+.topRight .parents{border-right:1px solid #e6e6e6}
+.topRight .parents a{color:#f7dc62}
+#header{height:95px;background:#10374f;border-top:1px solid #1a3f56}
+.header{width:1000px;height:95px;margin:0 auto}
+.logo{float:left;margin:12px 0 0 19px}
+.nav{float:right;font-size:16px}
+.nav li{float:left;line-height:91px;cursor:pointer;overflow:hidden}
+.nav li a{width:100%;height:100%;padding:0 14px;display:block;color:#f7f7f7}
+.nav .current{border-bottom:3px solid #f7dc62}
+.nav .current a{color:#f7dc62}
+@media screen and (min-width:980px){.nav li:hover a{color:#f7dc62}
+}
+#banner{width:1000px;margin:0 auto;overflow:hidden}
+.banner{overflow:hidden}
+.banner .showpic{width:200px;height:200px;background:red;float:right;margin:50px 20px 0 0;display:none}
+.banner ul{float:right;margin:190px 110px 60px 0}
+.banner li{background:url(../images/android_download.jpg) no-repeat center top;width:270px;height:73px;cursor:pointer}
+.banner li.iosshow{background:url(../images/ios_download.jpg) no-repeat center top;width:270px;height:73px;margin-bottom:17px}
+#content{overflow:hidden;width:1000px;margin:0 auto;background:#d7e6f0}
+.content{overflow:hidden}
+.con_sec,.con_thir{width:1000px;overflow:hidden;margin-top:23px}
+.Activity .ActivityTitle,.Award .AwardTitle,.News .NewsTitle,.Service .ServiceTitle,.myGame .myGameTitle{height:57px;font-size:20px;padding-left:35px;float:left;line-height:57px;background:url(../images/title_leader.jpg) no-repeat 7px center}
+.Activity .ActivityTitle a,.Award .AwardTitle a,.News .NewsTitle a,.Service .ServiceTitle a,.myGame .myGameTitle a{color:#f7f7f7}
+.Activity .Title,.Award .Title,.News .Title,.Service .Title,.myGame .Title{overflow:hidden;background:url(../images/title_bg.jpg) repeat-x;width:100%;margin-bottom:20px;border:1px solid #0d3f4f}
+.Activity .more,.Award .more,.News .more,.myGame .more{float:right;font-size:12px;margin-right:5px;cursor:pointer;line-height:57px}
+.Activity .more a,.Award .more a,.News .more a,.myGame .more a{color:#f7f7f7}
+.myGame .more{margin-right:30px}
+.myGame .myGameContent{width:1010px;padding-left:23px;overflow:hidden}
+.myGame .myGameContent dl{width:167px;float:left;margin-right:30px;margin-bottom:22px;cursor:pointer}
+.myGame .myGameContent h3{font-size:18px;font-weight:400;line-height:29px;text-align:center}
+.myGame .myGameContent p{width:90px;height:28px;margin:0 auto;background:url(../images/sprite.png) no-repeat 0 -419px}
+.myGame .not{color:#b9b9b9}
+.myGame .not p{background:url(../images/not.png)}
+.Activity{float:left;margin-right:56px;overflow:hidden}
+.Activity .ActivityLeft{float:left;margin:0 15px 0 30px}
+.Activity .ActivityRight{float:left;margin-right:30px}
+.Activity .ActivityRight p{margin-bottom:10px}
+.News{float:right;overflow:hidden}
+.News .NewsContent{width:315px;height:233px;border:1px solid #ccc;overflow:hidden}
+.News p{overflow:hidden}
+.News p span{width:105px;height:38px;line-height:38px;float:left;text-align:center;background:rgba(246,246,246,.5);cursor:pointer}
+.News .NewsContent .current{background:0;border-top:4px solid #ff7800;color:#ff7800}
+.News .NewsContent ul{padding:0 6px 0 6px;font-size:12px;display:none}
+.News .NewsContent li{width:303px;height:36px;line-height:36px;border-bottom:1px dashed #ccc}
+.News .NewsContent .article{float:left}
+.News .NewsContent .date{float:right}
+.News .NewsContent .showNews{display:block}
+.News .NewsContent .hot{background:url(../images/hot.png) no-repeat left center;padding-left:18px}
+.Award{float:left;margin-right:30px;overflow:hidden}
+.Award .AwardContent{width:635px;height:265px;background:url(../images/dispaly_footer.png) no-repeat center bottom;position:relative}
+.AwardContent .AwardBox{width:531px;height:210px;margin:0 auto;overflow:hidden;position:relative;z-index:3}
+.AwardContent ul{width:10000px;position:absolute;left:0;top:0}
+.AwardContent ul li{float:left;height:210px;margin-right:26px;cursor:pointer}
+.AwardContent ol{width:100%;height:52px;position:absolute;left:0;top:78px}
+.AwardContent ol li{background:url(../images/sprite.png) no-repeat;height:52px;width:34px;cursor:pointer}
+.AwardContent .turnLeft{background-position:0 -448px;float:left}
+.AwardContent .turnRight{background-position:-32px -448px;float:right}
+.Service{float:right;overflow:hidden}
+.Service .ServiceContent{width:295px;height:265px;border:1px solid #ccc;padding-left:18px}
+.ServiceContent .tel{font-size:23px;line-height:94px;font-weight:500}
+.ServiceContent .color{color:#f39800}
+.ServiceContent .QQ{font-size:21px;line-height:21px;margin-bottom:15px}
+.ServiceContent dl{width:77px;float:left;margin-right:24px;cursor:pointer}
+.ServiceContent dt{width:77px;height:77px;background:url(../images/QQ.png) no-repeat left top}
+.ServiceContent dd{text-align:center;font-size:12px;color:#666;margin-top:5px}
+.ServiceContent .last{margin:0}
+#footer{height:215px;background:#333b52;border-top:1px solid #262d41;margin-top:110px}
+.footer{width:1000px;margin:0 auto;padding-top:35px}
+.footer p{text-align:center;color:#d8d8d8;margin-bottom:15px;line-height:12px;font-size:12px}
+.footer .smalllist a{color:#e7e7e7}
+.footer .security{width:720px;margin:0 auto;overflow:hidden}
+.footer .security span{width:118px;height:47px;float:left;margin-right:8px;background:url(../images/sprite.png) no-repeat}
+.security span:nth-of-type(1){background-position:0 -520px}
+.security span:nth-of-type(2){background-position:0 -567px}
+.security span:nth-of-type(3){background-position:0 -615px}
+.security span:nth-of-type(4){background-position:0 -664px}
+#NewsBanner{height:300px;background:url(../images/newsbanner.jpg) no-repeat center center}
+.NewsBanner{width:1000px;height:300px;margin:0 auto;position:relative}
+.NewsBanner .details{width:129px;height:40px;border:2px solid #fff;border-radius:5px;font-size:18px;line-height:40px;text-align:center;position:absolute;right:50px;top:200px;color:#fff}
+.NewsBanner .details a{color:#fff;width:100%;height:100px;display:block}
+#GoodsDetailcontentBox,#NewscontentBox{width:1000px;margin:0 auto;overflow:hidden;background:#d7e6f0;margin-top:23px}
+.NewsLeader{height:52px;border-bottom:1px solid #ccc}
+.NewsLeader h2{font-size:26px;line-height:52px;padding-left:10px;float:left}
+.NewsLeader p{float:right;padding-right:10px;margin-top:25px}
+.NewsContentBox{margin-top:27px;overflow:hidden}
+.NewsSidebar{width:245px;float:left}
+.NewsSidebar li{width:207px;height:61px;line-height:61px;font-size:20px;padding-left:10px;cursor:pointer;border-bottom:1px dashed #ccc}
+.NewsSidebar li.current{background:url(../images/Newsmore.png) no-repeat 195px center;color:#ff7800}
+.NewsArticleName{float:left;margin-left:37px;width:715px;font-size:12px}
+.NewsArticleName li{line-height:31px;width:695px;height:31px;padding:0 15px 0 5px;border-bottom:1px dashed #ccc}
+.NewsArticleName li a{display:block;width:100%;height:100%}
+.NewsArticleName li .NewsName{float:left}
+.NewsArticleName li .NewsTitles{float:left;margin-left:15px}
+.NewsArticleName li .NewsDate{float:right}
+.NewsArticleName ul{display:none}
+.NewsArticleName .current{display:block}
+.NewsArticleContent{width:745px;float:left;overflow:hidden}
+.NewsArticleContent .NewsArticleTitle{height:45px;line-height:45px;text-align:center;font-size:26px}
+.NewsArticleContent .NewsAbout{width:220px;height:45px;line-height:45px;font-size:12px;margin:0 auto;color:#999}
+.NewsArticleContent .NewsAbout span{float:left}
+.NewsArticleContent .NewsAbout .ArticleAuthor{margin-right:25px}
+.NewsArticleContent .ArticleShow{padding:5px;font-size:13px}
+.NewsArticleContent .ArticleShow p{line-height:26px;margin-top:30px;text-indent:2em}
+.NewsArticleContent .NextBox{margin-top:65px;font-size:12px}
+.NewsArticleContent .NextBox a{float:left;margin-right:40px}
+.adv{float:right}
+.adv dl{margin-top:17px}
+.adv dd{line-height:43px;font-size:14px;padding-left:5px}
+#Downloadbanner{height:300px;background:url(../images/newsbanner.jpg) no-repeat center center}
+.AboutAdroid .DownloadGameTop .DownloadGameTitle,.AboutIOS .DownloadGameTop .DownloadGameTitle{border:0;padding-left:35px;line-height:57px;color:#f7f7f7;font-size:20px}
+.DownloadGame .DownloadGameContent dl{width:166px;height:235px;margin-right:28px;overflow:hidden;border:1px solid rgba(197,196,196,0);overflow:hidden}
+.DownloadGameContent dl dt{width:166px;height:166px}
+.DownloadGame .DownloadGameContent .current{border:1px solid #ccc}
+.DownloadGameContent dl img:nth-of-type(2){display:none}
+.DownloadGame .Title{border:0}
+.GameDetails_Wrapper{width:100%;height:100%;background:rgba(0,0,0,.6);position:fixed;left:0;top:0;display:none}
+.GameDetails{width:749px;height:568px;background:#fff;position:absolute;left:50%;top:50%;margin-left:-374.5px;margin-top:-284px}
+.GameDetails .GameDetailsTop{width:100%;height:45px;background:#b1ddf6}
+.GameDetails .GameDetailsTop p{float:left;padding-left:27px;font-size:18px;color:#363030;line-height:45px}
+.GameDetails .GameDetailsTop span{float:right;width:20px;height:19px;margin-right:12px;margin-top:14px;cursor:pointer;background:url(../images/sprite.png) no-repeat 0 -888px}
+.GameDetails .GameDetailsContent dl{width:716px;height:220px;border-bottom:1px solid #ebebeb;margin:0 auto;padding-top:30px;overflow:hidden;}
+.GameDetails .GameDetailsContent dt{float:left;padding-left:33px;padding-right:25px;overflow:hidden}
+.GameDetails .GameDetailsContent dd{color:#676968;float:left;width:524px;overflow:hidden}
+.GameDetails .GameDetailsContent .GamesTitle{font-size:24px;padding-left:20px;padding-bottom:10px;}
+.GameDetails .GameDetailsContent .GamesInformation{font-size:14px;line-height:18px;width:505px;height:25px;border-bottom:1px solid #ebebeb;padding-left:20px}
+.GameDetails .GameDetailsContent .DetailsArticle{width:445px;padding-left:20px;padding-top:5px;line-height:28px;font-size:16px}
+.GameDetails .GameDetails_DownLeft,.GameDetails .GameDetails_DownRight{width:269px;float:left;padding:20px 50px 0 40px;color:#676968}
+.GameDetails .GameDetails_DownLeft{border-left:1px solid #ebebeb}
+.GameDetails .GameDetails_DownLeft h3,.GameDetails .GameDetails_DownRight h3{color:#4c9ebc;font-size:24px;line-height:24px;margin-bottom:12px}
+.GameDetails .GameDetails_DownLeft p,.GameDetails .GameDetails_DownRight p{font-size:16px;line-height:28px;padding-left:5px}
+.GameDetails .GameDetails_DownLeft .GameDownloadNow{width:179px;height:39px;background:url(../images/sprite.png) no-repeat 0 -848px;margin:45px auto;display:block;cursor:pointer}
+.GameDetails .GameDetails_DownRight img{display:block;margin:26px auto}
+.GameDetails .GameDetails_BigImg{display:none;position:absolute;width:350px;height:350px;left:50%;top:50%;margin-left:-175px;margin-top:-175px}
+#Mallbanner{height:300px;background:url(../images/mallbanner.png) no-repeat center center}
+.MallContent{overflow:hidden;position:relative;width:966px;margin:0 auto}
+.MallContent_title{width:100%;height:39px;border:1px solid #d1d1d1;box-sizing:border-box;background:url(../images/mallcontentTitle_bg.jpg) repeat-x left top;margin-top:15px;overflow:hidden}
+.MallContent_title .MallTitle{float:left;margin-left:8px;width:82px;height:37px;background:url(../images/mall_leader.jpg) no-repeat center center}
+.MallContent_title .MallLeader{float:left;margin-left:36px;font-size:16px}
+.MallContent_title .MallLeader p{float:left;line-height:37px}
+.MallContent_title .MallLeader ul{float:left;margin-top:6px}
+.MallContent_title .MallLeader li{float:left;padding:4px 3px 4px 3px;border:1px solid #d1d1d1;line-height:16px;background:url(../images/mall_btn_bg_0.jpg) repeat-x left top;background-size:contain;margin-right:13px;cursor:pointer}
+.MallContent_title .MallLeader .MallLeaderform{background:0;border:0;margin-top:-2px}
+.MallContent_title .MallLeaderform input{width:63px;height:22px;border:1px solid #d1d1d1}
+.MallContent_title .MallLeaderform .submit{width:44px;height:23px;cursor:pointer;margin-top:-4px;font-size:14px}
+.MallContent_in{overflow:hidden;width:970px;margin-top:10px}
+.MallContent_in dl{width:176px;background:#fff;padding:7px 8px 0 8px;overflow:hidden;float:left;margin:0 2px 2px 0}
+.MallContent_in dt img{width:163px;margin:0 auto;display:block}
+.MallContent_in dd .MallName{font-size:12px;line-height:12px;margin-top:10px}
+.MallContent_in dd p{overflow:hidden}
+.MallContent_in dd .btnLink{margin-bottom:15px}
+.MallContent_in dd a{display:block;text-align:center;line-height:28px;float:left;background:url(../images/mall_btn_bg_0.jpg) repeat-x left top;background-size:contain;border:1px solid #d1d1d1;border-radius:3px;box-sizing:border-box}
+.MallContent_in dd a:hover{background:url(../images/mall_btn_bg_1.jpg) repeat-x left top;background-size:contain;border:1px solid #108cec;color:#fff}
+.MallContent_in dd .color{font-size:16px;text-align:center;line-height:36px;color:#ff1a00;font-weight:600}
+.MallContent_in dd .details{width:61px;height:28px;margin-left:10px}
+.MallContent_in dd .exchange{width:81px;height:28px;float:right;margin-right:10px}
+.MallContent .page{overflow:hidden;margin:50px auto}
+.MallContent .page li{float:left;border:1px solid #d1d1d1;width:24px;height:24px;line-height:24px;cursor:pointer;text-align:center;background:url(../images/mall_btn_bg_0.jpg) repeat-x left top;background-size:contain;margin-right:4px}
+.MallContent .page .current,.MallContent .page li:hover{background:url(../images/mall_btn_bg_1.jpg) repeat-x left top;background-size:contain;border:1px solid #108cec;color:#fff}
+.MallContent .page .long{width:65px}
+.GoodsDetailsBox{padding:30px 0 0 13px;overflow:hidden}
+.GoodsDetailsBox .GoodsLeft{float:left;margin-right:30px;overflow:hidden}
+.GoodsDetailsBox .normalWindow{width:389px;height:264px;border:2px solid #ccc;background:url(../images/goods_normalpic01.jpg) no-repeat center center;background-size:cover}
+.GoodsDetailsBox .smallWindow li{border:2px solid #ccc;width:69px;height:48px;float:left;margin-right:5px;margin-top:10px;cursor:pointer}
+.GoodsDetailsBox .smallWindow .current{width:75px;height:60px;border:0;background:url(../images/goods_bg.png) no-repeat 0 0;margin-top:2px;padding-top:4px}
+.GoodsDetailsBox .smallWindow span{background:url(../images/goods_smallpic01.jpg) no-repeat center center;width:100%;height:100%;display:block}
+.GoodsDetailsBox .GoodsRight{overflow:hidden}
+.GoodsDetailsBox .GoodsRight h3{font-size:18px;padding:10px 10px 10px 0;line-height:30px}
+.GoodsRight .promit{margin-bottom:32px;overflow:hidden}
+.GoodsRight .promit span{float:left;margin-right:7px}
+.GoodsRight .promit span:nth-of-type(1){background:url(../images/goods_deline.jpg);width:61px;height:29px}
+.GoodsRight .promit span:nth-of-type(2){background:url(../images/goods_security.jpg);width:122px;height:29px}
+.GoodsRight .Inventory{font-size:16px;line-height:25px}
+.GoodsRight .Inventory .color{font-size:24px}
+.GoodsRight .Integral{background:url(../images/goods_alert.jpg);width:517px;height:66px;color:#fff;padding:0 23px 0 12px}
+.GoodsRight .Integral span{float:left;margin-right:15px}
+.GoodsRight .Integral span:nth-of-type(1){font-size:16px;font-weight:400px;padding-top:30px;margin-right:5px}
+.GoodsRight .Integral span:nth-of-type(2){font-size:40px;font-weight:400px;line-height:66px}
+.GoodsRight .Integral span:nth-of-type(3){font-size:12px;font-weight:400px;color:#ccc;padding-top:35px;text-decoration:line-through}
+.GoodsRight .Integral .IntegralAlert{float:right;background:url(../images/alert.png) no-repeat;width:149px;height:48px;margin-top:10px;margin-right:0}
+.GoodsRight .Exchange{height:58px;margin-top:12px;overflow:hidden}
+.GoodsRight .Exchange .ExchangeButton{background:url(../images/ExchangeButton.jpg);width:200px;height:58px;float:left;cursor:pointer}
+.GoodsRight .Exchange span{float:left;margin-left:10px;font-size:12px;color:#999;padding-top:40px}
+.GoodsDetailsLeader{width:100%;margin-top:15px;height:54px;border-top:1px solid #d1d1d1}
+.GoodsDetailsLeader li{float:left;line-height:54px;width:25%;text-align:center;font-size:20px;background:url(../images/mall_btn_bg_0.jpg) repeat-x;background-size:contain;cursor:pointer}
+.GoodsDetailsLeader li:hover{color:#1963bc}
+.GoodsDetailsLeader .current{background:#fff;color:#1963bc}
+.GoodsDetailsTab{width:968px;margin:0 auto}
+.GoodsDetailsTab li{display:none}
+.GoodsDetailsTab .show{display:block}
+.GoodsDetailsTab .record{width:100%;margin:23px 0 23px 0;background:#fff}
+.GoodsDetailsTab .record thead{background:#b4d8f4}
+.GoodsDetailsTab .record tbody,.GoodsDetailsTab .record thead{width:100%}
+.GoodsDetailsTab .record td{width:20%;line-height:36px;text-align:center;border:1px solid #edecec}
+.GoodsDetailsTab tbody tr{background:#dadde1}
+.GoodsDetailsTab .firstfloor{margin-top:23px}
+.AfterSale{background:#fff;margin-bottom:26px}
+.AfterSale .firstfloor h3{height:52px;background:#eeeff0;font-size:22px;overflow:hidden;margin-bottom:19px;font-weight:700}
+.AfterSale .firstfloor h4,.AfterSale .firstfloor p{padding-left:28px;padding-right:24px}
+.AfterSale .firstfloor p{line-height:28px}
+.AfterSale .firstfloor h4{line-height:35px;font-size:18px;font-weight:700}
+.firstfloor h3 span{line-height:52px;width:238px;background:#b4d8f4;display:block;color:#0052b5;padding-left:40px}
+.firstfloor .problem1{margin-top:26px}
+.AfterSale .statement{font-size:22px;margin-top:60px;line-height:29px;padding-left:40px}
+.AfterSale .statement a{color:#0052b5;text-decoration:underline}
+.AfterSale .tel{font-size:18px;font-weight:700;padding-left:40px;line-height:29px}
+.GoodsIntroduce{margin-bottom:15px;padding-bottom:20px;border-bottom:1px solid #ccc}
+.GoodsIntroduce h3{padding:0 0 15px 10px;border-bottom:1px solid #ccc;font-size:26px}
+.GoodsIntroduce p{padding-left:10px;line-height:14px;padding-top:20px}
+.GoodsDetailsPic>*{display:block;width:790px;margin:0 auto}
+#CustomerService,#PayCenter{width:1000px;margin:23px auto;overflow:hidden;background:#d7e6f0}
+.CustomerServiceBox{width:1000px;overflow:hidden}
+.CustomerServiceBox div{width:308px;height:138px;border:1px solid #ccc;float:left;padding-top:30px;margin:20px 0 20px 18px}
+.CustomerServiceBox div p:nth-of-type(1){padding-left:82px;height:65px;line-height:65px;background:url(../images/sprite.png) no-repeat left -913px;color:#1e2c43;font-size:28px;margin-left:60px}
+.CustomerServiceBox .CustomerService_02 p:nth-of-type(1){background:url(../images/sprite.png) no-repeat left -980px}
+.CustomerServiceBox .CustomerService_03 p:nth-of-type(1){background:url(../images/sprite.png) no-repeat left -1047px}
+.CustomerServiceBox div p:nth-of-type(2){font-size:32px;color:#ff7800;text-align:center;line-height:60px}
+.CustomerServiceBox .CustomerService_02 input{width:180px;height:48px;border-radius:5px;background:url(../images/servicebutton_bg.png);color:#fff;font-size:20px;display:block;margin:10px auto}
+.HelpCenterBox{overflow:hidden;border-top:1px solid #ccc}
+.HelpCenterBox .HelpCenterLeft,.PayCenterBox .PayLeft{width:298px;float:left;overflow:hidden}
+.HelpCenterBox .HelpCenterLeft{border-right:1px solid #ccc}
+.HelpCenterBox .HelpCenterLeft h3{height:57px;background:url(../images/title_bg.jpg) repeat-x;color:#f7f7f7;font-size:20px;font-weight:400;line-height:57px;overflow:hidden}
+.HelpCenterBox .HelpCenterLeft span{padding-left:35px;background:url(../images/title_leader.jpg) no-repeat 7px center}
+.HelpCenterBox .HelpCenterLeft li{height:54px;border-bottom:1px dashed #ccc;line-height:54px;padding-left:20px;background:url(../images/HelpMore.png) no-repeat 268px center;cursor:pointer}
+.HelpCenterBox .HelpCenterLeft li.current{color:#ff7800}
+.HelpCenterLeft .CommonProblems,.HelpCenterLeft .GameFeedback{padding-bottom:100px}
+.HelpCenterBox .HelpCenterRight{float:left;max-width:660px;padding:20px 15px 100px 15px;overflow:hidden;border-left:1px solid #ccc}
+.HelpCenterRight li{width:645px;height:33px;line-height:33px;border-bottom:1px dashed #ccc;padding:0 5px 0 5px}
+.HelpCenterRight li span{float:left}
+.HelpCenterRight li span:nth-of-type(1){margin-right:10px}
+.HelpCenterRight li span:nth-of-type(3){float:right}
+.HelpCenterRight .advices,.HelpCenterRight ul{display:none}
+.HelpCenterRight .current{display:block}
+.HelpCenterRight .advices p{margin-bottom:10px;overflow:hidden}
+.HelpCenterRight .advices p>*{float:left}
+.HelpCenterRight .advices span{line-height:30px}
+.HelpCenterRight .advices input,.HelpCenterRight .advices select,.HelpCenterRight .advices textarea{width:200px;height:30px;color:#555;border:1px solid #ccc;background:rgba(255,255,255,.3);padding-left:3px}
+.HelpCenterRight .advices textarea{width:400px;height:100px}
+.HelpCenterRight .advices .yz{width:100px}
+.HelpCenterRight .advices .yzm{width:90px;height:30px;background:rgba(255,255,255,.5);border:1px solid #7dc545;margin-left:10px;text-align:center;line-height:30px}
+.HelpCenterRight .advices .sub{width:100px;background:url(../images/servicebutton_bg.png);border-radius:5px;color:#efefef;display:block;margin:30px auto;cursor:pointer}
+.CommonProblems_article p{line-height:26px;text-indent:2em}
+.CommonProblems_article h3{font-size:22px;text-align:center;margin-bottom:20px}
+.CommonProblems_article,.GameFeedback_article{display:none}
+.CommonProblems_article.current,.GameFeedback_article.current{display:block}
+.PayCenterBox .Apay_pay,.PayCenterBox .Wechat_pay{height:60px;line-height:60px;border-top:1px dashed #ccc;cursor:pointer}
+.PayCenterBox .Apay_pay span,.PayCenterBox .Wechat_pay span{padding-left:42px;font-size:18px;background:url(../images/pay_apay.png) no-repeat left center;margin-left:80px}
+.PayCenterBox .Wechat_pay span{background:url(../images/pay_wechat.png) no-repeat left center}
+.PayCenterBox .Paycurrent{color:#ff7800;border-bottom:3px solid #ff7800}
+.PayCenterBox .PayRight{width:656px;float:left;padding-top:20px;padding-bottom:100px;padding-left:43px;overflow:hidden;border-left:1px solid #ccc}
+.PayRight .PayBox_wrap{overflow:hidden}
+.PayRight .PayBox{width:283px;height:73px;border:1px solid #ccc;background:#e8e3dd;float:left;margin-right:43px;margin-bottom:30px;cursor:pointer}
+.PayRight .PayBox>*{float:left;margin:16px 0 0 16px}
+.PayRight .PayBox span{display:block}
+.PayRight .PayBox .money{font-size:20px;line-height:20px}
+.PayRight .PayBox .integral{font-size:12px;color:#999;line-height:12px;margin-top:10px}
+.PayRight .PayBox.current{border:0;background:url(../images/paysuccess.jpg) no-repeat;width:285px;height:75px}
+.PayRight .Paysub{background:url(../images/pay_button.png);width:210px;height:63px;margin:150px auto;display:block;cursor:pointer}
+.YourId{margin-bottom:30px;margin-top:10px}
+.YourId span{font-size:16px}
+.YourId input{width:180px;height:30px;background:rgba(255,255,255,.4);border:1px solid #ff7800;border-radius:5px;color:#fff;padding-left:10px;color:#ccc}
+@media screen and (max-width:980px){.YourId span{padding-left:10px}
+}
+@media screen and (max-width:620px){.YourId span{padding-left:1%}
+}
+.Apay_Wrap,.WeChat_Wrap{width:100%;height:100%;background:rgba(0,0,0,.6);position:fixed;left:0;top:0;display:none}
+.Apay_in,.WeChat_in{width:700px;height:400px;position:absolute;left:50%;top:50%;margin-left:-350px;margin-top:-200px;background:#fff url(../images/wechatpay_leader.jpg) no-repeat 395px center;overflow:hidden}
+.Apay_in .ApayLeft,.WeChat_in .WeChatLeft{width:350px;height:380px;border-right:1px dashed #f2f2f2;padding-top:26px}
+.Apay_in .ApayLeft h3,.WeChat_in .WeChatLeft h3{padding-left:50px;background:url(../images/wechatpay_logo.jpg) no-repeat left center;height:38px;line-height:38px;font-size:30px;color:#333;width:125px;margin:0 auto}
+.Apay_in .ApayLeft .Apay_paymoney,.WeChat_in .WeChatLeft .Wechat_paymoney{font-size:21px;text-align:center;line-height:75px}
+.Apay_in .ApayLeft .Apay_pic,.WeChat_in .WeChatLeft .Wechat_pic{width:183px;height:183px;margin:35px auto;margin-top:0}
+.Apay_in .ApayLeft .alertcolor,.WeChat_in .WeChatLeft .alertcolor{color:#cc0311;text-align:center;display:block}
+.Apay_Wrap.current,.WeChat_Wrap.current{display:block}
+.Apay_in{background:#fff url(../images/apay_leader.jpg) no-repeat 370px center}
+.Apay_in .ApayLeft{float:left}
+.Apay_in .ApayLeft h3{background:url(../images/apay_logo.jpg) no-repeat left center;width:98px}
+.Apay_in .ApayRight{width:100px;height:245px;background:#f3f2f2;padding:155px 10px 0 10px;float:right}
+.Apay_in .ApayRight p{color:#666;font-size:12px;text-align:center}
+.Apay_in .ApayRight .btn{height:36px;width:100px;background:#00a9f3;color:#FFF;font-size:16px;margin-top:15px;display:block;line-height:36px;border-radius:5px;cursor:pointer}
+.Apay_in .error,.WeChat_in .error{width:20px;height:20px;display:block;position:absolute;top:10px;right:10px;background:url(../images/error.png);cursor:pointer}
+.cunstomer_phone{display:none}
+.login_content{width:1000px;border-top:1px solid #ccc;margin:0 auto;padding:50px 36px 50px 36px;overflow:hidden}
+.login_content .left{float:left;width:527px;height:234px;overflow:hidden;margin-top:50px}
+.login_content .left ul{width:100%;height:100%}
+.login_content .left li{background:url(../images/login_banner.png);width:100%;height:100%}
+.login_content .right{float:left;border-left:1px solid #ccc;padding-left:44px;margin-left:44px;overflow:hidden;padding-top:8px}
+.usertitle{font-size:30px;text-align:center;margin-bottom:25px}
+.login_content form{overflow:hidden}
+.login_content label{width:315px;height:40px;border-radius:5px;display:block;margin-bottom:20px}
+.login_content .userName{background:url(../images/login_user.png) no-repeat 15px center}
+.login_content .password{background:url(../images/login_lock.png) no-repeat 15px center}
+.login_content input{width:265px;height:40px;background:url(../images/login_bg.png);padding-left:50px}
+.login_content .yzm input{width:155px;height:40px;padding-left:15px;background:url(../images/login_yzm.png);float:left}
+.login_content .yzm span{width:115px;height:40px;background:#ccc;float:right;border-radius:5px}
+.login_content .submit{width:315px;padding:0;color:#999;font-size:18px;cursor:pointer;margin-bottom:55px}
+.GoodsPic{width:310px;height:210px;background:url(../images/goods_normalpic01.jpg) no-repeat left top;background-size:contain;margin-left:7px}
+.AdressDetails,.AdressTop,.Announcements{overflow:hidden;margin-bottom:30px}
+.Adress_GoodsRight{width:628px;overflow:hidden}
+.AdressDetails h3,.Adress_GoodsRight h3,.Announcements h3{border-bottom:1px solid #ccc;font-size:18px;line-height:36px;margin-bottom:10px;padding-left:5px}
+.Adress_GoodsRight p{overflow:hidden;line-height:28px}
+.Adress_GoodsRight p span{float:left}
+.AdressDetails_in{overflow:hidden;padding-left:30px}
+.AdressDetails_in .requisite{color:#c90205}
+.AdressDetails_in label{display:block;overflow:hidden;margin-bottom:10px}
+.AdressDetails_in label>*{float:left}
+.AdressDetails_in label input,.AdressDetails_in label select{background:#ededed;border:1px solid #ccc;height:25px}
+.AdressDetails_in label input{width:170px}
+.AdressDetails_in .InformationTitles{width:77px;text-align:right;line-height:25px}
+.AdressDetails_in label .adress{width:276px}
+.Announcements_in p{padding-left:5px;line-height:30px;font-size:12px}
+.AdressDown .Exchange{margin:110px auto;width:125px}
+.AdressDown .Exchange .ExchangeButton{width:125px;height:40px;background:#ff7900;color:#fff;font-size:18px;border-radius:5px;cursor:pointer}
+.statementDetails{background:#fff}
+.statementDetails h3{text-align:center;font-size:24px;font-weight:700;color:#005d96;height:80px;border-bottom:1px solid #d1d1d1;line-height:85px}
+.statementDetails p{padding:0 40px 0 40px;margin-top:26px;line-height:29px}
+.statementDetails .back{overflow:hidden;padding-bottom:20px}
+.statementDetails .back span{font-size:18px;color:#005d96;font-weight:700;float:left}
+.statementDetails .back a{float:left;margin-left:20px;cursor:pointer}
+.statementDetails .back a:hover{color:#005d96}
+#footer p.credit span{padding:.5em}
+#footer p a{color:#fff}

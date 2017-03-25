@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1C68DA4-20F2-45ED-A567-73B369EA36D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Game.Entity</RootNamespace>
+    <AssemblyName>Game.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\AccountsFace.cs" />
+    <Compile Include="Accounts\AccountsInfo.cs" />
+    <Compile Include="Accounts\AccountsMember.cs" />
+    <Compile Include="Accounts\AccountsProtect.cs" />
+    <Compile Include="Accounts\ConfineAddress.cs" />
+    <Compile Include="Accounts\ConfineContent.cs" />
+    <Compile Include="Accounts\ConfineMachine.cs" />
+    <Compile Include="Accounts\GameIdentifier.cs" />
+    <Compile Include="Accounts\IndividualDatum.cs" />
+    <Compile Include="Accounts\ReserveIdentifier.cs" />
+    <Compile Include="Accounts\sysdiagrams.cs" />
+    <Compile Include="Accounts\SystemGrantCount.cs" />
+    <Compile Include="Accounts\SystemStatusInfo.cs" />
+    <Compile Include="Accounts\SystemStreamInfo.cs" />
+    <Compile Include="ApplicationConfig.cs" />
+    <Compile Include="Enum\Permission.cs" />
+    <Compile Include="Enum\NoticeLocation.cs" />
+    <Compile Include="Enum\ServiceArea.cs" />
+    <Compile Include="Enum\IssueArea.cs" />
+    <Compile Include="Enum\MemberOrderStatus.cs" />
+    <Compile Include="Enum\MasterRightStatus.cs" />
+    <Compile Include="Enum\SupporTypeStatus.cs" />
+    <Compile Include="Enum\UserRightStatus.cs" />
+    <Compile Include="GameMatch\AndroidManager.cs" />
+    <Compile Include="GameMatch\ConfineAddress.cs" />
+    <Compile Include="GameMatch\ConfineMachine.cs" />
+    <Compile Include="GameMatch\GameColumnItem.cs" />
+    <Compile Include="GameMatch\GameHistoryScore.cs" />
+    <Compile Include="GameMatch\GameProperty.cs" />
+    <Compile Include="GameMatch\GameScoreInfo.cs" />
+    <Compile Include="GameMatch\GameScoreLocker.cs" />
+    <Compile Include="GameMatch\MatchInfo.cs" />
+    <Compile Include="GameMatch\RecordDrawInfo.cs" />
+    <Compile Include="GameMatch\RecordDrawScore.cs" />
+    <Compile Include="GameMatch\RecordMatchUserInout.cs" />
+    <Compile Include="GameMatch\RecordUserInout.cs" />
+    <Compile Include="GameMatch\StreamMatchFeeInfo.cs" />
+    <Compile Include="GameMatch\StreamMatchHistory.cs" />
+    <Compile Include="GameMatch\SystemStreamInfo.cs" />
+    <Compile Include="GameMatch\vw_RecordMatchUserInout.cs" />
+    <Compile Include="GameScore\AndroidManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\ConfineAddress.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\ConfineMachine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\GameColumnItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\GameProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\GameScoreInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\GameScoreLocker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\RecordDrawInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\RecordDrawScore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\RecordUserInout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameScore\SystemStreamInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NativeWeb\admin.cs" />
+    <Compile Include="NativeWeb\Contents.cs" />
+    <Compile Include="NativeWeb\DIY_TEMPCOMMAND_TABLE.cs" />
+    <Compile Include="NativeWeb\GameFeedbackInfo.cs" />
+    <Compile Include="NativeWeb\GameIssueInfo.cs" />
+    <Compile Include="NativeWeb\GameMatchInfo.cs" />
+    <Compile Include="NativeWeb\GameMatchUserInfo.cs" />
+    <Compile Include="NativeWeb\GameMobileInfo.cs" />
+    <Compile Include="NativeWeb\GameRulesInfo.cs" />
+    <Compile Include="NativeWeb\jiaozhu.cs" />
+    <Compile Include="NativeWeb\MobileInfo.cs" />
+    <Compile Include="NativeWeb\News.cs" />
+    <Compile Include="NativeWeb\Notice.cs" />
+    <Compile Include="NativeWeb\Reward.cs" />
+    <Compile Include="NativeWeb\t_jiaozhu.cs" />
+    <Compile Include="PlatformManager\Base_Module.cs" />
+    <Compile Include="PlatformManager\Base_ModulePermission.cs" />
+    <Compile Include="PlatformManager\Base_RolePermission.cs" />
+    <Compile Include="PlatformManager\Base_Roles.cs" />
+    <Compile Include="PlatformManager\Base_UserRole.cs" />
+    <Compile Include="PlatformManager\Base_Users.cs" />
+    <Compile Include="PlatformManager\docunmentinfo.cs" />
+    <Compile Include="PlatformManager\GrantInfo.cs" />
+    <Compile Include="PlatformManager\GrantTimeCountsInfo.cs" />
+    <Compile Include="PlatformManager\ModulePage.cs" />
+    <Compile Include="PlatformManager\QPAdminSiteInfo.cs" />
+    <Compile Include="PlatformManager\SpreaderOption.cs" />
+    <Compile Include="PlatformManager\UserSpreader.cs" />
+    <Compile Include="PlatformManager\vw_GamerListInfo.cs" />
+    <Compile Include="PlatformManager\vw_SubAgentListInfo.cs" />
+    <Compile Include="PlatformManager\vw_SystemLog.cs" />
+    <Compile Include="PlatformManager\vw_SubAgentList.cs" />
+    <Compile Include="PlatformManager\SystemSecurity.cs" />
+    <Compile Include="PlatformManager\vw_Base_Users.cs" />
+    <Compile Include="Platform\DataBaseInfo.cs" />
+    <Compile Include="Platform\GameGameItem.cs" />
+    <Compile Include="Platform\GameKindItem.cs" />
+    <Compile Include="Platform\GameNodeItem.cs" />
+    <Compile Include="Platform\GamePageItem.cs" />
+    <Compile Include="Platform\GameRoomInfo.cs" />
+    <Compile Include="Platform\GameTypeItem.cs" />
+    <Compile Include="Platform\GlobalPlayPresent.cs" />
+    <Compile Include="Platform\OnLineStatusInfo.cs" />
+    <Compile Include="Platform\OnLineStreamInfo.cs" />
+    <Compile Include="Platform\QPAdminSiteInfo.cs" />
+    <Compile Include="Platform\SystemMessage.cs" />
+    <Compile Include="Platform\vw_GameKindItem.cs" />
+    <Compile Include="Platform\vw_GameNodeItem.cs" />
+    <Compile Include="Platform\vw_GamePageItem.cs" />
+    <Compile Include="Platform\vw_GameRoomInfo.cs" />
+    <Compile Include="Platform\vw_GameTypeItem.cs" />
+    <Compile Include="Platform\vw_GlobalPlayPresent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Record\RecordAccountsExpend.cs" />
+    <Compile Include="Record\RecordConvertPresent.cs" />
+    <Compile Include="Record\RecordConvertUserMedal.cs" />
+    <Compile Include="Record\RecordEncashPresent.cs" />
+    <Compile Include="Record\RecordGrantClearFlee.cs" />
+    <Compile Include="Record\RecordGrantClearScore.cs" />
+    <Compile Include="Record\RecordGrantExperience.cs" />
+    <Compile Include="Record\RecordGrantGameID.cs" />
+    <Compile Include="Record\RecordGrantGameScore.cs" />
+    <Compile Include="Record\RecordGrantMember.cs" />
+    <Compile Include="Record\RecordGrantTreasure.cs" />
+    <Compile Include="Record\RecordPasswdExpend.cs" />
+    <Compile Include="Record\RecordSendPresent.cs" />
+    <Compile Include="Record\RecordSendProperty.cs" />
+    <Compile Include="Record\vw_RecordAccountsExpend.cs" />
+    <Compile Include="Record\vw_RecordConvertPresent.cs" />
+    <Compile Include="Record\vw_RecordConvertUserMedal.cs" />
+    <Compile Include="Record\vw_RecordGrantClearFlee.cs" />
+    <Compile Include="Record\vw_RecordGrantClearScore.cs" />
+    <Compile Include="Record\vw_RecordGrantExperience.cs" />
+    <Compile Include="Record\vw_RecordGrantGameID.cs" />
+    <Compile Include="Record\vw_RecordGrantGameScore.cs" />
+    <Compile Include="Record\vw_RecordGrantMember.cs" />
+    <Compile Include="Record\vw_RecordGrantTreasure.cs" />
+    <Compile Include="Record\vw_RecordPasswdExpend.cs" />
+    <Compile Include="Treasure\AndroidManager.cs" />
+    <Compile Include="Treasure\ConfineAddress.cs" />
+    <Compile Include="Treasure\ConfineMachine.cs" />
+    <Compile Include="Treasure\GameColumnItem.cs" />
+    <Compile Include="Treasure\GameProperty.cs" />
+    <Compile Include="Treasure\GameScoreInfo.cs" />
+    <Compile Include="Treasure\GameScoreLocker.cs" />
+    <Compile Include="Treasure\GlobalLivcard.cs" />
+    <Compile Include="Treasure\GlobalShareInfo.cs" />
+    <Compile Include="Treasure\GlobalSpreadInfo.cs" />
+    <Compile Include="Treasure\LivcardAssociator.cs" />
+    <Compile Include="Treasure\LivcardBuildStream.cs" />
+    <Compile Include="Treasure\MobliePay.cs" />
+    <Compile Include="Treasure\OnLineOrder.cs" />
+    <Compile Include="Treasure\PayTransfers.cs" />
+    <Compile Include="Treasure\RecordDrawInfo.cs" />
+    <Compile Include="Treasure\RecordDrawScore.cs" />
+    <Compile Include="Treasure\vw_RecordGrantTreasureScore.cs" />
+    <Compile Include="Treasure\RecordInsure.cs" />
+    <Compile Include="Treasure\RecordSpreadInfo.cs" />
+    <Compile Include="Treasure\RecordUserInout.cs" />
+    <Compile Include="Treasure\ReturnDayDetailInfo.cs" />
+    <Compile Include="Treasure\ReturnKQDetailInfo.cs" />
+    <Compile Include="Treasure\ReturnVBDetailInfo.cs" />
+    <Compile Include="Treasure\ReturnYPDetailInfo.cs" />
+    <Compile Include="Treasure\ShareDetailInfo.cs" />
+    <Compile Include="Treasure\SpreadAdd.cs" />
+    <Compile Include="Treasure\StreamPlayPresent.cs" />
+    <Compile Include="Treasure\StreamShareInfo.cs" />
+    <Compile Include="Treasure\SystemStreamInfo.cs" />
+    <Compile Include="Treasure\vw_AndroidManager.cs" />
+    <Compile Include="Treasure\vw_GameScoreInfo.cs" />
+    <Compile Include="Treasure\vw_GameScoreLocker.cs" />
+    <Compile Include="Treasure\vw_LivcardAssociator.cs" />
+    <Compile Include="Treasure\vw_LivcardBuildStream.cs" />
+    <Compile Include="Treasure\vw_OnLineOrder.cs" />
+    <Compile Include="Treasure\vw_RecordDrawInfo.cs" />
+    <Compile Include="Treasure\vw_RecordDrawScore.cs" />
+    <Compile Include="Treasure\vw_RecordInsure.cs" />
+    <Compile Include="Treasure\vw_RecordUserInout.cs" />
+    <Compile Include="Treasure\vw_ShareDetailInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Game.Utils\Game.Utils.csproj">
+      <Project>{AA0752F8-22AC-409F-A500-40A81B9C5D06}</Project>
+      <Name>Game.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

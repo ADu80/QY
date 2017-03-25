@@ -1,0 +1,124 @@
+﻿<div ms-controller="#vmodel#" class="vmodel subagentlist">
+    <div class="panel search">
+        <div class="row">
+            <div class="col"><label class="md">账号：</label><input type="text" class="text-agents" ms-duplex-value="@condition.keyword" /></div>
+            <div class="col">
+                <label class="md">玩家范围：</label>
+                <select class="select-agents" ms-on-change="@changeStatus" name="status">
+                    <option value="-1">全部</option>
+                    <option value="1">冻结</option>
+                    <option value="0">未冻结</option>
+                </select>
+            </div>
+        </div>
+        <div class="row textcenter">
+            <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@reset()">重置</button>
+        </div>
+    </div>
+    <div class="panel table">
+        <div class="bar bar-btn">
+            <a class="btn btn-curd" ms-click="@openPwdDialog | stop"><span class="iconfont icon-xiugai"></span>重置密码</a>
+            <a class="btn btn-curd" ms-click="@dj | stop"><span class="iconfont icon-xiugai"></span>冻结账号</a>
+            <a class="btn btn-curd" ms-click="@jd | stop"><span class="iconfont icon-xiugai"></span>解冻账号</a>
+        </div>
+        <div class="datalist">
+            <xmp ms-widget="[{is:'ms-grid',id:'grid_subagents',fillGrid:@fillGrid},@config]">
+                <table slot="table">
+                    <thead>
+                        <tr>
+                            <th class="row-check">
+                                <input type="checkbox" ms-duplex-checked="@allchecked" data-duplex-changed="@checkAll">
+                            </th>
+                            <th>
+                                编号
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down" ms-click="@sortAsc('UserID') | stop"></span>
+                                    <span class="iconfont icon-up" ms-click="@sortDesc('UserID') | stop"></span>
+                                </span>
+                            </th>
+                            <th>
+                                代理账号
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down" ms-click="@sortAsc('UserName') | stop"></span>
+                                    <span class="iconfont icon-up" ms-click="@sortDesc('UserName') | stop"></span>
+                                </span>
+                            </th>
+                            <th>
+                                角色名称
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down" ms-click="@sortAsc('RoleName') | stop"></span>
+                                    <span class="iconfont icon-up" ms-click="@sortDesc('RoleName') | stop"></span>
+                                </span>
+                            </th>
+                            <th>
+                                代理级别
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down" ms-click="@sortAsc('GradeDes') | stop"></span>
+                                    <span class="iconfont icon-up" ms-click="@sortDesc('GradeDes') | stop"></span>
+                                </span>
+                            </th>
+                            <th>
+                                状态
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down" ms-click="@sortAsc('Nullity') | stop"></span>
+                                    <span class="iconfont icon-up" ms-click="@sortDesc('Nullity') | stop"></span>
+                                </span>
+                            </th>
+                            <th>
+                                登录次数
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down"></span>
+                                    <span class="iconfont icon-up"></span>
+                                </span>
+                            </th>
+                            <th>
+                                最后登录IP
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down" ms-click="@sortAsc('LastLoginIP') | stop"></span>
+                                    <span class="iconfont icon-up" ms-click="@sortDesc('LastLoginIP') | stop"></span>
+                                </span>
+                            </th>
+                            <th>
+                                最后登录时间
+                                <span class="sortIcon">
+                                    <span class="iconfont icon-down" ms-click="@sortAsc('LastLogintime') | stop"></span>
+                                    <span class="iconfont icon-up" ms-click="@sortDesc('LastLogintime') | stop"></span>
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tb" ms-for="(i,r) in @datasource" ms-click="@onGridSelectedRowChanged(i,r)" ms-class="[r.selected&&'selected']">
+                            <td class="row-check">
+                                <input type="checkbox" ms-duplex-checked="r.checked" data-duplex-changed="@checkOne">
+                            </td>
+                            <td>{{r.UserID}}</td>
+                            <td>{{r.UserName}}</td>
+                            <td>{{r.RoleName}}</td>
+                            <td ms-css="{color:@GetColor(r.GradeDes)}">{{r.GradeDes}}</td>
+                            <td ms-css="{color:!!+r.Nullity?'#d33':'#3d3'}">{{!!+r.Nullity?'冻结':'正常'}}</td>
+                            <td>{{r.LoginTimes}}</td>
+                            <td>{{r.LastLoginIP}}</td>
+                            <td class="col-datetime">{{r.LastLogintime}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </xmp>
+        </div>
+    </div>
+    <!--重置密码-->
+    <div ms-class="['vpage','page-edit','ch_pwd']" ms-effect="{is:'pwddialog',action:@pwdAnimation}">
+        <div class="box">
+            <div class="controlbox"><span>重置管理员密码</span><a class="btn-close" ms-click="@closePwdDialog();return false;">x</a></div>
+            <div class="content">
+                <p>是否将账号【<span name="UserName" ms-text="@model.UserName"></span>】的密码重置，重置后的密码为“<span>123456</span>”。</p>
+                <p>（注：密码重置修改的是代理账号登录[代理系统]的密码，并不会修改代理账号登录[游戏大厅]的密码）</p>
+                <div class="row bar-btn">
+                    <input type="submit" class="btn btn-update" value="保存" ms-click="@changePwd" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

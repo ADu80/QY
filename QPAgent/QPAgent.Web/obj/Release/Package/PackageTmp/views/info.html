@@ -1,0 +1,1679 @@
+﻿<div ms-controller="#vmodel#" class="vmodel info">
+    <div class="vpage page-list visible">
+        <div class="list">
+            <h3>代理结构</h3>
+            <div class="tree">
+                <ul>
+                    <li ms-for="(index, el) in @tree" ms-class="['item','item-'+el.ag,'item-l-'+el.level,'item-'+el.type]">
+                        <div class="title">
+                            <span ms-class="el.subtree.length?('iconfont '+(el.open?'icon-rightdown':'icon-right')):'none'" ms-click="@openSubTree(el) | stop"></span>
+                            <span class="iconfont icon-ren"></span>
+                            <span class="title-text" ms-click="@onTreeNodeSelected(el,$event)" ms-on-contextmenu="@onContextMenu(el,$event)">{{el.title}}<span class="rolename" ms-on-contextmenu="@onContextMenu(el,$event)">{{el.RoleName}}</span></span>
+                        </div>
+                        <div ms-visible="el.open" ms-html="@renderSubTree(el)" class="subtree">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab">
+            <div class="tab-header">
+                <ul>
+                    <li ms-for="(i,t) in @tabs" ms-click="@onSelectTab(i,t.tabpage)" ms-class="t.active && 'active'"><span ms-text="t.title"></span></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div ms-class="['tabpage','basic',@selectedTabPage==='basic'&&'active']">
+                    <div class="bar">
+                        <button ms-click="@setReportVisible()">查看代理的基本数据</button>
+                    </div>
+                    <div ms-if="!@selectedTreeNode.IsAgent" class="basic1">
+                        <div class="row">
+                            <div class="col"><label class="lg">玩家人数(全部)：</label><span ms-text="@AdminStatInfo.AllCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">玩家人数(代理)：</label><span ms-text="@AdminStatInfo.AgentCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">玩家人数(平台)：</label><span ms-text="@AdminStatInfo.PlatformCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="big">代理人数(金牌)：</label><span ms-text="@AdminStatInfo.TopAgentCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="big">代理人数(银牌)：</label><span ms-text="@AdminStatInfo.SubAgentCount | formatMoney" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="lg">在线人数(全部)：</label><span ms-text="@AdminStatInfo.OnLineCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">在线人数(代理)：</label><span ms-text="@AdminStatInfo.AgentOnLineCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">在线人数(平台)：</label><span ms-text="@AdminStatInfo.PlatformOnLineCount | formatMoney" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="lg">充值金额(全部)：</label><span ms-text="@AdminStatInfo.Recharge | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">充值金额(代理)：</label><span ms-text="@AdminStatInfo.AgentRecharge | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">充值金额(平台)：</label><span ms-text="@AdminStatInfo.PlatformRecharge | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">玩家总返利：</label><span ms-text="@AdminStatInfo.SpreadSum | formatMoney" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="lg">金币消耗(全部)：</label><span ms-text="@AdminStatInfo.Waste | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">金币消耗(代理)：</label><span ms-text="@AdminStatInfo.AgentWaste | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">金币消耗(平台)：</label><span ms-text="@AdminStatInfo.PlatformWaste | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">金币库存(全部)：</label><span ms-text="@AdminStatInfo.Score | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">金币库存(代理)：</label><span ms-text="@AdminStatInfo.AgentScore | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">金币库存(平台)：</label><span ms-text="@AdminStatInfo.PlatformScore | formatMoney" class="value"></span></div>
+                        </div>
+                    </div>
+                    <div ms-if="@selectedTreeNode.IsAgent" class="basic2">
+                        <div class="row">
+                            <div class="col"><label class="lg">代理商ID：</label><span ms-text="@AgentStatInfo.GameID" class="value"></span></div>
+                            <div class="col"><label class="lg">代理商帐号：</label><span ms-text="@AgentStatInfo.Accounts" class="value"></span></div>
+                            <div class="col"><label class="lg">代理商昵称：</label><span ms-text="@AgentStatInfo.NickName" class="value"></span></div>
+                            <div class="col"><label class="lg">代理状态：</label><span ms-text="@AgentStatInfo.AgentStatus" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="lg">在线人数：</label><span ms-text="@AgentStatInfo.OnLineCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">充值金额：</label><span ms-text="@AgentStatInfo.Recharge | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">总返利：</label><span ms-text="@AgentStatInfo.AgentSpreadSum | formatMoney" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="lg">直接玩家金币消耗：</label><span ms-text="@AgentStatInfo.DirectGamerWaste | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">直接玩家金币库存：</label><span ms-text="@AgentStatInfo.DirectGamerScore | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">直接玩家人数：</label><span ms-text="@AgentStatInfo.DirectGamerCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">直接代理商数：</label><span ms-text="@AgentStatInfo.DirectAgentCount" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="lg">全部玩家金币消耗：</label><span ms-text="@AgentStatInfo.AllGamerWaste | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">全部玩家金币库存：</label><span ms-text="@AgentStatInfo.AllGamerScore | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">全部玩家人数：</label><span ms-text="@AgentStatInfo.AllGamerCount | formatMoney" class="value"></span></div>
+                            <div class="col"><label class="lg">全部代理商数：</label><span ms-text="@AgentStatInfo.AllAgentCount | formatMoney" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="lg">支持最大层级：</label><span ms-text="@AgentStatInfo.AgentLevelLimit" class="value"></span></div>
+                            <div class="col"><label class="lg">盈利税收点：</label><span ms-text="@AgentStatInfo.ProfitRate" class="value"></span></div>
+                            <div class="col"><label class="lg">可否发展下级：</label><span ms-text="@AgentStatInfo.canHasSubAgent" class="value"></span></div>
+                            <div class="col col-md"><label class="lg">代理日期：</label><span ms-text="@AgentStatInfo.SpreaderDate" class="value"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-hg"><label class="lg">代理推广地址：</label><input type="text" onfocus="this.blur()" disabled="disabled" id="AgentStatInfo-SpreaderURL" ms-duplex-value="@AgentStatInfo.SpreaderURL" class="value" /></div>
+                            <div class="col col-ss"><button class="btn btn-update" ms-click="@copySpreaderURL($event,'AgentStatInfo-SpreaderURL')">复制</button></div>
+                            <div class="col">
+                                <label class="md">邀请码：</label>
+                                <span id="AgentStatInfo-SpreaderID" ms-text="@AgentStatInfo.SpreaderID" class="value visible"></span>
+                                <input id="txtSpreaderID" type="text" class="sm" ms-on-input="@changeSpreaderID($event)" />
+                            </div>
+                            <div class="col relative">
+                                <button id="btnUpdateSpreaderID" class="btn btn-update" ms-click="@openSpreaderIdChoice($event,1)" ms-visible="@openBtnVisible">修改邀请码</button>
+                                <button class="btn btn-update" ms-visible="@saveBtnVisible" ms-click="@saveSpreaderID($event,1)">保存</button>
+                                <button class="btn btn-update" ms-visible="@saveBtnVisible" ms-click="@closeSpreaderIdChoice(1)">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ms-controller="vmGamerlistInfo" ms-class="['tabpage','gamerlist',@selectedTabPage==='gamerlist'&&'active']">
+                    <div class="panel search">
+                        <div class="row">
+                            <div class="col">
+                                <label class="md">玩家ID：</label><input type="text" ms-duplex-value="@condition.GameID" autocomplete="off"/>
+                            </div>
+                            <div class="col"><label class="md">玩家账号：</label><input type="text" ms-duplex-value="@condition.Accounts" autocomplete="off" /></div>
+                            <div class="col">
+                                <label class="md">玩家范围：</label>
+                                <select type="text" ms-duplex-value="@condition.Range">
+                                    <option value="0">直接代理玩家</option>
+                                    <option value="1">全部代理玩家</option>
+                                </select>
+                            </div>
+                            <div class="col col-lg">
+                                <label class="sm">从 </label>
+                                <input type="text" data-date="datepicker" readonly="readonly" ms-duplex="@condition.startDate" placeholder="选择日期" />
+                                <label class="sm"> 到 </label>
+                                <input type="text" data-date="datepicker" readonly="readonly" ms-duplex="@condition.endDate" placeholder="选择日期" />
+                            </div>
+                        </div>
+                        <div class="row textcenter">
+                            <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@clearCondition()">重置</button>
+                        </div>
+                    </div>
+                    <div class="panel table">
+                        <div class="bar bar-btn">
+                            <a class="btn btn-curd" ms-click="@showGiveGoldDialog();return false;"><span class="iconfont icon-xinzeng"></span>赠送金币</a>
+                            <a class="btn btn-curd" ms-click="@showGiveRCardDialog();return false;"><span class="iconfont icon-xiugai"></span>赠送房卡</a>
+                        </div>
+                        <div class="datalist">
+                            <xmp ms-widget="[{is:'ms-grid',fillGrid:@fillGrid},@config]">
+                                <table slot="table">
+                                    <thead>
+                                        <tr class="th">
+                                            <th class="row-check">
+                                                <input type="checkbox" ms-duplex-checked="@allchecked" data-duplex-changed="@checkAll">
+                                            </th>
+                                            <th>
+                                                玩家ID
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('GameID') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('GameID') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                账号
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Accounts') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Accounts') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                昵称
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('NickName') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('NickName') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                邀请码
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('InviteCode') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('InviteCode') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                总金币
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('AllScore') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('AllScore') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                游戏金币
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Score') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Score') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                银行金币
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('InsureScore') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('InsureScore') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                钻石<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Diamond') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Diamond') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                房卡
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('RCard') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('RCard') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                充值金额
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Rechange') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Rechange') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                消耗金币
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Waste') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Waste') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                今日消耗
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('AgentWasteSumToday') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('AgentWasteSumToday') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                今日返利
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('AgentSpreaderSumToday') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('AgentSpreaderSumToday') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                在线状态
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('LoginStatus') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('LoginStatus') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                登录次数
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('LoginTimes') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('LoginTimes') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                账号状态
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('PageView_RowNo') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('PageView_RowNo') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                推广人
+                                            </th>
+                                            <th>
+                                                代理商
+                                            </th>
+                                            <th>
+                                                注册日期
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('SpreaderDate') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('SpreaderDate') | stop"></span>
+                                                </span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="tb" ms-for="(i,r) in @datasource" ms-click="@onRowChanged(i,r)" ms-class="[r.selected&&'selected']">
+                                            <td class="row-check"><input type="checkbox" ms-duplex-checked="r.checked" data-duplex-changed="@checkOne" ms-attr="{disabled:@noSelfCheck(r.UserID)}"></td>
+                                            <td>{{r.GameID}}</td>
+                                            <td><a ms-click="@openReport(r,'gamer')">{{r.Accounts}}</a></td>
+                                            <td>{{r.NickName}}</td>
+                                            <td>{{r.InviteCode}}</td>
+                                            <td class="textright">{{r.AllScore}}</td>
+                                            <td class="textright">{{r.Score}}</td>
+                                            <td class="textright">{{r.InsureScore}}</td>
+                                            <td class="textright">{{r.Diamond}}</td>
+                                            <td class="textright">{{r.RCard}}</td>
+                                            <td class="textright">{{r.Recharge}}</td>
+                                            <td class="textright">{{r.Waste}}</td>
+                                            <td class="textright">{{r.GamerWasteSumToday}}</td>
+                                            <!--<td class="textright">{{r.GamerSpreaderSum}}</td>-->
+                                            <td class="textright"><a ms-click="@openSpreadSumDialog(r)">{{r.GamerSpreaderSumToday}}</a></td>
+                                            <td>{{r.LoginStatus}}</td>
+                                            <td class="textright">{{r.LoginTimes}}</td>
+                                            <td ms-css="{color:!!+r.Nullity?'#d33':'#3d3'}">{{!!+r.Nullity?'冻结':'正常'}}</td>
+                                            <td>{{r.SpreaderAccounts}}</td>
+                                            <td>{{r.AgentName}}</td>
+                                            <td class="col-datetime">{{r.SpreaderDate}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </xmp>
+                        </div>
+                    </div>
+                    <!--<div class="vpage page-edit" ms-visible="@GiveGoldDialogVisible">-->
+                    <div class="vpage page-edit" ms-effect="{is:'smalldialog',action:@GiveGoldDialogAnimation}">
+                        <div class="box">
+                            <div class="controlbox"><span>赠送金币</span><a class="btn-close" ms-click="@closeGiveGoldDialog();return false;">X</a></div>
+                            <div class="content">
+                                <form id="form_info_gamer_givegold" ms-on-submit="@AddGiftGold | prevent">
+                                    <div class="row">
+                                        <div class="col"><label class="md">金币数量：</label><input type="text" name="GiftGold" ms-duplex="@GiftGoldForm.GiftGold" /></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="md">赠送原因：</label><textarea name="Nick" ms-duplex="@GiftGoldForm.Reason" /></div>
+                                    </div>
+                                    <div class="row bar-btn">
+                                        <input type="submit" class="btn btn-update" value="保存" /><label class="lblmsg"></label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vpage page-edit" ms-effect="{is:'smalldialog',action:@GiveRCardDialogAnimation}">
+                        <div class="box">
+                            <div class="controlbox"><span>赠送房卡</span><a class="btn-close" ms-click="@closeGiveRCardDialog();return false;">X</a></div>
+                            <div class="content">
+                                <form id="form_info_gamer_givercard" ms-on-submit="@AddRCard | prevent">
+                                    <div class="row">
+                                        <div class="col"><label class="md">房卡数量：</label><input type="text" name="RCard" ms-duplex="@GiftRCardForm.RCard" /></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="md">赠送原因：</label><textarea name="Reason" ms-duplex="@GiftRCardForm.Reason" /></div>
+                                    </div>
+                                    <div class="row bar-btn">
+                                        <input type="submit" class="btn btn-update" value="保存" /><label class="lblmsg"></label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ms-controller="vmSubAgentlistInfo" ms-class="['tabpage','myagent',@selectedTabPage==='myagent'&&'active']">
+                    <div class="panel search">
+                        <div class="row">
+                            <div class="col">
+                                <label class="md">邀请码：</label><input type="text" ms-duplex-value="@condition.SpreaderID" />
+                            </div>
+                            <div class="col"><label class="md">代理账号：</label><input type="text" ms-duplex-value="@condition.Accounts" /></div>
+                            <div class="col">
+                                <label class="md">代理范围：</label>
+                                <select type="text" ms-duplex-value="@condition.Range">
+                                    <option value="0">直接代理商</option>
+                                    <option value="1">全部代理商</option>
+                                </select>
+                            </div>
+                            <div class="col col-lg">
+                                <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@condition.startDate" placeholder="选择日期" />
+                                <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@condition.endDate" placeholder="选择日期" />
+                            </div>
+                        </div>
+                        <div class="row textcenter">
+                            <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@clearCondition()">重置</button>
+                        </div>
+                    </div>
+                    <div class="panel table">
+                        <div class="bar bar-btn">
+                            <a class="btn btn-curd" ms-click="@showGiveGoldDialog();return false;"><span class="iconfont icon-xinzeng"></span>赠送金币</a>
+                            <a class="btn btn-curd" ms-click="@showGiveRCardDialog();return false;"><span class="iconfont icon-xiugai"></span>赠送房卡</a>
+                        </div>
+                        <div class="datalist">
+                            <xmp ms-widget="[{is:'ms-grid',fillGrid:@fillGrid},@config]">
+                                <table slot="table">
+                                    <thead>
+                                        <tr class="th">
+                                            <th class="row-check"><input type="checkbox" ms-duplex-checked="@allchecked" data-duplex-changed="@checkAll"></th>
+                                            <th>
+                                                代理商ID
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('GameID') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('GameID') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                代理商账号
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Accounts') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Accounts') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                代理商昵称
+                                                <span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('NickName') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('NickName') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                金币总消耗<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('AllWaste') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('AllWaste') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                充值金额<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Recharge') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Recharge') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                在线人数<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('OnlineCount') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('OnlineCount') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                玩家人数<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('AllGamerCount') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('AllGamerCount') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                全部玩家金币库存<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('AllGamerScore') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('AllGamerScore') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                盈利税收点<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('Percentage') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('Percentage') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                子代理个数<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('SubAgentCount') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('SubAgentCount') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                代理状态
+                                            </th>
+                                            <th>
+                                                代理日期<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('SpreaderDate') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('SpreaderDate') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                上级代理商ID<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('HigherAgentID') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('HigherAgentID') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                上级代理商<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('HigherAgentName') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('HigherAgentName') | stop"></span>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                邀请码<span class="sortIcon">
+                                                    <span class="iconfont icon-down" ms-click="@sortAsc('InviteCode') | stop"></span>
+                                                    <span class="iconfont icon-up" ms-click="@sortDesc('InviteCode') | stop"></span>
+                                                </span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="tb" ms-for="(i,r) in @datasource" ms-click="@onRowChanged(i,r)" ms-class="[r.selected&&'selected']">
+                                            <td class="row-check"><input type="checkbox" ms-duplex-checked="r.checked" data-duplex-changed="@checkOne"></td>
+                                            <td>{{r.GameID}}</td>
+                                            <td><a ms-click="@openReport(r,'agent')">{{r.Accounts}}</a></td>
+                                            <td>{{r.NickName}}</td>
+                                            <td class="textright">{{r.AllWaste}}</td>
+                                            <td class="textright">{{r.Recharge}}</td>
+                                            <td class="textright">{{r.OnlineCount}}</td>
+                                            <td class="textright">{{r.AllGamerCount}}</td>
+                                            <td class="textright">{{r.AllGamerScore}}</td>
+                                            <td class="textright">{{r.Percentage}}</td>
+                                            <td class="textright">{{r.SubAgentCount}}</td>
+                                            <td ms-css="{color:!!+r.Status?'#d33':'#3d3'}">{{!!+r.Status?'冻结':'正常'}}</td>
+                                            <td class="col-datetime">{{r.SpreaderDate}}</td>
+                                            <td>{{r.HigherAgentID}}</td>
+                                            <td>{{r.HigherAgentName}}</td>
+                                            <td>{{r.InviteCode}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </xmp>
+                        </div>
+                    </div>
+                    <div class="vpage page-edit" ms-effect="{is:'smalldialog',action:@GiveGoldDialogAnimation}">
+                        <div class="box">
+                            <div class="controlbox"><span>赠送金币</span><a class="btn-close" ms-click="@closeGiveGoldDialog();return false;">X</a></div>
+                            <div class="content">
+                                <form id="form_info_agent_givegold" ms-on-submit="@AddGiftGold | prevent">
+                                    <div class="row">
+                                        <div class="col"><label class="md">金币数量：</label><input type="text" name="GiftGold" ms-duplex="@GiftGoldForm.GiftGold" /></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="md">赠送原因：</label><textarea name="Nick" ms-duplex="@GiftGoldForm.Reason" /></div>
+                                    </div>
+                                    <div class="row bar-btn">
+                                        <input type="submit" class="btn btn-update" value="保存" /><label class="lblmsg"></label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vpage page-edit" ms-effect="{is:'smalldialog',action:@GiveRCardDialogAnimation}">
+                        <div class="box">
+                            <div class="controlbox"><span>赠送房卡</span><a class="btn-close" ms-click="@closeGiveRCardDialog();return false;">X</a></div>
+                            <div class="content">
+                                <form id="form_info_agent_givercard" ms-on-submit="@AddRCard | prevent">
+                                    <div class="row">
+                                        <div class="col"><label class="md">房卡数量：</label><input type="text" name="RCard" ms-duplex="@GiftRCardForm.RCard" /></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="md">赠送原因：</label><textarea name="Reason" ms-duplex="@GiftRCardForm.Reason" /></div>
+                                    </div>
+                                    <div class="row bar-btn">
+                                        <input type="submit" class="btn btn-update" value="保存" /><label class="lblmsg"></label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ms-controller="vmInfoReport" class="tabpage dialog report" ms-effect="{is:'reportdialog',action:@reportAnimation}">
+                    <div class="controlbox"><span class="dialog-title" ms-text="@reportDialog.title"></span><a class="btn-close" ms-click="@closeReport();return false;">X</a></div>
+                    <div class="left">
+                        <ul class="report-list">
+                            <li ms-class="[@reportView==='basic' && 'active']"><a ms-click="@setReportView('basic')">基本信息</a></li>
+                            <li ms-if="@reportDialog.userType==='gamer'" ms-class="[@reportView==='richchange' && 'active']"><a ms-click="@setReportView('richchange')">财富变化</a></li>
+                            <li ms-class="[@reportView==='recharge' && 'active']"><a ms-click="@setReportView('recharge')">充值记录</a></li>
+                            <li ms-if="@reportDialog.userType==='gamer'" ms-class="[@reportView==='loginlog' && 'active']"><a ms-click="@setReportView('loginlog')">登录日志</a></li>
+                            <li ms-class="[@reportView==='gift' && 'active']"><a ms-click="@setReportView('gift')">赠送记录</a></li>
+                            <li ms-class="[@reportView==='playgame' && 'active']"><a ms-click="@setReportView('playgame')" ms-text="(@reportDialog.userType==='gamer'?'游戏记录':'玩家游戏记录')"></a></li>
+                            <li ms-if="@reportDialog.userType!=='gamer'" ms-class="[@reportView==='gamewaste' && 'active']"><a ms-click="@setReportView('gamewaste')">游戏金币消耗</a></li>
+                            <li ms-class="[@reportView==='allsum' && 'active']"><a ms-click="@setReportView('allsum')" ms-text="(@reportDialog.userType==='gamer'?'游戏统计':'游戏数据统计')"></a></li>
+                            <li ms-if="@reportDialog.userType==='gamer'" ms-class="[@reportView==='allplayer' && 'active']"><a ms-click="@setReportView('allplayer')">推广列表</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <div class="report-tab basic" ms-visible="@reportView=='basic'">
+                            <div ms-if="@reportDialog.userType=='admin'" class="basic1">
+                                <div class="row">
+                                    <div class="col"><label class="lg">玩家人数(全部)：</label><span ms-text="@AdminStatInfo.AllCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">玩家人数(代理)：</label><span ms-text="@AdminStatInfo.AgentCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">玩家人数(平台)：</label><span ms-text="@AdminStatInfo.PlatformCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="big">代理人数(金牌)：</label><span ms-text="@AdminStatInfo.TopAgentCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="big">代理人数(银牌)：</label><span ms-text="@AdminStatInfo.SubAgentCount | formatMoney" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="lg">在线人数(全部)：</label><span ms-text="@AdminStatInfo.OnLineCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">在线人数(代理)：</label><span ms-text="@AdminStatInfo.AgentOnLineCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">在线人数(平台)：</label><span ms-text="@AdminStatInfo.PlatformOnLineCount | formatMoney" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="lg">充值金额(全部)：</label><span ms-text="@AdminStatInfo.Recharge | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">充值金额(代理)：</label><span ms-text="@AdminStatInfo.AgentRecharge | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">充值金额(平台)：</label><span ms-text="@AdminStatInfo.PlatformRecharge | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">玩家总返利：</label><span ms-text="@AdminStatInfo.SpreadSum | formatMoney" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="lg">金币消耗(全部)：</label><span ms-text="@AdminStatInfo.Waste | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">金币消耗(代理)：</label><span ms-text="@AdminStatInfo.AgentWaste | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">金币消耗(平台)：</label><span ms-text="@AdminStatInfo.PlatformWaste | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">金币库存(全部)：</label><span ms-text="@AdminStatInfo.Score | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">金币库存(代理)：</label><span ms-text="@AdminStatInfo.AgentScore | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">金币库存(平台)：</label><span ms-text="@AdminStatInfo.PlatformScore | formatMoney" class="value"></span></div>
+                                </div>
+                            </div>
+                            <div ms-if="@reportDialog.userType=='agent'" class="basic2">
+                                <div class="row">
+                                    <div class="col"><label class="lg">代理商ID：</label><span ms-text="@AgentStatInfo.GameID" class="value"></span></div>
+                                    <div class="col"><label class="lg">代理商帐号：</label><span ms-text="@AgentStatInfo.Accounts" class="value"></span></div>
+                                    <div class="col"><label class="lg">代理商昵称：</label><span ms-text="@AgentStatInfo.NickName" class="value"></span></div>
+                                    <div class="col"><label class="lg">代理状态：</label><span ms-text="@AgentStatInfo.AgentStatus" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="lg">在线人数：</label><span ms-text="@AgentStatInfo.OnLineCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">充值金额：</label><span ms-text="@AgentStatInfo.Recharge | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">总返利：</label><span ms-text="@AgentStatInfo.AgentSpreadSum | formatMoney" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="lg">直接玩家金币消耗：</label><span ms-text="@AgentStatInfo.DirectGamerWaste | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">直接玩家金币库存：</label><span ms-text="@AgentStatInfo.DirectGamerScore | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">直接玩家人数：</label><span ms-text="@AgentStatInfo.DirectGamerCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">直接代理商数：</label><span ms-text="@AgentStatInfo.DirectAgentCount" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="lg">全部玩家金币消耗：</label><span ms-text="@AgentStatInfo.AllGamerWaste | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">全部玩家金币库存：</label><span ms-text="@AgentStatInfo.AllGamerScore | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">全部玩家人数：</label><span ms-text="@AgentStatInfo.AllGamerCount | formatMoney" class="value"></span></div>
+                                    <div class="col"><label class="lg">全部代理商数：</label><span ms-text="@AgentStatInfo.AllAgentCount | formatMoney" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="lg">支持最大层级：</label><span ms-text="@AgentStatInfo.AgentLevelLimit" class="value"></span></div>
+                                    <div class="col"><label class="lg">盈利税收点：</label><span ms-text="@AgentStatInfo.ProfitRate" class="value"></span></div>
+                                    <div class="col"><label class="lg">可否发展下级：</label><span ms-text="@AgentStatInfo.canHasSubAgent" class="value"></span></div>
+                                    <div class="col col-md"><label class="lg">代理日期：</label><span ms-text="@AgentStatInfo.SpreaderDate" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-hg"><label class="lg">代理推广地址：</label><input type="text" onfocus="this.blur()" disabled="true" id="AgentStatInfo-SpreaderURL2" ms-duplex-value="@AgentStatInfo.SpreaderURL" class="value" /></div>
+                                    <div class="col col-ss"><button class="btn btn-update" ms-click="@copySpreaderURL($event,'AgentStatInfo-SpreaderURL')">复制</button></div>
+                                    <div class="col">
+                                        <label class="md">邀请码：</label><span id="AgentStatInfo-SpreaderID2" ms-text="@AgentStatInfo.SpreaderID" class="value visible"></span>
+                                        <input id="txtSpreaderID2" ms-on-input="@changeSpreaderID($event)" />
+                                    </div>
+                                    <div class="col relative">
+                                        <button id="btnUpdateSpreaderID2" class="btn btn-update" ms-click="@openSpreaderIdChoice($event,2)" ms-visible="@openBtnVisible">修改邀请码</button>
+                                        <button class="btn btn-update" ms-visible="@saveBtnVisible" ms-click="@saveSpreaderID($event,2)">保存</button>
+                                        <button class="btn btn-update" ms-visible="@saveBtnVisible" ms-click="@closeSpreaderIdChoice(2)">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ms-if="@reportDialog.userType=='gamer'" class="basic3">
+                                <div class="row">
+                                    <div class="col col-md"><label class="lg">玩家ID：</label><span id="gamerDetail-GameID" class="value"></span></div>
+                                    <div class="col"><label class="lg">邀请码：</label><span id="gamerDetail-InviteCode" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md"><label class="lg">玩家帐号：</label><span id="gamerDetail-Accounts" class="value"></span></div>
+                                    <div class="col col-hg"><label class="lg">玩家昵称：</label><span id="gamerDetail-NickName" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md"><label class="lg">状态：</label><span id="gamerDetail-LoginStatus" class="value"></span></div>
+                                    <div class="col"><label class="lg">经验值：</label><span id="gamerDetail-Experience" class="value"></span></div>
+                                    <div class="col"><label class="lg">等级：</label><span id="gamerDetail-Level" class="value"></span></div>
+                                </div>
+                                <div class="row border-top padding-top">
+                                    <div class="col col-md"><label class="lg">金币：</label><span id="gamerDetail-Score" class="value"></span></div>
+                                    <div class="col"><label class="lg">银行金币：</label><span id="gamerDetail-InsureScore" class="value"></span></div>
+                                </div>
+                                <div class="row border-bottom padding-bottom">
+                                    <div class="col col-md"><label class="lg">钻石：</label><span id="gamerDetail-Diamond" class="value"></span></div>
+                                    <div class="col"><label class="lg">房卡：</label><span id="gamerDetail-RCard" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md"><label class="lg">登录次数：</label><span id="gamerDetail-LoginTimes" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md"><label class="lg">注册IP：</label><span id="gamerDetail-RegisterIP" class="value"></span></div>
+                                    <div class="col col-lg"><label class="lg">注册时间：</label><span id="gamerDetail-SpreaderDate" class="value"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md"><label class="lg">最后登录IP：</label><span id="gamerDetail-LastLogonIP" class="value"></span></div>
+                                    <div class="col col-lg"><label class="lg">最后登录时间：</label><span id="gamerDetail-LastLogonDate" class="value"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="report-tab recharge" ms-visible="@reportView=='recharge'">
+                            <div class="panel search">
+                                <div class="row">
+                                    <div class="col"><label class="md">玩家账号：</label><input type="text"  autocomplete="off" ms-duplex-value="@Cond_Recharge.Accounts" /></div>
+                                    <div class="col">
+                                        <label class="md">玩家范围：</label>
+                                        <select type="text" ms-duplex-value="@Cond_Recharge.Range">
+                                            <option value="-1">全部</option>
+                                            <option value="0">未冻结</option>
+                                            <option value="1">冻结</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col-lg">
+                                        <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_Recharge.startDate" placeholder="选择日期" />
+                                        <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_Recharge.endDate" placeholder="选择日期" />
+                                    </div>
+                                </div>
+                                <div class="row textcenter">
+                                    <button class="btn btn-search" ms-click="@findRecharge()">查询</button><button class="btn btn-reset" ms-click="@ClearRechargeCond()">重置</button>
+                                </div>
+                            </div>
+                            <div class="panel table">
+                                <xmp ms-widget="[{is:'ms-grid',fillGrid:@getRecharge},@config]">
+                                    <table slot="table">
+                                        <thead>
+                                            <tr class="th">
+                                                <th>
+                                                    充值日期
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('RechargeDate') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('RechargeDate') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    充值账号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Accounts') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Accounts') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    订单金额
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('OrderAmount') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('OrderAmount') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    实付金额
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('PayAmount') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('PayAmount') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    赠送(元宝或金币)
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('GiftGold') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('GiftGold') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    代理商
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Agent') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Agent') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    订单号码
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('OrderCode') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('OrderCode') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    充值卡号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('RechargeCard') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('RechargeCard') | stop"></span>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tb" ms-for="(i,r) in @datasource">
+                                                <td class="col-datetime">{{r.RechargeDate}}</td>
+                                                <td>{{r.Accounts}}</td>
+                                                <td class="textright">{{r.OrderAmount}}</td>
+                                                <td class="textright">{{r.PayAmount}}</td>
+                                                <td class="textright">{{r.GiftGold}}</td>
+                                                <td>{{r.Agent}}</td>
+                                                <td>{{r.OrderCode}}</td>
+                                                <td>{{r.RechargeCard}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </xmp>
+                            </div>
+                        </div>
+                        <div class="report-tab loginlog" ms-visible="@reportView==='loginlog' && @reportDialog.userType==='gamer'">
+                            <div class="panel search">
+                                <div class="row">
+                                    <div class="col col-lg">
+                                        <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_LoginLog.startDate" placeholder="选择日期" />
+                                        <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_LoginLog.endDate" placeholder="选择日期" />
+                                    </div>
+                                </div>
+                                <div class="row textcenter">
+                                    <button class="btn btn-search" ms-click="@findLoginLog()">查询</button><button class="btn btn-reset" ms-click="@ClearLoginLogCond()">重置</button>
+                                </div>
+                            </div>
+                            <div class="panel table">
+                                <xmp ms-widget="[{is:'ms-grid',fillGrid:@getLoginLog},@config]">
+                                    <table slot="table">
+                                        <thead>
+                                            <tr class="th">
+                                                <th>
+                                                    玩家ID
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('GameID') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('GameID') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    玩家账号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Accounts') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Accounts') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    登录时间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('LoginTime') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('LoginTime') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    退出时间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('LogoutTime') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('LogoutTime') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    登录IP
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('LoginIP') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('LoginIP') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    登录类型
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('LoginType') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('LoginType') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    登录网络
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('LoginWeb') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('LoginWeb') | stop"></span>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tb" ms-for="(i,r) in @datasource">
+                                                <td>{{r.GameID}}</td>
+                                                <td>{{r.Accounts}}</td>
+                                                <td class="col-datetime">{{r.LoginTime}}</td>
+                                                <td class="col-datetime">{{r.LogoutTime}}</td>
+                                                <td>{{r.LoginIP}}</td>
+                                                <td>{{r.LoginType}}</td>
+                                                <td>{{r.LoginWeb}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </xmp>
+                            </div>
+                        </div>
+                        <div class="report-tab gift" ms-visible="@reportView=='gift'">
+                            <div class="panel search">
+                                <div class="row">
+                                    <div class="col"><label class="md">玩家账号：</label><input type="text"  autocomplete="off"  ms-duplex-value="@Cond_Gift.Accounts" /></div>
+                                    <div class="col">
+                                        <label class="md">操作类型：</label>
+                                        <select type="text" ms-duplex-value="@Cond_Gift.OperationType">
+                                            <option value="-1">全部</option>
+                                            <option value="0">接收</option>
+                                            <option value="1">赠送</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col-lg">
+                                        <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_Gift.startDate" placeholder="选择日期" />
+                                        <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_Gift.endDate" placeholder="选择日期" />
+                                    </div>
+                                </div>
+                                <div class="row textcenter">
+                                    <button class="btn btn-search" ms-click="@findGift()">查询</button><button class="btn btn-reset" ms-click="@ClearGiftCond()">重置</button>
+                                </div>
+                            </div>
+                            <div class="panel table">
+                                <xmp ms-widget="[{is:'ms-grid',fillGrid:@getGift},@config]">
+                                    <table slot="table">
+                                        <thead>
+                                            <tr class="th">
+                                                <th>
+                                                    赠送人ID
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('SendorID') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('SendorID') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    赠送人账号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Sendor') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Sendor') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    接收人ID
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('ReceiptorID') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('ReceiptorID') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    接收人账号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Receiptor') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Receiptor') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    赠送金币
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('GiftGold') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('GiftGold') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    税收
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Revenue') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Revenue') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    操作端
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('OperateClient') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('OperateClient') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    时间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('GiftDate') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('GiftDate') | stop"></span>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tb" ms-for="(i,r) in @datasource">
+                                                <td>{{r.SendorID}}</td>
+                                                <td>{{r.Sendor}}</td>
+                                                <td>{{r.ReceiptorID}}</td>
+                                                <td>{{r.Receiptor}}</td>
+                                                <td class="textright">{{r.GiftGold}}</td>
+                                                <td class="textright">{{r.Revenue}}</td>
+                                                <td>{{r.OperateClient}}</td>
+                                                <td class="col-datetime">{{r.GiftDate}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </xmp>
+                            </div>
+                        </div>
+                        <div class="report-tab richchange" ms-visible="@reportView=='richchange' && @reportDialog.userType=='gamer'">
+                            <div class="panel search">
+                                <div class="row">
+                                    <div class="col col-lg">
+                                        <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_Rich.startDate" placeholder="选择日期" />
+                                        <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_Rich.endDate" placeholder="选择日期" />
+                                    </div>
+                                    <div class="col">
+                                        <label class="md">类型</label>
+                                        <select ms-duplex-value="@Cond_Rich.rType">
+                                            <option value="-1">全部</option>
+                                            <option value="1">普通游戏</option>
+                                            <option value="2">购买/兑换</option>
+                                            <option value="3">充值</option>
+                                            <option value="4">每日幸运转盘抽取</option>
+                                            <option value="5">邮件附件领取</option>
+                                            <option value="6">每日签到</option>
+                                            <option value="7">赠送</option>
+                                            <option value="8">存款</option>
+                                            <option value="9">取款</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row textcenter">
+                                    <button class="btn btn-search" ms-click="@findRichChange()">查询</button><button class="btn btn-reset" ms-click="@ClearRichCond()">重置</button>
+                                </div>
+                            </div>
+                            <div class="panel table">
+                                <xmp ms-widget="[{is:'ms-grid',fillGrid:@getRichChange},@config]">
+                                    <table slot="table">
+                                        <thead>
+                                            <tr class="th">
+                                                <th>
+                                                    记录时间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('RecordTime') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('RecordTime') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    记录类型
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Type') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Type') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    扣分类型
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('RType') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('RType') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    游戏
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Game') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Game') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    更新前金币
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('BeforeScore') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('BeforeScore') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    更新金币
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('ChangeScore') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('ChangeScore') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    更新后金币
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('AfterScore') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('AfterScore') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    游戏税收
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Revenue') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Revenue') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    房间<span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Room') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Room') | stop"></span>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tb" ms-for="(i,r) in @datasource">
+                                                <td class="col-datetime">{{r.RecordTime}}</td>
+                                                <td>{{r.Type}}</td>
+                                                <td>{{r.RType}}</td>
+                                                <td>{{r.Game}}</td>
+                                                <td class="textright">{{r.BeforeScore}}</td>
+                                                <td class="textright">{{r.ChangeScore}}</td>
+                                                <td class="textright">{{r.AfterScore}}</td>
+                                                <td class="textright">{{r.Revenue}}</td>
+                                                <td>{{r.Room}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </xmp>
+                            </div>
+                        </div>
+                        <div class="report-tab playgame" ms-visible="@reportView=='playgame'">
+                            <div class="panel search">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="md">游戏名称：</label>
+                                        <select type="text" ms-on-change="@selectGameChange">
+                                            <option value="-1">全部</option>
+                                            <option ms-for="(i,v) in @GameItems" ms-attr="{value:v.GameID}">{{v.GameName}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label class="md">房间名称：</label>
+                                        <select type="text" ms-duplex-value="@Cond_PlayGame.RoomID">
+                                            <option value="-1">全部</option>
+                                            <option ms-for="(i,v) in @RoomListFilter" ms-attr="{value:v.ServerID}">{{v.ServerName}}</option>
+                                        </select>
+                                    </div>
+                                    <!--<div class="col"><label class="md">用户ID：</label><input type="text" ms-duplex-value="@condition.Accounts" /></div>-->
+                                    <div class="col"><label class="md">玩家账号：</label><input type="text"  autocomplete="off" ms-duplex-value="@Cond_PlayGame.Accounts" /></div>
+                                    <div class="col col-lg">
+                                        <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_PlayGame.startDate" placeholder="选择日期" />
+                                        <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_PlayGame.endDate" placeholder="选择日期" />
+                                    </div>
+                                </div>
+                                <div class="row textcenter">
+                                    <button class="btn btn-search" ms-click="@findPlayGame()">查询</button><button class="btn btn-reset" ms-click="@ClearPlayGameCond()">重置</button>
+                                </div>
+                            </div>
+                            <div class="panel table">
+                                <xmp ms-widget="[{is:'ms-grid',fillGrid:@getPlayGame},@config]">
+                                    <table slot="table">
+                                        <thead>
+                                            <tr class="th">
+                                                <th>
+                                                    记录时间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('RecordTime') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('RecordTime') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    房间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Room') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Room') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    扣分类型
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('PointsType') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('PointsType') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    用户账号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Accounts') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Accounts') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    代理商
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Agent') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Agent') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    获得金币
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('WinGold') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('WinGold') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    游戏税收
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Revenue') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Revenue') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    开始时间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('StartDate') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('StartDate') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    结束时间
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('EndDate') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('EndDate') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    游戏
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Game') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Game') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    桌子号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('DeskID') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('DeskID') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    椅子号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('ChairID') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('ChairID') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    编号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('DrawID') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('DrawID') | stop"></span>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tb" ms-for="(i,r) in @datasource">
+                                                <td class="col-datetime">{{r.RecordTime}}</td>
+                                                <td>{{r.Room}}</td>
+                                                <td>{{r.PointsType}}</td>
+                                                <td>{{r.Accounts}}</td>
+                                                <td>{{r.Agent}}</td>
+                                                <td class="textright">{{r.WinGold}}</td>
+                                                <td class="textright">{{r.Revenue}}</td>
+                                                <td class="col-datetime">{{r.StartDate}}</td>
+                                                <td class="col-datetime">{{r.EndDate}}</td>
+                                                <td>{{r.Game}}</td>
+                                                <td>{{r.DeskID}}</td>
+                                                <td>{{r.ChairID}}</td>
+                                                <td>{{r.DrawID}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </xmp>
+                            </div>
+                        </div>
+                        <div class="report-tab gamewaste" ms-visible="@reportView=='gamewaste'">
+                            <div class="panel search">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="md">游戏名称：</label>
+                                        <select type="text" ms-duplex-value="@Cond_GameWaste.GameID">
+                                            <option value="-1">全部</option>
+                                            <option ms-for="(i,v) in @GameItems" ms-attr="{value:v.GameID}">{{v.GameName}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col-lg">
+                                        <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_GameWaste.startDate" placeholder="选择日期" />
+                                        <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_GameWaste.endDate" placeholder="选择日期" />
+                                    </div>
+                                </div>
+                                <div class="row textcenter">
+                                    <button class="btn btn-search" ms-click="@findGameWaste()">查询</button><button class="btn btn-reset" ms-click="@ClearGameWasteCond()">重置</button>
+                                </div>
+                            </div>
+                            <div class="panel table">
+                                <xmp ms-widget="[{is:'ms-grid',fillGrid:@getGameWaste},@config]">
+                                    <table slot="table">
+                                        <thead>
+                                            <tr class="th">
+                                                <th>
+                                                    游戏名称
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Game') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Game') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    消耗金币
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('GameWaste') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('GameWaste') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th class="space"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tb" ms-for="(i,r) in @datasource">
+                                                <td>{{r.Game}}</td>
+                                                <td class="textright">{{r.GameWaste}}</td>
+                                                <td class="space"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </xmp>
+                            </div>
+                        </div>
+                        <div class="report-tab allsum" ms-visible="@reportView=='allsum'">
+                            <div ms-if="@reportDialog.userType!=='gamer'">
+                                <div class="panel search">
+                                    <div class="row">
+                                        <div class="col col-lg">
+                                            <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_AllSum.startDate" placeholder="选择日期" />
+                                            <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_AllSum.endDate" placeholder="选择日期" />
+                                        </div>
+                                    </div>
+                                    <div class="row textcenter">
+                                        <button class="btn btn-search" ms-click="@findAllSum()">查询</button><button class="btn btn-reset" ms-click="@ClearAllSumCond()">重置</button>
+                                    </div>
+                                </div>
+                                <div class="panel table">
+                                    <xmp ms-widget="[{is:'ms-grid',fillGrid:@getAllSum},@config]">
+                                        <table slot="table">
+                                            <thead>
+                                                <tr class="th">
+                                                    <th>
+                                                        金币消耗
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('GoldWaste') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('GoldWaste') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                        充值金额
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('RechargeAmount') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('RechargeAmount') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                        在线充值金额
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('OnlineRechargeAmount') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('OnlineRechargeAmount') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                        实卡充值金额
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('CardRechargeAmount') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('CardRechargeAmount') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                        赠送金币
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('GiftGold') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('GiftGold') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                        被赠金币
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('ReceiptGold') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('ReceiptGold') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                        新增玩家
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('NewGamerCount') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('NewGamerCount') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="tb" ms-for="(i,r) in @datasource">
+                                                    <td class="textright">{{r.GoldWaste}}</td>
+                                                    <td class="textright">{{r.RechargeAmount}}</td>
+                                                    <td class="textright">{{r.OnlineRechargeAmount}}</td>
+                                                    <td class="textright">{{r.CardRechargeAmount}}</td>
+                                                    <td class="textright">{{r.GiftGold}}</td>
+                                                    <td class="textright">{{r.ReceiptGold}}</td>
+                                                    <td class="textright">{{r.NewGamerCount}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </xmp>
+                                </div>
+                            </div>
+                            <div ms-if="@reportDialog.userType==='gamer'">
+                                <div class="panel search">
+                                    <div class="row">
+                                        <div class="col col-lg">
+                                            <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_AllSum_Gamer.startDate" placeholder="选择日期" />
+                                            <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_AllSum_Gamer.endDate" placeholder="选择日期" />
+                                        </div>
+                                    </div>
+                                    <div class="row textcenter">
+                                        <button class="btn btn-search" ms-click="@findAllSum_Gamer()">查询</button><button class="btn btn-reset" ms-click="@ClearAllSum_GamerCond()">重置</button>
+                                    </div>
+                                </div>
+                                <div class="panel table">
+                                    <xmp ms-widget="[{is:'ms-grid',fillGrid:@getAllSum_Gamer},@config]">
+                                        <table slot="table">
+                                            <thead>
+                                                <tr class="th">
+                                                    <th>
+                                                        项目名称
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('GroupName') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('GroupName') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                        总金币
+                                                        <span class="sortIcon">
+                                                            <span class="iconfont icon-down" ms-click="@sortAsc('GoldWaste') | stop"></span>
+                                                            <span class="iconfont icon-up" ms-click="@sortDesc('GoldWaste') | stop"></span>
+                                                        </span>
+                                                    </th>
+                                                    <th class="space"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="tb" ms-for="(i,r) in @datasource">
+                                                    <td>{{r.GroupName}}</td>
+                                                    <td class="textright">{{r.GoldWaste}}</td>
+                                                    <td class="space"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </xmp>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="report-tab spreaderrelation" ms-visible="@reportView=='allplayer' && @reportDialog.userType==='gamer'">
+                            <div class="panel search">
+                                <div class="row">
+                                    <div class="col col-lg">
+                                        <label class="sm">从 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_AllPlayer.startDate" placeholder="选择日期" />
+                                        <label class="sm"> 到 </label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@Cond_AllPlayer.endDate" placeholder="选择日期" />
+                                    </div>
+                                </div>
+                                <div class="row textcenter">
+                                    <button class="btn btn-search" ms-click="@findSpreadPlayer()">查询</button><button class="btn btn-reset" ms-click="@ClearAllPlayerCond()">重置</button>
+                                </div>
+                            </div>
+                            <div class="tip" ms-visible="@relationDialogVisible" ms-css="@relationDialogStyle">
+                                <div class="content">
+                                    <p class="tip-direct"><span></span></p>
+                                    <a class="tip-close" ms-click="@closeRelationDialog | stop"><span>x</span></a>
+                                    <p>{{@relationText}}</p>
+                                </div>
+                            </div>
+                            <div class="panel table">
+                                <xmp ms-widget="[{is:'ms-grid',fillGrid:@getSpreadPlayer},@config]">
+                                    <table slot="table">
+                                        <thead>
+                                            <tr class="th">
+                                                <th>
+                                                    玩家ID
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('GameID') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('GameID') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    玩家账号
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('Accounts') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('Accounts') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>
+                                                    玩家昵称
+                                                    <span class="sortIcon">
+                                                        <span class="iconfont icon-down" ms-click="@sortAsc('NickName') | stop"></span>
+                                                        <span class="iconfont icon-up" ms-click="@sortDesc('NickName') | stop"></span>
+                                                    </span>
+                                                </th>
+                                                <th>玩家推广关系</th>
+                                                <th>推广人ID</th>
+                                                <th>推广人账号</th>
+                                                <th>推广人昵称</th>
+                                                <th>代理商ID</th>
+                                                <th>代理商账号</th>
+                                                <th>注册日期</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tb" ms-for="(i,r) in @datasource">
+                                                <td>{{r.GameID}}</td>
+                                                <td>{{r.Accounts}}</td>
+                                                <td>{{r.NickName}}</td>
+                                                <td class="col-text">{{r.Relation}}<a ms-click="@showRelationDialog($event,r) | stop">详细</a></td>
+                                                <td>{{r.SpreaderID}}</td>
+                                                <td>{{r.SpreaderName}}</td>
+                                                <td>{{r.SpreaderNick}}</td>
+                                                <td>{{r.AgentID}}</td>
+                                                <td>{{r.AgentName}}</td>
+                                                <td class="col-datetime">{{r.RegisterDate}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </xmp>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--分享返利窗口-->
+                <div ms-controller="vmInfoSpreadSum" class="tabpage dialog spreadsum" ms-effect="{is:'spreadsumdialog',action:@spreadsumAnimation}">
+                    <div class="controlbox"><span class="dialog-title" ms-text="@spreadsumDialog.title"></span><a class="btn-close" ms-click="@closeSpreadSumDialog();return false;">X</a></div>
+                    <div class="dialog-content">
+                        <div class="row">
+                            <label class="md">选择日期：</label><input type="text" data-date="datepicker" readonly="readonly" ms-duplex-value="@selectedDate" placeholder="选择日期" />
+                            <button class="btn btn-search" ms-click="@loadDataByDate">查询</button>
+                        </div>
+                        <div class="row data">
+                            <div class="groupbox">
+                                <h1>A列表（自身消耗返利）:</h1>
+                                <section>
+                                    <table>
+                                        <thead>
+                                            <tr><th>玩家账号</th><th>当日消耗</th><th>当日返利</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ms-for="(i,r) in @AData"><td>{{r.Accounts}}</td><td class="textright">{{r.TodayWaste}}</td><td class="textright">{{r.TodayCommission}}</td></tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
+                            <div class="groupbox">
+                                <h1>B列表（A发展B）:</h1>
+                                <section>
+                                    <table>
+                                        <thead>
+                                            <tr><th>玩家账号</th><th>当日消耗</th><th>当日返利</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ms-for="(i,r) in @BData"><td>{{r.Accounts}}</td><td class="textright">{{r.TodayWaste}}</td><td class="textright">{{r.TodayCommission}}</td></tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
+                            <div class="groupbox">
+                                <h1>C列表（B发展C）:</h1>
+                                <section>
+                                    <table>
+                                        <thead>
+                                            <tr><th>玩家账号</th><th>当日消耗</th><th>当日返利</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ms-for="(i,r) in @CData"><td>{{r.Accounts}}</td><td class="textright">{{r.TodayWaste}}</td><td class="textright">{{r.TodayCommission}}</td></tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row detail">
+                            <label class="md">合计</label>
+                            <label class="md">当日消耗</label>
+                            <div class="col col-sm"><label class="ms">A:</label><span class="text" ms-text="@AWasteSum"></span></div>
+                            <div class="col col-sm"><label class="ms">B:</label><span class="text" ms-text="@BWasteSum"></span></div>
+                            <div class="col col-sm"><label class="ms">C:</label><span class="text" ms-text="@CWasteSum"></span></div>
+                        </div>
+                        <div class="row detail">
+                            <label class="md"></label>
+                            <label class="md">当日返利</label>
+                            <div class="col col-sm"><label class="ms">A:</label><span class="text" ms-text="@ASpreadSum"></span></div>
+                            <div class="col col-sm"><label class="ms">B:</label><span class="text" ms-text="@BSpreadSum"></span></div>
+                            <div class="col col-sm"><label class="ms">C:</label><span class="text" ms-text="@CSpreadSum"></span></div>
+                        </div>
+                        <div class="row detail">
+                            <div class="col col-msd"><label class="ml">当日消耗：</label><span class="text" ms-text="@AWasteSum+@BWasteSum+@CWasteSum"></span></div>
+                            <div class="col col-msd"><label class="ml">当日返利：</label><span class="text" ms-text="@ASpreadSum+@BSpreadSum+@CSpreadSum"></span></div>
+                            <div class="col col-msd"><label class="ml">当日实际返利：</label><span class="text" ms-text="@RealSpreadSum"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vpage page-edit agent" ms-effect="{is:'dialog',action:@agentAnimation}">
+            <div class="box">
+                <div class="controlbox"><span>新增代理</span><a class="btn-close" ms-click="@closeAgentDialog | stop">X</a></div>
+                <div class="content">
+                    <form id="form_info_agent" ms-on-submit="@addAgentSubmit | prevent">
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">账号：</label>
+                                <input type="text" name="UserName" ms-duplex="@newUser.UserName" ms-on-change="@IsSenstWord" />
+                                <input type="text" class="hidden" name="UserID" ms-duplex="@newUser.UserID" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">昵称：</label><input type="text" name="Nick" ms-duplex="@newUser.Nick" ms-on-change="@IsSenstWord" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">密码：</label><input type="text" name="Password" readonly="readonly" ms-duplex="@newUser.Password" /></div>
+                        </div>
+                        <!--<div class="row">
+                            <div class="col col-lg"><label class="lg">确认密码：</label><input type="password" name="cfPassword" disabled="disabled" ms-duplex="@newUser.cfPassword" /></div>
+                        </div>-->
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">性别：</label>
+                                <select name="Sex" ms-duplex-value="@newUser.Sex">
+                                    <option value="1">男</option>
+                                    <option value="0">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">是否可以发展下级：</label>
+                                <select name="canHasSub" ms-duplex-value="@newUser.canHasSub" ms-class="{disabled:@AgentLevelLimitsDisabled}" ms-attr="{disabled:@AgentLevelLimitsDisabled}">
+                                    <option value="1">是</option>
+                                    <option value="0">否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">最大层级：</label>
+                                <select name="AgentLevelLimit" ms-duplex-value="@newUser.AgentLevelLimit" ms-class="{disabled:@AgentLevelLimitsDisabled}" ms-attr="{disabled:@AgentLevelLimitsDisabled}">
+                                    <option ms-for="(i,l) in @AgentLevelLimits" ms-attr="{value:l.LevelLimit}">{{l.LevelLimitDes}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">代理角色：</label>
+                                <select name="RoleID" ms-duplex-value="@newUser.RoleID" ms-on-change="@roleChange">
+                                    <option ms-for="(i,r) in @roles" ms-attr="{value:r.RoleID}">{{r.RoleName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">代理等级：</label>
+                                <select name="GradeID" ms-duplex-value="@newUser.GradeID">
+                                    <option ms-for="(i,r) in @grades | filterBy(@GradeIDFilter)" ms-attr="{value:r.GradeID}">{{r.GradeDes}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">盈利税收(1-100)：</label><input type="text" name="Revenue" ms-duplex="@newUser.Revenue" /></div>
+                        </div>
+                        <div class="row bar-btn">
+                            <input type="submit" class="btn btn-update" value="保存" /><label class="lblmsg"></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="vpage page-edit gamer" ms-effect="{is:'dialog',action:@gamerAnimation}">
+            <div class="box">
+                <div class="controlbox"><span>新增玩家</span><a class="btn-close" ms-click="@closeGamerDialog | stop">X</a></div>
+                <div class="content">
+                    <form id="form_info_gamer" ms-on-submit="@addGamerSubmit | prevent">
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">账号：</label><input type="text" name="UserName" ms-duplex="@newUser.UserName" ms-on-change="@IsSenstWord" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">昵称：</label><input type="text" name="Nick" ms-duplex="@newUser.Nick" ms-on-change="@IsSenstWord" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">密码：</label><input type="password" name="Password" ms-duplex="@newUser.Password" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">确认密码：</label><input type="password" name="cfPassword" ms-duplex="@newUser.cfPassword" /></div>
+                        </div>
+                        <div class="row bar-btn">
+                            <input type="submit" class="btn btn-update" value="保存" /><label class="lblmsg"></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="vpage page-edit setting" ms-effect="{is:'dialog',action:@settingAnimation}">
+            <div class="box">
+                <div class="controlbox"><span>设置属性</span><a class="btn-close" ms-click="@closeSettingDialog | stop">X</a></div>
+                <div class="content">
+                    <form id="form_info_setting" ms-on-submit="@editAgentSubmit | prevent">
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">代理商昵称：</label>
+                                <input type="text" name="UserName" ms-duplex-value="@editUser.Nick" ms-on-change="@IsSenstWord" />
+                                <input type="text" name="UserID" class="hidden" ms-duplex="@editUser.UserID" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">是否可以发展下级：</label>
+                                <select name="canHasSub" ms-duplex-value="@editUser.canHasSub" ms-class="{disabled:@AgentLevelLimitsDisabled}" ms-attr="{disabled:@AgentLevelLimitsDisabled}">
+                                    <option value="1">是</option>
+                                    <option value="0">否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">最大层级：</label>
+                                <select name="AgentLevelLimit" ms-duplex-value="@editUser.AgentLevelLimit" ms-class="{disabled:@AgentLevelLimitsDisabled}" ms-attr="{disabled:@AgentLevelLimitsDisabled}">
+                                    <option ms-for="(i,l) in @AgentLevelLimits" ms-attr="{value:l.LevelLimit}">{{l.LevelLimitDes}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">代理角色：</label>
+                                <select name="RoleID" ms-duplex-value="@editUser.RoleID" ms-on-change="@roleChange">
+                                    <option ms-for="(i,r) in @roles" ms-attr="{value:r.RoleID}">{{r.RoleName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">代理等级：</label>
+                                <select name="GradeID" ms-duplex-value="@editUser.GradeID">
+                                    <option ms-for="(i,r) in @grades | filterBy(@GradeIDFilter)" ms-attr="{value:r.GradeID}">{{r.GradeDes}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line"><label class="lg">盈利税收：</label><input type="text" name="Revenue" ms-duplex="@editUser.Revenue" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-line">
+                                <label class="lg">代理状态：</label>
+                                <select name="AgentStatus" ms-duplex-value="@editUser.AgentStatus">
+                                    <option value="1">冻结</option>
+                                    <option value="0">未冻结</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row bar-btn">
+                            <input type="submit" class="btn btn-update" value="保存" /><label class="lblmsg"></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

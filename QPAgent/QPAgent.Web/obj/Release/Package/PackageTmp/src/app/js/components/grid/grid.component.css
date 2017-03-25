@@ -1,0 +1,41 @@
+﻿.grid{position:relative;width:100%;height:100%;}
+/*.grid .gridview{position:absolute;bottom:2em;top:0em;left:0;right:0;background:#e7e7e7;background:transparent;}*/
+.grid .gridview{position:absolute;left:0;right:0;top:0;bottom:2em;background:#e7e7e7;background:transparent;overflow:auto;}
+.grid .gridview .gridview-nodata{margin:1em;font-size:1.2em;text-align:center;}
+.grid .gridview table{text-align:center;border-collapse:collapse;}
+.grid .gridview table thead{background:#bdf;}
+.grid .gridview table tbody{overflow:auto;}
+.grid .gridview table thead tr{background:#ddd;}
+.grid .gridview table thead tr th{width:7em;height:2em;border:solid 1px #ccc;}
+.grid .gridview table tbody tr:nth-of-type(2n+1){background:#f8f8f8;}
+.grid .gridview table tbody tr:hover{background:#8be;}
+.grid .gridview table tbody tr:hover td{color:#fff;}
+.grid .gridview table tbody tr.selected{background:#7be;}
+.grid .gridview table tbody tr.selected td{color:#fff;}
+.grid .gridview table tbody tr td{width:7em;padding:.4em;text-overflow:ellipsis;border:dotted 1px #bbb;}
+.grid .gridview table tbody tr td.number{text-align:right;}
+.grid .gridview table tbody tr td:hover{background:#8be;color:#fff;}
+
+.grid .gridview table tbody tr td.col-datetime{width:15em;text-overflow:ellipsis;}
+.grid .gridview table tbody tr td.col-text{width:30em;text-align:left;text-overflow:ellipsis;}
+
+.grid .gridview table tr .row-check{width:3em;}
+.grid .gridview table tr .row-check input[type="checkbox"]{width:3em;}
+
+/****************************/
+右键菜单
+/****************************/
+.grid .gridview ul.contextmenu {}
+.grid .gridview ul.contextmenu li{cursor:pointer;padding:.2em;text-align:center;}
+.grid .gridview ul.contextmenu li:hover{background:#59f;color:#fff;}
+
+.grid .pager{position:absolute;bottom:0;left:.1em;right:0;height:2em;line-height:2em;background:#ddd;}
+.grid .pager p{display:inline;}
+.grid .pager span{margin-right:.5em;padding:.2em;}
+.grid .pager span.num{display:inline-block;*display:inline;*zoom:1;margin:0;width:2em;color:#e22626;font-size:1em;}
+.grid .pager a{margin-left: .5em;padding:.2em 0;color:#22d;cursor:pointer;background:transparent;}
+.grid .pager a:active{color:#f66;}
+.grid .pager a.first{margin-left: 2em;}
+.grid .pager a.disabled{color:#aaa;cursor:default;}
+.grid .pager input{margin-left: .5em;width:5em;}
+

@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="keywords" content="广州棋游网络科技有限公司,棋游网络,棋牌,棋牌类游戏公司那家强,游戏公司,棋牌类游戏公司,棋牌游戏，科技官网" />
+<meta name="description" content="广州棋游网络科技有限公司致力于棋牌游戏的开发和运营的游戏企业。企业成立于2016年，主营手机游戏的研发、代理发行等业务。自主研发的手机棋牌游戏《棋乐无穷》准备上线。《棋乐无穷》是一款休闲类棋牌游戏，游戏画面清新脱俗，内容丰富多彩。游戏包含各种特色的棋牌游戏，丰富多样的玩法让玩家其乐无穷。" />
+<title>广州棋游网络科技有限公司</title>
+<link rel="stylesheet" href="../css/cssreset.css">
+<link rel="stylesheet" href="../css/swiper.min.css">
+<link rel="stylesheet" href="../css/mycss.css">
+<link rel="stylesheet" href="../css/iconfont.css">
+<link rel="shortcut icon" href="../../images/favicon.ico"/>
+
+<style>
+	html,body{background: #f2f2f2;}
+	.icon_pic,.icon_pic span{float: none;padding: 0;}
+	.icon_pic{width: 100%;position: relative;}
+	.header_in{}
+	.header_in .nav_title{color:#555;text-align: center;font-size: 20px;display: block;width: 100%;}
+	.header_in .icon-home{text-align: right;right:0;position: absolute;}
+	.header_in .icon-back{position: absolute;left:1px;}
+	.swiper-pagination-bullet-active{background:#FF7800;z-index:99999;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+      <div class="header_in">
+        <!--<h1 class="logo"><img src="../images/logo.png" width="249" alt=""/></h1>-->
+        <p class="icon_pic">	
+            <span class="iconfont icon-back"  onClick="window.history.back()"></span>
+            <span class="iconfont icon-home" onClick="window.location.href='../m_index.html'"></span>	
+            <span class="nav_title">商品详情</span>	
+        </p>
+      </div>
+  </div>
+  <div class="Goodswrap">
+  	<div class="swiper-container Goods_pic ">
+    	<ul class="swiper-wrapper">
+    		<li class="swiper-slide"><img src="../images/good_pic01.jpg"/></li>
+    		<li class="swiper-slide"><img src="../images/mall_01.jpg"/></li>
+    		<li class="swiper-slide"><img src="../images/mall_02.jpg"/></li>
+    		<li class="swiper-slide"><img src="../images/mall_03.jpg"/></li>
+    	</ul>
+        <!--<ol>
+        	<li class="current"></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        </ol>-->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="Goods_details">
+    	<h3><span class="GoodsName">创新双磨豆浆机 新款</span><span class="Post"></span></h3>
+      	<div class="Integration">
+        	<p class="Now">需支付奖券：<span class="color">9999万奖券</span></p>
+ 			<p class="past">原价:1000000000万奖券</p>
+        </div>
+      	<a href="m_mall_adress.html" class="ExchangeBtn">立即兑换</a>
+        <div class="Goods_details_pic">
+   	    	<img src="../images/goods_details.jpg" alt=""/> 
+        </div>
+    </div>
+    
+  </div>
+  <div class="footer">
+    <p class="footer_in">广州棋游网络科技有限公司 版权证书 软件产品登记证书 
+    ICP许可证：粤ICP备16097719号 [粤ICP备16097719号]</p>
+  </div>
+</div>
+<script src="../js/jquery1.10.2.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/style.js"></script>
+<script>
+$(function(){	
+	var length=$('.Goods_pic ol').width();
+	$('.Goods_pic ol').css({'margin-left':-length/2})
+})
+</script>
+<script>
+	var swiper = new Swiper('.swiper-container',{
+		// 如果需要分页器
+    	pagination: '.swiper-pagination',
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Services\Game.Entity\bin\Release\Game.Entity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Services\Game.Entity\bin\Release\Game.Entity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Services\Game.Entity\bin\Release\Game.Utils.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Services\Game.Entity\bin\Release\Game.Utils.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Services\Game.Entity\obj\Release\Game.Entity.csprojResolveAssemblyReference.cache
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Services\Game.Entity\obj\Release\Game.Entity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Services\Game.Entity\obj\Release\Game.Entity.pdb
+F:\dhz\qy\QPAgent\Services\Game.Entity\bin\Release\Game.Entity.dll
+F:\dhz\qy\QPAgent\Services\Game.Entity\bin\Release\Game.Entity.pdb
+F:\dhz\qy\QPAgent\Services\Game.Entity\bin\Release\Game.Utils.dll
+F:\dhz\qy\QPAgent\Services\Game.Entity\bin\Release\Game.Utils.pdb
+F:\dhz\qy\QPAgent\Services\Game.Entity\obj\Release\Game.Entity.csprojResolveAssemblyReference.cache
+F:\dhz\qy\QPAgent\Services\Game.Entity\obj\Release\Game.Entity.dll
+F:\dhz\qy\QPAgent\Services\Game.Entity\obj\Release\Game.Entity.pdb

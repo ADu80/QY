@@ -1,0 +1,4 @@
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbEntity\bin\Release\DbEntity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbEntity\bin\Release\DbEntity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbEntity\obj\Release\DbEntity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbEntity\obj\Release\DbEntity.pdb

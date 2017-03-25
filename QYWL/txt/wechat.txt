@@ -1,0 +1,10 @@
+<div class="WeChat_Wrap current">
+	<div class="WeChat_in">
+		<div class="WeChatLeft">
+        	<h3>微信支付</h3>
+        	<p class="Wechat_paymoney">支付金额：<span class="color">￥10</span></p>
+            <p class="Wechat_pic"><img src="../images/wechatpay_erweima.jpg" width="183" height="183" alt="微信二维码"></p>
+            <span class="alertcolor">请尽快处理订单</span>
+        </div>
+	</div>
+</div>

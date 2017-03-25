@@ -1,0 +1,105 @@
+﻿input,button,select,textarea{outline:none}
+textarea{resize:none}
+
+.tab-header{background: #def;border:solid 1px #ccc;height:2em;}
+.tab-header li{position:relative;display:inline-block;*display:inline;*zoom:1;width:8em;height:1.9em;line-height:1.9em;margin-left:.1em;border:solid .1em #bbb;background:#def;text-align:center;z-index:1;}
+.tab-header a{display:inline-block;*display:inline;*zoom:1;width:100%;height:100%;text-decoration:none;cursor:pointer;}
+.tab-header a:hover{background:#fff;}
+.tab-header a.active{background:#fff;border-bottom:solid 2px #fff;}
+.tab-header .iconfont{position:absolute;font-size:1em;right:.1em;color:#888;visibility:hidden;}
+.tab-header .iconfont.over{visibility:visible;}
+.tab-content{}
+
+.row{margin:1em 0;}
+.row.row-none{margin:0;}
+.row.row-sm{margin:.2em;}
+.row .col{display:inline-block;*display:inline;*zoom:1;width:18em;}
+.row .col.col-ss{width:10em;}
+.row .col.col-sm{width:12em;}
+.row .col.col-ms{width:15em;}
+.row .col.col-msd{width:18em;}
+.row .col.col-md{width:22em;}
+.row .col.col-lg{width:28em;}
+.row .col.col-hg{width:35em;}
+.row .col.col-line{width:auto;}
+.row .col.col-space{width:2em;}
+
+.btn{border:solid 1px #bbb;background:#fff;padding:.2em 1em;font-size:1em;border-radius:.3em;cursor:pointer;}
+.btn:hover{color:#f6c6c6;box-shadow:1px 1px 1px 1px #ddd;}
+.btn:active{position:relative;top:1px;color:#f6c6c6;box-shadow:1px 1px 1px 1px #ddd;}
+.btn-default{background:#e7e7e7;}
+.btn-default:hover{background:#f2f2f2;}
+.btn-curd{background:#39e;color:#f8f8f8;padding:.3em .5em;margin-left:.5em;text-decoration:none;}
+.btn-curd:hover{background:#29f;outline:solid 1px #6cf;color:#fff;}
+.btn-update{background:#39e;color:#fff;margin:0 .5em;}
+.btn-update:hover{background:#29f;outline:solid 1px #6cf;color:#eee;}
+
+.btn-curd .iconfont{width:2em;font-size:1em;color:#eee;}
+
+.link{border:0;text-decoration:none;color:#38f;}
+
+.textleft{text-align:left;}
+.textcenter{text-align:center;}
+.textright{text-align:right;}
+.border-left{border-left:dashed 1px #eee;}
+
+label{display:inline-block;*display:inline;*zoom:1;text-align:right;}
+label.sm{width:2em;text-align:center;}
+label.ms{width:4em;}
+label.md{width:6em;}
+label.ml{width:8em;}
+label.lg{width:10em;}
+label.big{width:12em;}
+
+/**/
+.vpage{display:none;width:100%;height:100%;}
+.vpage.visible{display:block;}
+.vpage .bar{border-bottom:solid 1px #ccc;}
+
+.hidden{visibility:hidden;width:0;height:0;}
+.nodisplay{display:none;}
+
+input,select{width:9em;}
+input.sm{width:4em;}
+input.md{width:6em;}
+input.hg{width:12em;}
+
+.relative{position:relative;}
+.absolute{position:absolute;}
+
+.disabled{background:#ddd;}
+
+/*弹出窗口关闭按钮*/
+.controlbox{position:relative;padding:.3em;background:#6cf;}
+.controlbox span{color:#fff;}
+.controlbox a{color:#eee;}
+.controlbox .btn-close{position:absolute;right:0;width:2em;text-decoration:none;text-align:center;}
+.controlbox .btn-close:hover{color:#e66;cursor:pointer;}
+
+/*弹出窗口*/
+.vpage.page-edit{position:absolute;width:50em;height:40em;left:0;right:0;top:0;bottom:0;margin:auto;background:#fff;border:solid 3px #6cf;}
+.vpage.page-edit .box{position:relative;height:100%;}
+.vpage.page-edit .bar-btn{position:absolute;bottom:0;margin:0;text-align:right;}
+.vpage.page-edit .bar-btn .btn{margin-right:1em;padding:.3em .5em;}
+
+.panel {border:solid 1px #bbb;}
+.panel .panel-header{font-size:1.2em;background:#ddd;padding:.2em;}
+.panel .panel-content{padding:.5em;}
+
+.panel.search{border-bottom:solid 1px #ccc;height:7em;}
+.panel.search .row .btn{margin:0 .8em;}
+/*.panel.table {position:absolute;width:100%;top:7em;bottom:1.3em;border-top:solid 1px #aaa;}*/
+
+table{width:100%;text-align:center;border-collapse:collapse;}
+table thead{background:#ccc;}
+table thead tr th{padding:.3em;color:#555;}
+
+/*排序*/
+.grid tr.th td {position:relative;}
+.sortIcon{position:absolute;right:0px;top:5px;}
+.sortIcon .icon-down,.sortIcon .icon-up{display:block;padding:0;margin:0;font-size:12px;cursor:pointer;line-height:10px;color:#666;}
+
+span.iconfont{color:#38c;}
+
+input:focus{outline: solid #2cf;}
+select:focus{outline: solid #2cf;}

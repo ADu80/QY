@@ -1,0 +1,79 @@
+﻿<div ms-controller="#vmodel#" class="vmodel sensitiveword">
+    <div class="vpage page-list visible">
+        <div class="panel search">
+            <div class="row">
+                <div class="col"><label class="md">关键词：</label><input type="text" name="keyword" ms-duplex-value="@condition.keyword" /></div>
+            </div>
+            <div class="row textcenter">
+                <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@reset()">重置</button>
+            </div>
+        </div>
+        <div class="panel table">
+            <div class="bar bar-btn">
+                <a class="btn btn-curd" ms-click="@showAddDialog | stop"><span class="iconfont icon-xinzeng"></span>新增</a>
+                <!--<a class="btn btn-curd" ms-click="@showpage('edit');return false;"><span class="iconfont icon-xiugai"></span>修改</a>-->
+                <a class="btn btn-curd" ms-click="@delS();return false;"><span class="iconfont icon-shanchu"></span>删除</a>
+            </div>
+            <div class="datalist">
+                <xmp ms-widget="[{is:'ms-grid',id:'grid_sensitiveword',fillGrid:@fillGrid},@config]">
+                    <table slot="table">
+                        <thead>
+                            <tr>
+                                <th class="row-check"><input type="checkbox" ms-duplex-checked="@allchecked" data-duplex-changed="@checkAll"></th>
+                                <th>关键字</th>
+                                <th>时间</th>
+                                <th>操作</th>
+                                <th class="space"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ms-for="(i,r) in @datasource" ms-click="@onGridSelectedRowChanged(i,r)" ms-class="[r.selected&&'selected']">
+                                <td class="row-check"><input type="checkbox" ms-duplex-checked="r.checked" data-duplex-changed="@checkOne"></td>
+                                <td>{{r.SensitiveWord}}</td>
+                                <td>{{r.LastTime | date("yyyy-MM-dd HH:mm:ss")}}</td>
+                                <td><button ms-click="@showEditDialog(r) | stop">编辑</button><button ms-click="@del(r.ID)">删除</button></td>
+                                <td class="space"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </xmp>
+            </div>
+        </div>
+    </div>
+    <div ms-class="['vpage','page-edit','add']" ms-effect="{is:'smalldialog',action:@addAnimation}">
+        <div class="box">
+            <div class="controlbox"><span>添加敏感词</span><a class="btn-close" ms-click="@closeAddDialog | stop">x</a></div>
+            <div class="content">
+                <form id="form_admin_add" ms-on-submit="@addSubmit | prevent">
+                    <div class="row">
+                        <div class="col col-lg"><label class="ml">敏感词：</label><input type="text" name="SensitiveWord" class="hg" ms-duplex="@newModel.SensitiveWord" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg"><label class="ml">时间：</label><input type="text" name="LastTime" class="hg" ms-duplex="@newModel.LastTime" /></div>
+                    </div>
+                    <div class="row bar-btn">
+                        <input type="submit" class="btn btn-update" value="保存" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div ms-class="['vpage','page-edit','edit']" ms-effect="{is:'smalldialog',action:@editAnimation}">
+        <div class="box">
+            <div class="controlbox"><span>修改敏感词</span><a class="btn-close" ms-click="@closeEditDialog | stop">x</a></div>
+            <div class="content">
+                <form id="form_admin_edit" ms-on-submit="@editSubmit | prevent">
+                    <div class="row">
+                        <div class="col col-lg"><label class="ml">敏感词：</label><input type="text" name="SensitiveWord" class="hg" ms-duplex="@editModel.SensitiveWord" /><input type="text" class="sm hidden" name="ID" ms-duplex="@editModel.ID" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg"><label class="ml">时间：</label><input type="text" name="LastTime" class="hg" ms-duplex="@editModel.LastTime" /></div>
+                    </div>
+                    <div class="row bar-btn">
+                        <input type="submit" class="btn btn-update" value="保存" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

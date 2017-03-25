@@ -1,0 +1,262 @@
+﻿<div ms-important="#vmodel#" class="vmodel admin">
+    <div class="vpage page-list visible">
+        <div class="panel search">
+            <div class="row">
+                <div class="col"><label class="md">账号：</label><input type="text" class="text-agents" ms-duplex-value="@condition.keyword" /></div>
+                <div class="col">
+                    <label class="md">玩家范围：</label>
+                    <select class="select-agents" ms-on-change="@changeStatus" name="status">
+                        <option value="-1">全部</option>
+                        <option value="1">冻结</option>
+                        <option value="0">未冻结</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row textcenter">
+                <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@reset()">重置</button>
+            </div>
+        </div>
+        <div class="panel table">
+            <div class="bar bar-btn">
+                <a class="btn btn-curd" ms-click="@vpageChange('add');return false;"><span class="iconfont icon-xinzeng"></span>新增</a>
+                <a class="btn btn-curd" ms-click="@vpageChange('edit');return false;"><span class="iconfont icon-xiugai"></span>修改</a>
+                <a class="btn btn-curd" ms-click="@del();return false;"><span class="iconfont icon-shanchu"></span>删除</a>
+                <a class="btn btn-curd" ms-click="@vpageChange('ch_role');return false;"><span class="iconfont icon-xiugai"></span>更换角色</a>
+                <a class="btn btn-curd" ms-click="@vpageChange('ch_pwd');return false;"><span class="iconfont icon-xiugai"></span>重置密码</a>
+                <a class="btn btn-curd" ms-click="@dj();return false;"><span class="iconfont icon-xiugai"></span>冻结账号</a>
+                <a class="btn btn-curd" ms-click="@jd();return false;"><span class="iconfont icon-xiugai"></span>解冻账号</a>
+            </div>
+            <div class="datalist">
+                <xmp ms-widget="[{is:'ms-grid',id:'grid_admin',fillGrid:@fillGrid},@config]">
+                    <table slot="table">
+                        <thead>
+                            <tr>
+                                <th class="row-check"><input type="checkbox" ms-duplex-checked="@allchecked" data-duplex-changed="@checkAll"></th>
+                                <th>
+                                    编号
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('UserID') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('UserID') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    管理员名称
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('UserName') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('UserName') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    角色名称
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('UserID') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('UserID') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    状态
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('UserID') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('UserID') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    是否绑定IP
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('IsBand') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('IsBand') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    绑定IP
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('BandIP') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('BandIP') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    会员编号
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('VipID') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('VipID') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    上一次登录IP
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('PreLoginIP') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('PreLoginIP') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    上一次登录时间
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('PreLogintime') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('PreLogintime') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    最后登录IP
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('LastLoginIP') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('LastLoginIP') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    最后登录时间
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('LastLogintime') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('LastLogintime') | stop"></span>
+                                    </span>
+                                </th>
+                                <th>
+                                    登录次数
+                                    <span class="sortIcon">
+                                        <span class="iconfont icon-down" ms-click="@sortAsc('LoginTimes') | stop"></span>
+                                        <span class="iconfont icon-up" ms-click="@sortDesc('LoginTimes') | stop"></span>
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tb" ms-for="(i,r) in @datasource" ms-click="@onGridSelectedRowChanged(i,r)" ms-class="[r.selected&&'selected']">
+                                <td class="row-check"><input type="checkbox" ms-attr="r.UserName==='admin' && {disabled:'disabled'}" ms-duplex-checked="r.checked" data-duplex-changed="@checkOne"></td>
+                                <td>{{r.UserID}}</td>
+                                <td>{{r.UserName}}</td>
+                                <td>{{r.RoleName}}</td>
+                                <td ms-css="{color:!!+r.Nullity?'#d33':'#3d3'}">{{!!+r.Nullity?'冻结':'正常'}}</td>
+                                <td>{{r.IsBand}}</td>
+                                <td>{{r.BandIP}}</td>
+                                <td>{{r.VipID}}</td>
+                                <td>{{r.PreLoginIP}}</td>
+                                <td class="col-datetime">{{r.PreLogintime}}</td>
+                                <td>{{r.LastLoginIP}}</td>
+                                <td class="col-datetime">{{r.LastLogintime}}</td>
+                                <td>{{r.LoginTimes}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </xmp>
+            </div>
+        </div>
+    </div>
+    <!--新增-->
+    <div ms-class="['vpage','page-edit','add']" ms-effect="{is:'dialog',action:@addAnimation}">
+        <div class="box">
+            <div class="controlbox"><span>新增管理员</span><a class="btn-close" ms-click="@closeAddDialog();return false;">x</a></div>
+            <div class="content">
+                <form id="form_admin_add" ms-on-submit="@submit | prevent">
+                    <div class="row">
+                        <div class="col col-lg">
+                            <label class="ml">用户名称：</label><input type="text" name="UserName" ms-duplex="@newModel.UserName" />
+                            <input class="hidden" type="text" name="UserID" ms-duplex="@newModel.UserID" />
+                        </div>
+                        <input class="hidden" type="text" name="UserID" ms-duplex="@newModel.UserID" />
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="ml">密码：</label><input type="password" name="Password" ms-duplex="@newModel.Password" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="ml">确认密码：</label><input type="password" name="cfPassword" ms-duplex="@newModel.cfPassword" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="ml">是否绑定IP：</label><input class="md" type="checkbox" name="IsBand" ms-duplex-checked="@newModel.IsBand" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="ml">绑定IP：</label><input type="text" name="BandIP" ms-duplex="@newModel.BandIP" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="ml">角色：</label>
+                            <select name="RoleID" ms-duplex-value="@newModel.RoleID">
+                                <option ms-for="(i,l) in @roles" ms-attr="{value:l.RoleID}">{{l.RoleName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="ml">是否冻结：</label><input class="md" type="checkbox" name="Nullity" ms-duplex-checked="@newModel.Nullity" /></div>
+                    </div>
+                    <div class="row bar-btn">
+                        <input type="submit" class="btn btn-update" value="保存" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--修改-->
+    <div ms-class="['vpage','page-edit','edit']" ms-effect="{is:'dialog',action:@editAnimation}">
+        <div class="box">
+            <div class="controlbox"><span>修改管理员</span><a class="btn-close" ms-click="@closeEditDialog();return false;">x</a></div>
+            <div class="content">
+                <form id="form_admin_edit" ms-on-submit="@submit | prevent">
+                    <div class="row">
+                        <div class="col col-lg">
+                            <label class="md">管理员账号：</label><input type="text" name="UserName" ms-duplex="@editModel.UserName" />
+                            <input class="hidden" type="text" name="UserID" ms-duplex="@editModel.UserID" />
+                            <!--<input name="UserName" class="hidden" ms-duplex-value="@editModel.UserName" />-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="md">绑定IP：</label><input type="text" name="BandIP" ms-duplex="@editModel.BandIP" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label class="md">是否绑定IP</label><input class="check-md" type="checkbox" name="IsBand" ms-duplex-checked="@editModel.IsBand" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="md">角色：</label>
+                            <select name="RoleID" ms-duplex-value="@editModel.RoleID">
+                                <option ms-for="(i,l) in @roles" ms-attr="{value:l.RoleID}">{{l.RoleName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row bar-btn">
+                        <input type="submit" class="btn" value="保存" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--更换角色-->
+    <!--<div ms-class="['vpage','page-edit','ch_role',@editpage==='ch_role'&&'visible']">-->  
+    <div ms-class="['vpage','page-edit','ch_role']" ms-effect="{is:'dialog',action:@roleAnimation}">
+        <div class="box">
+            <div class="controlbox"><span>更换管理员角色</span><a class="btn-close" ms-click="@closeRoleDialog();return false;">x</a></div>
+            <div class="content">
+                <form id="form_admin_ch_role" ms-on-submit="@submit | prevent">
+                    <div class="row">
+                        <div class="col col-lg">
+                            <label class="lg">管理员账号：</label><span name="UserName" ms-text="@editModel.UserName"></span>
+                            <input name="UserID" class="hidden" ms-duplex-value="@editModel.UserID" />
+                            <input name="UserName" class="hidden" ms-duplex-value="@editModel.UserName" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="md">角色：</label>
+                            <select name="RoleID" ms-duplex-value="@editModel.RoleID">
+                                <option ms-for="(i,l) in @roles" ms-attr="{value:l.RoleID}">{{l.RoleName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row bar-btn">
+                        <input type="submit" class="btn" value="保存" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div ms-class="['vpage','page-edit','ch_pwd']" ms-effect="{is:'pwddialog',action:@pwdAnimation}">
+        <div class="box">
+            <div class="controlbox"><span>重置管理员密码</span><a class="btn-close" ms-click="@closePwdDialog();return false;">x</a></div>
+            <div class="content">
+                <p>是否将账号【<span name="UserName" ms-text="@editModel.UserName"></span>】的密码重置，重置后的密码为“<span>123456</span>”。</p>
+                <p>（注：密码重置修改的是代理账号登录[代理系统]的密码，并不会修改代理账号登录[游戏大厅]的密码）</p>
+                <div class="row bar-btn">
+                    <input type="submit" class="btn" value="保存" ms-click="@changePwd" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

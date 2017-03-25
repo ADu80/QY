@@ -1,0 +1,52 @@
+﻿.vmodel{position:absolute;width:100%;height:100%;}
+
+.vmodel .panel .row{text-align:center;}
+.vmodel .panel.search .row .btn{margin:0 1em;}
+.vmodel .panel.table {position:absolute;left:0;right:0;top:7em;bottom:0;}
+.vmodel .bar-btn{background:#cef;width:100%;height:2.5em;line-height:2.5em;}
+.vmodel .panel.table div.datalist{position:absolute;top:2.5em;left:0;right:.1em;bottom:0;}
+
+.vmodel .btn-curd .iconfont{color:#3f8;font-weight:bold;padding:.3em;}
+
+.vmodel .grid table tr td a{text-decoration:none;}
+
+
+/*********************
+    角色列表
+**********************/
+.vmodel.roles .panel.search {height:auto;}
+.vmodel.roles .panel.table{top:0;}
+
+
+/*********************
+    管理员账号
+**********************/
+.vmodel.admin{}
+.vmodel.admin .vpage.page-edit.add input.check-sm {width:1em;}
+/*充值密码弹窗*/
+/*.vmodel.admin .vpage.page-edit.ch_pwd {width:30em;height:10em;margin-left:-20em;margin-top:-5em;}*/
+
+
+/*********************
+    代理商账号
+**********************/
+/*充值密码弹窗*/
+.vmodel.subagentlist .vpage.page-edit.ch_pwd {width:30em;height:10em;}
+
+
+/*********************
+    返利设置
+**********************/
+.vmodel.spreaderoptions .row{text-align:left;}
+.vmodel.spreaderoptions .row.textcenter{text-align:center;}
+.vmodel.spreaderoptions .panel{margin-bottom:.5em;}
+.vmodel.spreaderoptions .panel table{border-collapse:collapse;}
+.vmodel.spreaderoptions .panel table thead {background:#e7e7e7;}
+.vmodel.spreaderoptions .panel table thead th{padding:.5em;border:solid 1px #ccc;font-size:1.2em;}
+.vmodel.spreaderoptions .panel table tbody td{padding:.5em;border:dotted 1px #ccc;}
+.vmodel.spreaderoptions .panel table tbody td input{width:100%;border:0;}
+.vmodel.spreaderoptions input:focus{outline: none;}
+
+/*****敏感词*****/
+.vmodel.sensitiveword table tr td button{padding:0 1em;margin-left:1em;}
+

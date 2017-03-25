@@ -1,0 +1,38 @@
+﻿<div ms-controller="#vmodel#" class="vmodel spreaderoptions">
+    <div class="panel">
+        <div class="panel-header">玩家分享返利比例设置</div>
+        <div class="panel-content">
+            <div class="row row-none">
+                <table>
+                    <thead>
+                        <tr><th>代理角色</th><th>代理级别</th><th>返利比例</th><th>A</th><th>B</th><th>C</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr ms-for="(i,r) in @SpreadOptionsSet"><td>{{r.RoleName}}</td><td ms-css="{color:@GetColor(r.GradeDes)}">{{r.GradeDes}}</td><td><input type="text" class="textright" ms-duplex-value="r.Rate" /></td><td><input type="text" class="textright" ms-duplex-value="r.ARate" /></td><td><input type="text" class="textright" ms-duplex-value="r.BRate" /></td><td><input type="text" class="textright" ms-duplex-value="r.CRate" /></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row textcenter">
+                <button type="button" class="btn btn-update" ms-click="@submit(0)">保存</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-header">代理返利比例设置</div>
+        <div class="panel-content">
+            <div class="row row-none">
+                <table>
+                    <thead>
+                        <tr><th>代理商ID</th><th>代理商名称</th><th>代理角色</th><th>代理级别</th><th>返利比例</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr ms-for="(i,r) in @AgentRevenesSet"><td>{{r.GameID}}</td><td>{{r.Accounts}}</td><td>{{r.RoleName}}</td><td ms-css="{color:@GetColor(r.GradeDes)}">{{r.GradeDes}}</td><td><input type="text" class="textright" ms-duplex-value="r.Percentage" /></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row textcenter">
+                <button type="button" class="btn btn-update" ms-click="@submit(1)">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

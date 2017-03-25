@@ -1,0 +1,26 @@
+input:focus{outline:thick 1px}
+#footer{margin-top:0;}
+#content{background:0 0;min-width:600px;padding:120px;}
+#loginbox{background:#fff;width:600px;height:340px;margin:0 auto;border-radius:6px;padding:30px;}
+#loginbox ul{height:30px;line-height:30px}
+#loginbox ul:after{content:"";display:block;width:0;visibility:hidden;clear:both}
+#loginbox ul li h1{font-size:22px;width:90px;cursor:pointer}
+#loginbox ul li h1.selected{border-bottom:solid 3px #FFA00A}
+#loginbox ul li{float:left;margin-right:20px}
+#loginbox ul li span{vertical-align:middle}
+#loginbox section{display:none;padding:50px 0 0 50px}
+#loginbox section.visible{display:block}
+#loginbox section p{width:280px;padding:10px}
+#loginbox section p:after{content:"";display:block;width:0;visibility:hidden;clear:both}
+#loginbox section p label{float:left;width:80px;text-align:right}
+#loginbox section p input[type=submit]{margin-left:80px;width:187px;padding:8px;background:#ffa00a;font-weight:700;letter-spacing:3px;color:#fff;cursor:pointer;border-radius:3px}
+#loginbox section p input{float:left;width:180px;border:solid 1px #ccc;padding:3px;border-radius:3px}
+#loginbox section p input[type=submit]:hover{background:#ffb00b;color:#f8f8f8}
+#loginbox section p.choice{margin-top:20px;margin-left:80px}
+#loginbox section p.choice a{margin-right:20px;vertical-align:middle;cursor:pointer}
+#loginbox section p.choice a .iconfont{padding:5px}
+#loginbox section p.choice a .icon-weixin{color:green}
+#loginbox section p.choice a .icon-qie{color:red}
+#loginbox-weixin{position:fixed;width:100%;height:100%;left:0;top:0;z-index:100}
+#loginbox-weixin .box{width:100%;height:100%;opacity:.4;background:#000}
+#loginbox-weixin iframe{position:fixed;width:600px;height:420px;background:#f8f8f8;left:50%;top:50%;margin-left:-300px;margin-top:-210px;z-index:101}

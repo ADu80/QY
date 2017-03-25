@@ -1,0 +1,27 @@
+C:\Work Space\QPAgent\Common\Game.Kernel\bin\Debug\Game.Kernel.dll
+C:\Work Space\QPAgent\Common\Game.Kernel\bin\Debug\Game.Kernel.pdb
+C:\Work Space\QPAgent\Common\Game.Kernel\bin\Debug\Game.Entity.dll
+C:\Work Space\QPAgent\Common\Game.Kernel\bin\Debug\Game.Utils.dll
+C:\Work Space\QPAgent\Common\Game.Kernel\bin\Debug\Game.Utils.pdb
+C:\Work Space\QPAgent\Common\Game.Kernel\bin\Debug\Game.Entity.pdb
+C:\Work Space\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.csprojResolveAssemblyReference.cache
+C:\Work Space\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.dll
+C:\Work Space\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.pdb
+F:\dhz\qy\QPAgent\Common\Game.Kernel\bin\Debug\Game.Kernel.dll
+F:\dhz\qy\QPAgent\Common\Game.Kernel\bin\Debug\Game.Kernel.pdb
+F:\dhz\qy\QPAgent\Common\Game.Kernel\bin\Debug\Game.Entity.dll
+F:\dhz\qy\QPAgent\Common\Game.Kernel\bin\Debug\Game.Utils.dll
+F:\dhz\qy\QPAgent\Common\Game.Kernel\bin\Debug\Game.Utils.pdb
+F:\dhz\qy\QPAgent\Common\Game.Kernel\bin\Debug\Game.Entity.pdb
+F:\dhz\qy\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.csprojResolveAssemblyReference.cache
+F:\dhz\qy\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.dll
+F:\dhz\qy\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\bin\Debug\Game.Kernel.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\bin\Debug\Game.Kernel.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\bin\Debug\Game.Entity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\bin\Debug\Game.Utils.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\bin\Debug\Game.Utils.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\bin\Debug\Game.Entity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.csprojResolveAssemblyReference.cache
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.dll
+D:\ChessHall\网站前端和后台\项目升级\QPAgent\Common\Game.Kernel\obj\Debug\Game.Kernel.pdb

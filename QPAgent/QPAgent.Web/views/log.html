@@ -1,0 +1,85 @@
+﻿<div ms-controller="#vmodel#" class="vmodel log">
+    <div class="panel search">
+        <div class="row">
+            <div class="col col-lg">
+                <label class="sm">从 </label>
+                <input type="text" name="startDate" readonly="readonly" data-date="datepicker" ms-duplex="@condition.startDate" placeholder="选择日期" />
+                <label class="sm"> 到 </label>
+                <input type="text" name="endDate" readonly="readonly" data-date="datepicker" ms-duplex="@condition.endDate" placeholder="选择日期" />
+            </div>
+            <div class="col">
+                <label class="md">操作类型：</label>
+                <select name="operationType" ms-duplex-value="@condition.OperationID">
+                    <option value="-1">全部</option>
+                    <option ms-for="(i,p) in @operations" ms-attr="{value:p.ID}">{{p.Operation}}</option>
+                </select>
+            </div>
+            <div class="col"><label class="md">相关帐号：</label><input type="text" name="Accounts" ms-duplex-value="@condition.Accounts" /></div>
+        </div>
+        <div class="row textcenter">
+            <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@reset()">重置</button>
+        </div>
+    </div>
+    <div class="panel table">
+        <xmp ms-widget="[{is:'ms-grid',id:'grid_log',fillGrid:@fillGrid},@config]">
+            <table slot="table">
+                <thead>
+                    <tr>
+                        <th>
+                            操作类型
+                            <span class="sortIcon">
+                                <span class="iconfont icon-down" ms-click="@sortAsc('Operation') | stop"></span>
+                                <span class="iconfont icon-up" ms-click="@sortDesc('Operation') | stop"></span>
+                            </span>
+                        </th>
+                        <th class="col-text">
+                            日志内容
+                            <span class="sortIcon">
+                                <span class="iconfont icon-down" ms-click="@sortAsc('LogContent') | stop"></span>
+                                <span class="iconfont icon-up" ms-click="@sortDesc('LogContent') | stop"></span>
+                            </span>
+                        </th>
+                        <th>
+                            记录时间
+                            <span class="sortIcon">
+                                <span class="iconfont icon-down" ms-click="@sortAsc('LogTime') | stop"></span>
+                                <span class="iconfont icon-up" ms-click="@sortDesc('LogTime') | stop"></span>
+                            </span>
+                        </th>
+                        <th>
+                            操作人
+                            <span class="sortIcon">
+                                <span class="iconfont icon-down" ms-click="@sortAsc('Operator') | stop"></span>
+                                <span class="iconfont icon-up" ms-click="@sortDesc('Operator') | stop"></span>
+                            </span>
+                        </th>
+                        <th>
+                            最后一次登录IP
+                            <span class="sortIcon">
+                                <span class="iconfont icon-down" ms-click="@sortAsc('Modified') | stop"></span>
+                                <span class="iconfont icon-up" ms-click="@sortDesc('LoginIP') | stop"></span>
+                            </span>
+                        </th>
+                        <th>
+                            模块
+                            <span class="sortIcon">
+                                <span class="iconfont icon-down" ms-click="@sortAsc('Modified') | stop"></span>
+                                <span class="iconfont icon-up" ms-click="@sortDesc('LoginIP') | stop"></span>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tb" ms-for="(i,r) in @datasource" ms-click="@onGridSelectedRowChanged(i,r)" ms-class="[r.selected&&'selected']">
+                        <td>{{r.Operation}}</td>
+                        <td class="col-text">{{r.LogContent}}</td>
+                        <td class="col-datetime">{{r.LogTime}}</td>
+                        <td>{{r.Operator}}</td>
+                        <td>{{r.LoginIP}}</td>
+                        <td>{{r.Module}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </xmp>
+    </div>
+</div>
