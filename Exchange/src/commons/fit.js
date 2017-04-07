@@ -1,4 +1,4 @@
-export default () => {
+export function fit() {
     var win = $(window),
         winWidth = win.width(),
         fontSize = winWidth / 30;

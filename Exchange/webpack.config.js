@@ -43,7 +43,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src/pages/goods/goods.html'),
-            filename: 'goods.html',
+            filename: 'index.html',
             inject: true,
             hash: true,
             chunks: ['vendors', 'goods']
