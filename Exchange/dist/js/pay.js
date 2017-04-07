@@ -1,6 +1,6 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 2:
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,4 +11,4 @@ $(document.body).append('<h1>Hello world!</h1>');
 
 /***/ })
 
-},[2]);
+},[6]);

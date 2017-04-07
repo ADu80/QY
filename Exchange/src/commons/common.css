@@ -1,0 +1,7 @@
+.clearfix {
+    content: "";
+    display: block;
+    width: 0;
+    visibility: hidden;
+    clear: both;
+}

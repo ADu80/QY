@@ -65,3 +65,10 @@ li {
     width: 30%;
     font-size: .8rem;
 }
+.clearfix {
+    content: "";
+    display: block;
+    width: 0;
+    visibility: hidden;
+    clear: both;
+}

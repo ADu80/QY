@@ -1,6 +1,7 @@
 var webpack = require('webpack'),
     path = require('path'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -9,26 +10,39 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '/dist',
+        publicPath: './',
         filename: 'js/[name].js'
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.html$/,
-            loader: 'raw-loader'
+            use: 'raw-loader'
         }, {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            use: 'babel-loader'
         }, {
             test: /\.(png|jpg|gif)$/,
-            loader: 'url-loader?limit=8192&name=./images/[hash].[ext]'
+            use: 'url-loader?limit=8192&name=./images/[hash].[ext]'
+        }, {
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                })
+                /*, {
+                    loader: 'postcss-loader',
+                    options: {
+                        postcss: [require('autoprefixer')({ browsers: ['last 10 Chrome versions', 'last 5 Firefox versions', 'Safari >= 6', 'ie > 8'] })]
+                    }
+                }*/
         }]
     },
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery'
         }),
+        new ExtractTextPlugin('css/[name].css?[contenthash]'),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors',
             chunks: ['goods', 'pay']
@@ -51,6 +65,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         inline: true,
-        port: 8080
+        port: 8080,
+        hot: true
     }
 }
