@@ -1,0 +1,200 @@
+
+@font-face {font-family: "iconfont";
+  src: url(/css/iconfont/iconfont.eot); /* IE9*/
+  src: url(/css/iconfont/iconfont.eot#iefix) format('embedded-opentype'), 
+  url(/css/iconfont/iconfont.woff) format('woff'), 
+  url(/css/iconfont/iconfont.ttf) format('truetype'), 
+  url(/css/iconfont/iconfont.svg#iconfont) format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-danxuanfill:before { content: "\E71E"; }
+
+.icon-danxuan:before { content: "\E71F"; }
+
+.icon-fangxingweixuanzhong:before { content: "\E720"; }
+
+.icon-fangxingxuanzhongfill:before { content: "\E721"; }
+
+.icon-fangxingxuanzhong:before { content: "\E722"; }
+
+.icon-jiahao:before { content: "\E726"; }
+
+.icon-tishifill:before { content: "\E72A"; }
+
+.icon-tishi:before { content: "\E72B"; }
+
+.icon-wenhaofill:before { content: "\E72C"; }
+
+.icon-wenhao:before { content: "\E72D"; }
+
+.icon-biaoxingfill:before { content: "\E732"; }
+
+.icon-biaoxing:before { content: "\E733"; }
+
+.icon-dingdan:before { content: "\E737"; }
+
+.icon-fenxiang:before { content: "\E739"; }
+
+.icon-gengduo:before { content: "\E73A"; }
+
+.icon-gouwuchefill:before { content: "\E73C"; }
+
+.icon-gouwuche:before { content: "\E73D"; }
+
+.icon-liebiaoxingshi:before { content: "\E742"; }
+
+.icon-saoma:before { content: "\E749"; }
+
+.icon-shaixuan:before { content: "\E74A"; }
+
+.icon-shanchu:before { content: "\E74B"; }
+
+.icon-shezhi:before { content: "\E74C"; }
+
+.icon-shouyefill:before { content: "\E750"; }
+
+.icon-shouye:before { content: "\E751"; }
+
+.icon-sousuo:before { content: "\E752"; }
+
+.icon-sousuoleimufill:before { content: "\E753"; }
+
+.icon-sousuoleimu:before { content: "\E754"; }
+
+.icon-wodefill:before { content: "\E75D"; }
+
+.icon-wode:before { content: "\E75E"; }
+
+.icon-xihuan:before { content: "\E761"; }
+
+.icon-hongbao:before { content: "\E784"; }
+
+.icon-leimu:before { content: "\E78E"; }
+
+.icon-caidan:before { content: "\E790"; }
+
+.icon-erweima:before { content: "\E7AD"; }
+
+body {}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    width: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.good-group h1 {
+    background: #eee;
+    padding: .5rem;
+}
+
+.good-group li {
+    padding: .5rem;
+}
+
+.good-group .good-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 6rem;
+    border-bottom: solid 1px #eee;
+    padding: 0 .2rem .2rem .2rem;
+    font-size: .8em;
+}
+
+.good-group .good-item {}
+
+.good-group .good-item img {
+    display: block;
+    float: left;
+    width: 6rem;
+    left: 0;
+    top: 0;
+}
+
+.good-group .good-item .good-info {
+    width: auto;
+    height: 100%;
+    margin-left: 6rem;
+}
+
+.good-group .good-item .good-info .title {
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.good-group .good-item .good-info .activity {
+    display: block;
+    position: absolute;
+    bottom: 1.5rem;
+    height: 1.5rem;
+}
+
+.good-group .good-item .good-info .showprice {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 1.5rem
+}
+
+#good-list {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 3rem;
+    overflow-y: auto;
+}
+
+.menubar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.menubar a {
+    display: block;
+    float: left;
+    width: 30%;
+    height: 100%;
+    line-height: 1rem;
+    margin-left: 2%;
+    font-size: .8rem;
+}
+
+.menubar a span {
+    display: block;
+    height: 1rem;
+}
+
+.menubar a span.iconfont {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+}
+
+.menubar a.active {
+    color: red;
+}

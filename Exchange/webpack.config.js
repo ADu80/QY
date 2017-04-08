@@ -5,8 +5,10 @@ var webpack = require('webpack'),
 
 module.exports = {
     entry: {
-        goods: path.join(__dirname, 'src/pages/goods/index.js'),
-        pay: path.join(__dirname, 'src/pages/pay/index.js')
+        index: path.join(__dirname, 'src/pages/goods/index.js'),
+        // pageitem: path.join(__dirname, 'src/pageitem/index.js'),
+        // pay: path.join(__dirname, 'src/pay/index.js'),
+        // page: path.join(__dirname, 'src/shopcar/index.js')
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -15,21 +17,20 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.html$/,
-            use: 'raw-loader'
-        }, {
             test: /\.js$/,
-            exclude: /node_modules/,
+            exclude: /node-modules/,
             use: 'babel-loader'
-        }, {
-            test: /\.(png|jpg|gif)$/,
-            use: 'url-loader?limit=8192&name=./images/[hash].[ext]'
         }, {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader'
-                })
+                fallback: 'style-loader',
+                use: 'css-loader'
+            })
+        }, {
+            //文件加载器，处理文件静态资源
+            test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            include: [path.join(__dirname, 'src/commons/vendor')],
+            use: 'file-loader?name=css/iconfont/[name].[ext]&publicPath=/'
         }]
     },
     plugins: [
@@ -37,29 +38,16 @@ module.exports = {
             $: 'jquery'
         }),
         new ExtractTextPlugin('css/[name].css?[contenthash]'),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendors',
-            chunks: ['goods', 'pay']
-        }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src/pages/goods/goods.html'),
             filename: 'index.html',
             inject: true,
-            hash: true,
-            chunks: ['vendors', 'goods']
-        }),
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/pages/pay/pay.html'),
-            filename: 'pay.html',
-            inject: true,
-            hash: true,
-            chunks: ['vendors', 'pay']
+            chunks: ['index']
         })
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         inline: true,
-        port: 8080,
-        hot: true
+        port: 8080
     }
 }

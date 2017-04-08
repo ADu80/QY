@@ -1,7 +1,8 @@
-import { fetchData, postData } from '../../commons/ajax';
+import { fetchData, postData } from '../../commons/basic/ajax';
 import Promise from 'bluebird';
 
-var createGoods = (id, data) => {
+
+var createGoods = (data) => {
         var tmpl = `${data.map(d => `
         <section class="good-group">
             <h1>${d.title}</h1>
@@ -21,7 +22,7 @@ var createGoods = (id, data) => {
             </ul>
         </section>
     `).join('')}`;
-    $(id).append(tmpl);
+    $('#good-list').append(tmpl);
 }
 
 var data = [{
@@ -43,12 +44,33 @@ var data = [{
 var getGoods = () => {
     // fetchData('/goods')
 
-    return new Promise((resolve, reject) => setTimeout(resolve, 500, data));
+    return new Promise((resolve, reject) => setTimeout(resolve, 300, data));
 }
 
 export var initData = () => {
-getGoods()
-    .then((data) => {
-        createGoods('#good-list', data);
-    })
+    getGoods()
+        .then((data) => {
+            createGoods(data);
+        })
+        .catch((err)=>{
+            alert(err);
+        });
+}
+
+var selectMunuItem='#btn_home';
+
+var addClick=(item)=>{
+    var el=$(item);
+    el.click((e)=>{
+        if(selectMunuItem===item) return;
+        $(selectMunuItem).removeClass('active');
+        el.addClass('active');
+        selectMunuItem=item;
+    });  
+}
+
+export var initAction = () => {
+    ['#btn_home','#btn_category','#btn_shopcar'].forEach((el)=>{
+        addClick(el);
+    });
 }

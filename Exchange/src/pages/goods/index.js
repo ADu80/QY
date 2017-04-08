@@ -1,10 +1,14 @@
-// var $ = jQuery = require('jquery');
-
-import '../../commons/comm.css';
-import { fit} from '../../commons/fit';
+import FastClick from 'fastclick';
+import '../../commons/vendor/iconfont/iconfont.css';
+import '../../commons/basic/comm.css';
 import './goods.css';
-import {initData} from './goods';
 
-fit();
-initData();
+import { fit } from '../../commons/basic/fit';
+import { initData, initAction } from './goods';
 
+$(function(e) {
+    FastClick.attach(document.body);
+    fit();
+    initAction();
+    initData();
+});
