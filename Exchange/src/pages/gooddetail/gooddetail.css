@@ -1,0 +1,39 @@
+.menubar {
+    border-top: solid 1px #eee;
+}
+
+.menubar ul {
+    height: 100%;
+}
+
+.menubar ul li {
+    float: left;
+    height: 100%;
+}
+
+.menubar .left {
+    width: 46%;
+}
+
+.menubar .left a {
+    width: 33.3%;
+}
+
+.menubar .right {
+    width: 54%;
+}
+
+.menubar .right a {
+    width: 50%;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.menubar .right a#btn_addto_shopcar {
+    background: #fb4;
+}
+
+.menubar .right a#btn_buynow {
+    background: #e33;
+}

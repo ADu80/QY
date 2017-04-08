@@ -1,11 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-ul,
-li {
-    list-style: none;
+.menubar a {
+    width: 30%;
+    margin-left: 2%;
 }
 
 .good-group h1 {
@@ -61,45 +56,4 @@ li {
     position: absolute;
     bottom: 0;
     height: 1.5rem
-}
-
-#good-list {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    bottom: 3rem;
-    overflow-y: auto;
-}
-
-.menubar {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center;
-}
-
-.menubar a {
-    display: block;
-    float: left;
-    width: 30%;
-    height: 100%;
-    line-height: 1rem;
-    margin-left: 2%;
-    font-size: .8rem;
-}
-
-.menubar a span {
-    display: block;
-    height: 1rem;
-}
-
-.menubar a span.iconfont {
-    font-size: 1.5rem;
-    margin-top: .5rem;
-}
-
-.menubar a.active {
-    color: red;
 }
