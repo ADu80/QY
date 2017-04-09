@@ -1,4 +1,5 @@
 import { fetchData, postData } from '../../commons/basic/ajax';
+import data from './goods.mock';
 import Promise from 'bluebird';
 
 
@@ -25,21 +26,6 @@ var createGoods = (data) => {
     $('#good-list').append(tmpl);
 }
 
-var data = [{
-    title: 'Hot',
-    rows: [
-        { GoodID: '001', ImgUrl: './images/1002.png', Price: 50 },
-        { GoodID: '002', ImgUrl: './images/1003.png', Price: 50 },
-        { GoodID: '003', ImgUrl: './images/1007.png', Price: 50 }
-    ]
-}, {
-    title: '3C',
-    rows: [
-        { GoodID: '001', ImgUrl: './images/1002.png', Price: 50 },
-        { GoodID: '002', ImgUrl: './images/1003.png', Price: 50 },
-        { GoodID: '003', ImgUrl: './images/4003.png', Price: 50 }
-    ]
-}];
 
 var getGoods = () => {
     // fetchData('/goods')
@@ -47,7 +33,7 @@ var getGoods = () => {
     return new Promise((resolve, reject) => setTimeout(resolve, 300, data));
 }
 
-export var initData = () => {
+var initData = () => {
     getGoods()
         .then((data) => {
             createGoods(data);
@@ -69,8 +55,13 @@ var addClick=(item)=>{
     });  
 }
 
-export var initAction = () => {
+var initAction = () => {
     ['#btn_home','#btn_category','#btn_shopcar'].forEach((el)=>{
         addClick(el);
     });
+}
+
+export var init = () => {
+    initData();
+    initAction();
 }

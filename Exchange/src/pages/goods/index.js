@@ -3,10 +3,9 @@ import '../../commons/basic/comm.css';
 import './goods.css';
 
 import { fit } from '../../commons/basic/fit';
-import { initData, initAction } from './goods';
+import { init } from './goods';
 
 $(function(e) {
     fit();
-    initAction();
-    initData();
+    init();
 });

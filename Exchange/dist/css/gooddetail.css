@@ -95,119 +95,140 @@
 
 .icon-erweima:before { content: "\E7AD"; }
 
-body {}
-
 * {
     margin: 0;
     padding: 0;
 }
 
-ul,
-li {
+ul li {
     list-style: none;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 a {
     text-decoration: none;
+    display: block;
+    height: 100%;
 }
 
-.clearfix:after {
-    content: "";
-    display: block;
-    width: 0;
-    visibility: hidden;
-    clear: both;
+.container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.topbar,
+.menubar {
+    text-align: center;
+    overflow: hidden;
 }
 
 .topbar {
-    position: fixed;
     height: 2.8rem;
-    width: 100%;
+    line-height: 2.8rem;
     border-bottom: solid 1px #eee;
 }
 
-.main-notop {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    bottom: 3.2rem;
-    overflow-y: auto;
-}
-
 .main {
-    position: fixed;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     width: 100%;
-    top: 2.8rem;
-    bottom: 3.2rem;
-    overflow-y: auto;
+    word-break: break-all;
+    overflow: hidden;
 }
 
 .menubar {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
     height: 3.2rem;
     line-height: 3.2rem;
-    text-align: center;
-}
-
-.menubar a {
-    display: block;
-    float: left;
-    height: 100%;
-    line-height: 1rem;
-    font-size: .5rem;
-}
-
-.menubar a span {
-    display: block;
-    height: 1.1rem;
-}
-
-.menubar a span.iconfont {
-    font-size: 1.5rem;
-    margin-top: .6rem;
-}
-
-.menubar a.active {
-    color: red;
-}
-.menubar {
     border-top: solid 1px #eee;
 }
 
-.menubar ul {
+.topbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.topbar .left {
+    width: 3rem;
+}
+
+.topbar .mid {
+    flex: 1;
+}
+
+.topbar .mid .tab-label-wrap {
+    display: flex;
+    margin: 0 2rem;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.topbar .mid .tab-label-wrap .tab-label a {
+    display: block;
     height: 100%;
 }
 
-.menubar ul li {
-    float: left;
-    height: 100%;
+.topbar .mid .tab-label-wrap .tab-label:active a {
+    font-weight: bold;
 }
 
-.menubar .left {
-    width: 46%;
+.topbar .right {
+    width: 3rem;
 }
 
-.menubar .left a {
-    width: 33.3%;
+.menubar .action-wrap {
+    display: flex;
+    flex-direction: row;
 }
 
-.menubar .right {
-    width: 54%;
+.menubar .action-wrap .action {
+    display: flex;
+    flex-direction: row;
 }
 
-.menubar .right a {
-    width: 50%;
-    line-height: 3rem;
-    font-size: 1rem;
+.menubar .action-wrap .action.left {
+    width: 44%;
+    font-size: .7rem;
+}
+
+.menubar .action-wrap .action a {
+    flex: 1;
+}
+
+.menubar .action-wrap .action.left a span {
+    display: block;
+    height: 1rem;
+}
+
+.menubar .action-wrap .action.left a span.iconfont {
+    margin-top: -.5rem;
+}
+
+.menubar .action-wrap .action.right {
+    width: 56%;
+}
+
+.menubar .action-wrap .action.right a {
     color: #fff;
 }
 
-.menubar .right a#btn_addto_shopcar {
-    background: #fb4;
+.menubar .action-wrap .action.right a#btn_addto_shopcar {
+    background: #ec3;
 }
 
-.menubar .right a#btn_buynow {
+.menubar .action-wrap .action.right a#btn_buynow {
     background: #e33;
 }
