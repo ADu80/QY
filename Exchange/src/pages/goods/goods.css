@@ -1,12 +1,28 @@
+.topbar {
+    padding: 0 .5rem;
+}
+
+.topbar input {
+    height: 1.8rem;
+    flex: 1;
+}
+
+.topbar button {
+    width: 2rem;
+    border: none;
+    background: transparent;
+}
+
 .menubar a {
     width: 30%;
     margin-left: 2%;
 }
 
-.good-group h1 {
-    background: #eee;
-    padding: .5rem;
+.menubar .action-wrap .action {
+    flex: 1;
 }
+
+
 
 .good-group li {
     padding: .5rem;
@@ -21,8 +37,6 @@
     padding: 0 .2rem .2rem .2rem;
     font-size: .8em;
 }
-
-.good-group .good-item {}
 
 .good-group .good-item img {
     display: block;

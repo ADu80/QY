@@ -6,7 +6,9 @@ var webpack = require('webpack'),
 module.exports = {
     entry: {
         index: path.join(__dirname, 'src/pages/goods/index.js'),
-        gooddetail: path.join(__dirname, 'src/pages/gooddetail/index.js')
+        gooddetail: path.join(__dirname, 'src/pages/gooddetail/index.js'),
+        pay: path.join(__dirname, 'src/pages/pay/index.js'),
+        shopcar: path.join(__dirname, 'src/pages/shopcar/index.js')
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -29,7 +31,7 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            $: 'jquery'
+            $: 'jquery'            
         }),
         new ExtractTextPlugin('css/[name].css?[contenthash]'),
         new HtmlWebpackPlugin({
@@ -43,6 +45,18 @@ module.exports = {
             filename: 'gooddetail.html',
             inject: 'body',
             chunks: ['gooddetail']
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src/pages/pay/pay.html'),
+            filename: 'pay.html',
+            inject: 'body',
+            chunks: ['pay']
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src/pages/shopcar/shopcar.html'),
+            filename: 'shopcar.html',
+            inject: 'body',
+            chunks: ['shopcar']
         })
     ],
     devServer: {

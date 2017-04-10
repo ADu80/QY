@@ -8,13 +8,32 @@
 </head>
 
 <body>
-    <article id="good-list" class="main-notop">
-    </article>
-    <footer class="menubar clearfix">
-        <a id="btn_home" class="active"><span class="iconfont icon-shouye"></span><span>首页</span></a>
-        <a id="btn_category"><span class="iconfont icon-leimu"></span><span>分类</span></a>
-        <a id="btn_shopcar"><span class="iconfont icon-gouwuche"></span><span>购物车</span></a>
-    </footer>
+    <div class="container">
+        <header class="topbar">
+            <input type="text" name="searchWord">
+            <button class="btn"><span class="iconfont icon-sousuo"></span></button>
+        </header>
+        <article class="main" id="good-list">
+        </article>
+        <footer class="menubar">
+            <ul class="action-wrap">
+                <li class="action left">
+                    <a class="action-item active" id="btn_home">
+                        <span class="iconfont icon-shouye"></span>
+                        <span>首页</span>
+                    </a>
+                    <a class="action-item" id="btn_history">
+                        <span class="iconfont icon-dingdan"></span>
+                        <span>兑换记录</span>
+                    </a>
+                    <a class="action-item" id="btn_shopcar" href="shopcar.html">
+                        <span class="iconfont icon-gouwuche"></span>
+                        <span>购物车</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </body>
 
 </html>

@@ -3,19 +3,33 @@
     padding: 0;
 }
 
+html,
+body {
+    font-family: "微软雅黑", "华文细黑", "黑体", "Helvetica", sans-serif;
+    height: 100%;
+}
+
 ul li {
     list-style: none;
 }
 
-html,
-body {
-    height: 100%;
+input,
+button {
+    height: 2rem;
+    border-radius: .2rem;
+    border: solid 1px #eee;
+    background: #fff;
+    outline: none;
+}
+
+.btn {
+    border: solid 1px #ccc;
 }
 
 a {
     text-decoration: none;
     display: block;
-    height: 100%;
+    color: #000;
 }
 
 ::-webkit-scrollbar {
@@ -39,12 +53,15 @@ a {
 .topbar,
 .menubar {
     text-align: center;
+    align-items: center;
 }
 
 .topbar {
     height: 2.8rem;
     line-height: 2.8rem;
-    border-bottom: solid 1px #eee;
+    border-bottom: solid 1px #e7e7e7;
+    text-align: center;
+    background: #f8f8f8;
 }
 
 .main {
@@ -81,42 +98,17 @@ a {
     flex: 1;
 }
 
-.topbar .mid .tab-label-wrap {
-    display: flex;
-    margin: 0 2rem;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.topbar .mid .tab-label-wrap .tab-label a {
-    display: block;
-    height: 100%;
-}
-
-.topbar .mid .tab-label-wrap .tab-label.active a {
-    font-weight: bold;
-    border-bottom: solid 2px;
-}
+.topbar .mid .title {}
 
 .topbar .right {
     width: 3rem;
 }
 
-.main {}
-
-.main .tab-content {
-    display: flex;
-    flex-direction: row;
-    width: 300%;
-}
-
-.main .tab-content .tab-page {
-    width: 33.33%;
-}
-
 .menubar .action-wrap {
+    height: 3.2rem;
     display: flex;
     flex-direction: row;
+    font-size: .8rem;
 }
 
 .menubar .action-wrap .action {
@@ -124,36 +116,39 @@ a {
     flex-direction: row;
 }
 
-.menubar .action-wrap .action.left {
-    width: 44%;
-    font-size: .7rem;
+.menubar .action-wrap .action .action-item.active {
+    color: red;
 }
 
-.menubar .action-wrap .action a {
+.menubar .action-wrap .action .action-item {
     flex: 1;
 }
 
-.menubar .action-wrap .action.left a span {
+.menubar .action-wrap .action .action-item span {
     display: block;
     height: 1rem;
 }
 
-.menubar .action-wrap .action.left a span.iconfont {
+.menubar .action-wrap .action .action-item span.iconfont {
+    font-size: 1.4rem;
     margin-top: -.5rem;
 }
 
-.menubar .action-wrap .action.right {
-    width: 56%;
-}
-
-.menubar .action-wrap .action.right a {
+.menubar .action-wrap .action.right .action-item {
     color: #fff;
+    font-size: 1rem;
 }
 
-.menubar .action-wrap .action.right a#btn_addto_shopcar {
-    background: #ec3;
+.tab-label-wrap {
+    font-size: .9rem;
+    display: flex;
+    margin: 0 2rem;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.menubar .action-wrap .action.right a#btn_buynow {
-    background: #e33;
+.tab-label-wrap .tab-label.active a {
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: solid 2px;
 }

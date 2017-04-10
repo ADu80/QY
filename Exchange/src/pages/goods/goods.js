@@ -2,15 +2,12 @@ import { fetchData, postData } from '../../commons/basic/ajax';
 import data from './goods.mock';
 import Promise from 'bluebird';
 
-
 var createGoods = (data) => {
         var tmpl = `${data.map(d => `
-        <section class="good-group">
-            <h1>${d.title}</h1>
-            <ul>
+            <ul class="grid grid-goods">
                 ${d.rows.map(r=>`
-                    <li>
-                        <a class="good-item clearfix" href="./gooddetail.html?id=${r.GoodID}">
+                    <li class="grid-item">
+                        <a class="good-item" href="./gooddetail.html?id=${r.GoodID}">
                             <img src="${r.ImgUrl}"></img>
                             <dl class="good-info">
                                 <dt class="title"><p>Apple MacBook Pro 13.3英寸笔记本电脑 深空灰色</p></dt>
@@ -21,7 +18,6 @@ var createGoods = (data) => {
                     </li>`
                 ).join('')}
             </ul>
-        </section>
     `).join('')}`;
     $('#good-list').append(tmpl);
 }
@@ -48,6 +44,7 @@ var selectMunuItem='#btn_home';
 var addClick=(item)=>{
     var el=$(item);
     el.click((e)=>{
+        console.log(e);
         if(selectMunuItem===item) return;
         $(selectMunuItem).removeClass('active');
         el.addClass('active');
@@ -56,7 +53,7 @@ var addClick=(item)=>{
 }
 
 var initAction = () => {
-    ['#btn_home','#btn_category','#btn_shopcar'].forEach((el)=>{
+    ['#btn_home','#btn_history','#btn_shopcar'].forEach((el)=>{
         addClick(el);
     });
 }

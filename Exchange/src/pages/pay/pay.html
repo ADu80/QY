@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>付款页面</title>
+</head>
+
+<body>
+    <div class="container tab" id=tab-1>
+        <header class="topbar">
+            <div class="left">
+                <a id="btn_back" class="btn-back" href="gooddetail.html"><span class="iconfont icon-xiangzuo1"></span></a>
+            </div>
+            <div class="mid">
+                <span>填写订单</span>
+            </div>
+            <div class="right"><a>登录</a></div>
+        </header>
+        <article class="main">
+            <form>
+                <section class="form-valid">
+                    <p for="txt_mobile">快捷下单验证(安全保证)</p>
+                    <input id="txt_mobile" type="text" name="validMobile">
+                    <button class="btn">获得验证码</button>
+                    <input id="txt_validCode" type="text" name="validCode">
+                </section>
+                <section class="form-info">
+                    <label for="txt_receiver">收货人：</label>
+                    <input id="txt_receiver" type="text" name="receiver">
+                </section>
+                <section class="form-info">
+                    <label for="txt_mobile">手机号码：</label>
+                    <input id="txt_mobile" type="text" name="mobile">
+                </section>
+                <section class="form-info">
+                    <label for="txt_mobile">所在地区：</label>
+                    <input id="txt_mobile" type="text" name="mobile">
+                </section>
+                <section class="form-info">
+                    <label for="txt_mobile">详细地址：</label>
+                    <input id="txt_mobile" type="text" name="mobile">
+                </section>
+                <section class="form-detail">
+                    <ul>
+                        <li>
+                            <img src="./images/1007.png">
+                            <p>Macbook Air 2017款 8G内存256G SSD硬盘</p>
+                            <i><span>￥</span><span class="price">6888.00<span></i>
+                        </li>
+                    </ul>
+                </section>
+            </form>
+        </article>
+        <footer class="menubar">
+            <input type="submit" name="submit" value="保存信息" class="btn-submit">
+        </footer>
+</body>
+
+</html>

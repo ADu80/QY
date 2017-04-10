@@ -1,4 +1,4 @@
-function Tab(id, fn) {
+function SlideTab(id, fn) {
     this.target = $('#' + id);
     this.selectedTabIndex = 0;
 
@@ -25,7 +25,19 @@ var init = (ctx, fn) => {
         e.newScrollLeft = index * ctx.winWidth;
 
 
-        select(ctx, e, fn);
+        slide(ctx, e, fn);
+    });
+
+    var tabcontent = ctx.target.find('.tab-content');
+
+    ctx.pages.scroll((e) => {
+        var scroLeft = ctx.target.scrollLeft();
+        var i = Math.round(scroLeft / ctx.winWidth);
+        e.dataIndex = i;
+        e.oldScrollLeft = scroLeft;
+        e.newScrollLeft = (i - 1) * ctx.winWidth;
+        console.log(scroLeft);
+        slide(ctx, e, fn);
     });
 }
 
@@ -35,11 +47,10 @@ var selectTabLabel = (ctx, e) => {
 }
 
 var selectTabContent = (ctx, e) => {
-    ctx.pages.eq(e.dataIndex).css({ display: 'flex' });    
-    ctx.pages.eq(ctx.selectedTabIndex).css({ display: 'none' });
+    ctx.target.scrollLeft(e.newScrollLeft);
 }
 
-var select = (ctx, e, fn) => {
+var slide = (ctx, e, fn) => {
     if (e.dataIndex === undefined || ctx.selectedTabIndex === e.dataIndex) {
         return;
     }
@@ -51,4 +62,4 @@ var select = (ctx, e, fn) => {
 
 
 
-export default Tab;
+export default SlideTab;

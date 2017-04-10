@@ -5,16 +5,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title id="head-title">商品兑换-主页</title>
-<link href="/css/index.css?9b1c4848585e7a7c46f560a2bb7b163c" rel="stylesheet"></head>
+<link href="/css/index.css?c36bd3ec8780b78771f8c0a417a51ddb" rel="stylesheet"></head>
 
 <body>
-    <article id="good-list" class="main-notop">
-    </article>
-    <footer class="menubar clearfix">
-        <a id="btn_home" class="active"><span class="iconfont icon-shouye"></span><span>首页</span></a>
-        <a id="btn_category"><span class="iconfont icon-leimu"></span><span>分类</span></a>
-        <a id="btn_shopcar"><span class="iconfont icon-gouwuche"></span><span>购物车</span></a>
-    </footer>
+    <div class="container">
+        <header class="topbar">
+            <input type="text" name="searchWord">
+            <button class="btn"><span class="iconfont icon-sousuo"></span></button>
+        </header>
+        <article class="main">
+            <ul id="good-list">
+            </ul>
+        </article>
+        <footer class="menubar">
+            <ul class="action-wrap">
+                <li class="action left">
+                    <a class="action-item active" id="btn_home">
+                        <span class="iconfont icon-shouye"></span>
+                        <span>首页</span>
+                    </a>
+                    <a class="action-item" id="btn_history">
+                        <span class="iconfont icon-leimu"></span>
+                        <span>兑换记录</span>
+                    </a>
+                    <a class="action-item" id="btn_shopcar" href="shopcar.html">
+                        <span class="iconfont icon-gouwuche"></span>
+                        <span>购物车</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
 <script type="text/javascript" src="/js/index.js"></script></body>
 
 </html>

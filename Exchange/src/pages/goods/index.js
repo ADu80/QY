@@ -1,5 +1,5 @@
 import '../../assets/iconfont/iconfont.css';
-import '../../commons/basic/comm.css';
+import '../../commons/css/comm.css';
 import './goods.css';
 
 import { fit } from '../../commons/basic/fit';

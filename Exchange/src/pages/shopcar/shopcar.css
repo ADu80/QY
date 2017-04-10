@@ -1,0 +1,32 @@
+.menubar .action-wrap .action.left {
+    width: 4rem;
+    padding-left: .6rem;
+}
+
+.menubar .action-wrap .action.left a .iconfont {
+    font-size: 1.4rem;
+}
+
+.menubar .action-wrap .action.left a span {
+    vertical-align: middle;
+}
+
+.menubar .action-wrap .action.mid {
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+}
+
+.menubar .action-wrap .action.mid p {
+    line-height: 1rem;
+}
+
+.menubar .action-wrap .action.mid {
+    flex: 1;
+}
+
+.menubar .action-wrap .action.right {
+    width: 6rem;
+    background: #e33;
+    color: #fff;
+}
