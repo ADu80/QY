@@ -1,32 +1,36 @@
 import { fetchData, postData } from '../../commons/basic/ajax';
-import data from './goods.mock';
+import mockData from './goods.mock';
 import Promise from 'bluebird';
 
 var createGoods = (data) => {
-        var tmpl = `${data.map(d => `
-            <ul class="grid grid-goods">
-                ${d.rows.map(r=>`
-                    <li class="grid-item">
-                        <a class="good-item" href="./gooddetail.html?id=${r.GoodID}">
-                            <img src="${r.ImgUrl}"></img>
-                            <dl class="good-info">
-                                <dt class="title"><p>Apple MacBook Pro 13.3英寸笔记本电脑 深空灰色</p></dt>
-                                <dt class="activity"></dt>
-                                <dt class="showprice"><i>${r.Price}</i><span class="iconfont icon-"></span><dt>
-                            </dl>
-                        </a>
-                    </li>`
-                ).join('')}
-            </ul>
-    `).join('')}`;
-    $('#good-list').append(tmpl);
+        var tmpl = `
+        ${data.rows.map(r=>`
+            <li class="grid-item">
+                <a class="good-img-link" href="./gooddetail.html?id=${r.GoodID}">
+                    <img src="${r.ImgUrl}"></img>
+                </a>
+                <dl class="good-info">
+                    <dt class="good-info-item title">
+                        <p>Apple MacBook Pro 13.3英寸笔记本电脑 深空灰色</p>
+                    </dt>
+                    <dt class="good-info-item price">
+                        <i>￥${r.Price}</i>
+                    </dt>
+                    <dt class="good-info-item action">
+                        <a class="btn" data-gid="${r.GoodID}"><span class="iconfont icon-gouwuche"></span>加入购物车</a>
+                        <a class="btn" data-gid="${r.GoodID}" href="pay.html?id=${r.GoodID}"><span class="iconfont icon-danpin"></span>立即兑换</a>                        
+                    </dt>
+                </dl>
+            </li>`
+        ).join('')}`;
+    $('#grid-goods').append(tmpl);
 }
 
 
 var getGoods = () => {
     // fetchData('/goods')
 
-    return new Promise((resolve, reject) => setTimeout(resolve, 300, data));
+    return new Promise((resolve, reject) => setTimeout(resolve, 300, mockData));
 }
 
 var initData = () => {

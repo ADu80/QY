@@ -1,4 +1,4 @@
-import good from './pay.mock';
+import mockData from './pay.mock';
 
 var initData = () => {
 

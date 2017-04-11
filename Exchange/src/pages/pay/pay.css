@@ -43,6 +43,10 @@
     background: #f8f8f8;
 }
 
+.main section.form-detail ul {
+    width: 100%;
+}
+
 .main section.form-detail ul li {
     display: flex;
     flex-direction: row;

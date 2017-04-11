@@ -11,23 +11,14 @@
 }
 
 .menubar .action-wrap .action.left {
-    width: 40%;
+    flex: none;
+    width: 44%;
 }
 
-.menubar .action-wrap .action.left a span.iconfont {
-    margin-top: -.5rem;
-}
-
-.menubar .action-wrap .action.right {
-    flex: 1;
-    font-size: 1rem;
-    width: 56%;
-}
-
-.menubar .action-wrap .action.right a#btn_addto_shopcar {
+.menubar .action-wrap .action.right .action-item-noicon#btn_addto_shopcar {
     background: #ec3;
 }
 
-.menubar .action-wrap .action.right a#btn_buynow {
+.menubar .action-wrap .action.right .action-item-noicon#btn_buynow {
     background: #e33;
 }

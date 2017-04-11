@@ -1,5 +1,5 @@
 import SlideTab from '../../commons/basic/slideTab';
-import good from './gooddetail.mock';
+import mockData from './gooddetail.mock';
 
 var onTabSlided = (e) => {
 

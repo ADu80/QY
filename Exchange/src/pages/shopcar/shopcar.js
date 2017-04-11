@@ -1,11 +1,15 @@
-import '../../assets/iconfont/iconfont.css';
-import '../../commons/css/comm.css';
-import './shopcar.css';
+import mockData from './shopcar.mock';
 
-import { fit } from '../../commons/basic/fit';
-import { init } from './shopcar';
+var initData = () => {
 
-$(function(e) {
-    fit();
-    init();
-});
+}
+
+
+var initAction = () => {
+
+}
+
+export var init = () => {
+    initData();
+    initAction();
+}

@@ -5,16 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title id="head-title">购物车页面</title>
-<link href="/css/shopcar.css?9dd2de9fa9d6a432507f5a84b990ea88" rel="stylesheet"></head>
+<link href="/css/vendors.css?c1924da9d941f422776fa6a687c0df59" rel="stylesheet"><link href="/css/shopcar.css?791f38d4c8c5e234eca9e429d4712019" rel="stylesheet"></head>
 
 <body>
     <div class="container">
         <header class="topbar">
             <div class="left">
-                <a id="btn_back" class="btn-back" href="index.html"><span class="iconfont icon-xiangzuo1"></span></a>
+                <a id="btn_back" class="btn-back" href="index.html">
+                    <span class="iconfont icon-xiangzuo1"></span>
+                </a>
             </div>
             <div class="mid">
-                <h4 class="title">购物车</h4>
+                <span class="title">购物车</span>
             </div>
             <div class="right"><span class="iconfont icon-caidan"></span></div>
         </header>
@@ -23,22 +25,21 @@
         <footer class="menubar">
             <ul class="action-wrap">
                 <li class="action left">
-                    <a class="action-item" id="btn_home" class="active">
-                        <span class="iconfont icon-shouye"></span>
-                        <span>首页</span>
+                    <a>
+                        <span class="iconfont icon-fangxingweixuanzhong"></span>
+                        <span>全选<span>
                     </a>
-                    <a class="action-item" id="btn_category">
-                        <span class="iconfont icon-leimu"></span>
-                        <span>分类</span>
-                    </a>
-                    <a class="action-item" id="btn_shopcar">
-                        <span class="iconfont icon-gouwuche"></span>
-                        <span>购物车</span>
-                    </a>
+                </li>
+                <li class="action mid">
+                    <p>合计：￥<span>6888.00</span></p>
+                        <p>总额￥6888.00 立减￥0.00</p>
+                </li>
+                <li class="action right">
+                    <a class="action-item-noicon" id="btn_topay" href="pay.html?id=1">去结算(1)</a>
                 </li>
             </ul>
         </footer>
     </div>
-<script type="text/javascript" src="/js/shopcar.js"></script></body>
+<script type="text/javascript" src="/js/vendors.js"></script><script type="text/javascript" src="/js/shopcar.js"></script></body>
 
 </html>

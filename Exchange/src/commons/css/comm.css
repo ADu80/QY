@@ -30,6 +30,7 @@ a {
     text-decoration: none;
     display: block;
     color: #000;
+    font-size: 1rem;
 }
 
 ::-webkit-scrollbar {
@@ -114,6 +115,8 @@ a {
 .menubar .action-wrap .action {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    flex: 1;
 }
 
 .menubar .action-wrap .action .action-item.active {
@@ -122,6 +125,7 @@ a {
 
 .menubar .action-wrap .action .action-item {
     flex: 1;
+    line-height: 1.1rem;
 }
 
 .menubar .action-wrap .action .action-item span {
@@ -131,10 +135,10 @@ a {
 
 .menubar .action-wrap .action .action-item span.iconfont {
     font-size: 1.4rem;
-    margin-top: -.5rem;
 }
 
-.menubar .action-wrap .action.right .action-item {
+.menubar .action-wrap .action .action-item-noicon {
+    flex: 1;
     color: #fff;
     font-size: 1rem;
 }
@@ -142,8 +146,8 @@ a {
 .tab-label-wrap {
     font-size: .9rem;
     display: flex;
-    margin: 0 2rem;
     flex-direction: row;
+    margin: 0 2rem;
     justify-content: space-around;
 }
 

@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title id="head-title">商品兑换-主页</title>
-<link href="/css/index.css?c36bd3ec8780b78771f8c0a417a51ddb" rel="stylesheet"></head>
+    <title id="head-title">商品列表-主页</title>
+<link href="/css/vendors.css?c1924da9d941f422776fa6a687c0df59" rel="stylesheet"><link href="/css/index.css?e524f9ab2108833c1c63c6f10ed314aa" rel="stylesheet"></head>
 
 <body>
     <div class="container">
@@ -14,7 +14,7 @@
             <button class="btn"><span class="iconfont icon-sousuo"></span></button>
         </header>
         <article class="main">
-            <ul id="good-list">
+            <ul class="grid" id="grid-goods">
             </ul>
         </article>
         <footer class="menubar">
@@ -24,8 +24,8 @@
                         <span class="iconfont icon-shouye"></span>
                         <span>首页</span>
                     </a>
-                    <a class="action-item" id="btn_history">
-                        <span class="iconfont icon-leimu"></span>
+                    <a class="action-item" id="btn_history" href="orders.html">
+                        <span class="iconfont icon-dingdan"></span>
                         <span>兑换记录</span>
                     </a>
                     <a class="action-item" id="btn_shopcar" href="shopcar.html">
@@ -36,6 +36,6 @@
             </ul>
         </footer>
     </div>
-<script type="text/javascript" src="/js/index.js"></script></body>
+<script type="text/javascript" src="/js/vendors.js"></script><script type="text/javascript" src="/js/index.js"></script></body>
 
 </html>

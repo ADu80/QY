@@ -1,4 +1,4 @@
-webpackJsonp([1],[
+webpackJsonp([0],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -6108,22 +6108,23 @@ function postData(url, data) {
 
 /***/ }),
 /* 10 */,
-/* 11 */
+/* 11 */,
+/* 12 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 12 */,
 /* 13 */,
 /* 14 */,
 /* 15 */,
-/* 16 */
+/* 16 */,
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__commons_basic_ajax__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__goods_mock__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__orders_mock__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bluebird__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_bluebird__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return init; });
@@ -6133,37 +6134,44 @@ function postData(url, data) {
 
 var createGoods = (data) => {
         var tmpl = `
-        ${data.rows.map(r=>`
-            <li class="grid-item">
-                <a class="good-img-link" href="./gooddetail.html?id=${r.GoodID}">
-                    <img src="${r.ImgUrl}"></img>
-                </a>
-                <dl class="good-info">
-                    <dt class="good-info-item title">
-                        <p>Apple MacBook Pro 13.3英寸笔记本电脑 深空灰色</p>
-                    </dt>
-                    <dt class="good-info-item price">
-                        <i>￥${r.Price}</i>
-                    </dt>
-                    <dt class="good-info-item action">
-                        <a class="btn" data-gid="${r.GoodID}"><span class="iconfont icon-gouwuche"></span>加入购物车</a>
-                        <a class="btn" data-gid="${r.GoodID}" href="pay.html?id=${r.GoodID}"><span class="iconfont icon-danpin"></span>立即兑换</a>                        
-                    </dt>
-                </dl>
-            </li>`
-        ).join('')}`;
-    $('#grid-goods').append(tmpl);
+    ${data.rows.map(o=>`
+        <li class="grid-item">
+            <dl>
+                <dt class="order-item-title"><span>订单编号：${o.OrderCode}</span><span>订单状体：完成</span></dt>
+                <dd class="order-item-goods">
+                    ${o.goods.map(g=>`
+                    <a data-oid="${o.OrderID}">
+                        <img data-gid="${g.GoodID}" src="/images/${g.ImgUrl}">
+                    </a>
+                    `)}
+                </dd>
+                <dd class="order-item-sum">
+                    <p>共${o.Num}件商品,兑换${formatPayTypeToString(o.payType)}：${o.Amount}</p>
+                    <a class="btn">再次兑换</a>
+                </dd>
+            </dl>
+        </li>`
+    ).join('')}
+    `;
+    $('#grid-orders').append(tmpl);
 }
 
+var formatPayTypeToString = (type) => {
+    switch(type){
+        case 1:return '积分';
+        case 2:return '金币';
+        case 3:return '钻石';
+    }
+}
 
-var getGoods = () => {
+var getOrders = () => {
     // fetchData('/goods')
 
-    return new __WEBPACK_IMPORTED_MODULE_2_bluebird___default.a((resolve, reject) => setTimeout(resolve, 300, __WEBPACK_IMPORTED_MODULE_1__goods_mock__["a" /* default */]));
+    return new __WEBPACK_IMPORTED_MODULE_2_bluebird___default.a((resolve, reject) => setTimeout(resolve, 300, __WEBPACK_IMPORTED_MODULE_1__orders_mock__["a" /* default */]));
 }
 
 var initData = () => {
-    getGoods()
+    getOrders()
         .then((data) => {
             createGoods(data);
         })
@@ -6172,23 +6180,8 @@ var initData = () => {
         });
 }
 
-var selectMunuItem='#btn_home';
-
-var addClick=(item)=>{
-    var el=$(item);
-    el.click((e)=>{
-        console.log(e);
-        if(selectMunuItem===item) return;
-        $(selectMunuItem).removeClass('active');
-        el.addClass('active');
-        selectMunuItem=item;
-    });  
-}
-
 var initAction = () => {
-    ['#btn_home','#btn_history','#btn_shopcar'].forEach((el)=>{
-        addClick(el);
-    });
+
 }
 
 var init = () => {
@@ -6199,44 +6192,14 @@ var init = () => {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */,
 /* 18 */,
 /* 19 */,
 /* 20 */,
 /* 21 */,
 /* 22 */,
-/* 23 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var data = {
-    title: 'goods',
-    rows: [
-        { GoodID: 1, ImgUrl: './images/1002.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 2, ImgUrl: './images/1003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 3, ImgUrl: './images/1007.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 4, ImgUrl: './images/1002.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 5, ImgUrl: './images/1003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 6, ImgUrl: './images/4003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 7, ImgUrl: './images/1002.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 8, ImgUrl: './images/1003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 9, ImgUrl: './images/1007.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 10, ImgUrl: './images/1002.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 11, ImgUrl: './images/1003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 12, ImgUrl: './images/4003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 13, ImgUrl: './images/1002.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 14, ImgUrl: './images/1003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 15, ImgUrl: './images/1007.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 16, ImgUrl: './images/1002.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-        { GoodID: 17, ImgUrl: './images/1003.png', Price: 50, activitied: ['满1000减100', '手机端特价'] },
-    ]
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (data);
-
-
-/***/ }),
-/* 24 */
+/* 23 */,
+/* 24 */,
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6245,10 +6208,10 @@ var data = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__assets_iconfont_iconfont_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__assets_iconfont_iconfont_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__commons_css_comm_css__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__commons_css_comm_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__commons_css_comm_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__goods_css__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__goods_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__goods_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orders_css__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orders_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__orders_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__commons_basic_fit__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__goods__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__orders__ = __webpack_require__(17);
 
 
 
@@ -6258,10 +6221,82 @@ var data = {
 
 $(function(e) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__commons_basic_fit__["a" /* default */])();
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__goods__["a" /* init */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__orders__["a" /* init */])();
 });
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var data = {
+    title: 'orders',
+    rows: [{
+        OrderID: '001',
+        Num: 1,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [{ GoodID: 1, Price: 6888.00, ImgUrl: '2003.png' }]
+    }, {
+        OrderID: '001',
+        Num: 2,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [
+            { GoodID: 1, Price: 6888.00, ImgUrl: '1002.png' },
+            { GoodID: 1, Price: 6888.00, ImgUrl: '1007.png' }
+        ]
+
+    }, {
+        OrderID: '001',
+        Num: 3,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [
+            { GoodID: 1, Price: 6888.00, ImgUrl: '1002.png' },
+            { GoodID: 1, Price: 6888.00, ImgUrl: '1007.png' },
+            { GoodID: 1, Price: 6888.00, ImgUrl: '1003.png' }
+        ]
+    }, {
+        OrderID: '001',
+        Num: 1,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [{ GoodID: 1, Price: 6888.00, ImgUrl: '1007.png' }]
+    }, {
+        OrderID: '001',
+        Num: 2,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [
+            { GoodID: 1, Price: 6888.00, ImgUrl: '1007.png' },
+            { GoodID: 1, Price: 6888.00, ImgUrl: '4003.png' }
+        ]
+    }, {
+        OrderID: '001',
+        Num: 2,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [{ GoodID: 1, Price: 6888.00, ImgUrl: '4003.png' }]
+    }, {
+        OrderID: '001',
+        Num: 2,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [{ GoodID: 1, Price: 6888.00, ImgUrl: '4003.png' }]
+    }, {
+        OrderID: '001',
+        Num: 2,
+        Amount: 6888.00,
+        payType: 1,
+        goods: [{ GoodID: 1, Price: 6888.00, ImgUrl: '4003.png' }]
+    }]
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (data);
+
+
 /***/ })
-],[24]);
+],[25]);

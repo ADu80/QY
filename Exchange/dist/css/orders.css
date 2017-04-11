@@ -1,0 +1,51 @@
+.main {
+    background: #eee;
+}
+
+.grid {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.grid .grid-item {
+    flex: 1;
+    background: #fff;
+    margin-top: .5rem;
+    font-size: .8rem;
+}
+
+.grid .grid-item img {
+    width: 3rem;
+    margin: .3rem;
+}
+
+.grid .grid-item dd {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.grid .grid-item dd.order-item-goods {
+    background: #f7f7f7;
+}
+
+.grid .grid-item dd.order-item-goods a {
+    background: #fff;
+    margin: .5rem;
+}
+
+.grid .grid-item dd.order-item-sum {
+    padding: .5rem;
+    justify-content: space-between;
+    height: 1.8rem;
+}
+
+.grid .grid-item dt {
+    background: #fff;
+    padding: .5rem;
+    height: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

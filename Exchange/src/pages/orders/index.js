@@ -1,9 +1,9 @@
 import '../../assets/iconfont/iconfont.css';
 import '../../commons/css/comm.css';
-import './shopcar.css';
+import './orders.css';
 
 import fit from '../../commons/basic/fit';
-import { init } from './shopcar';
+import { init } from './orders';
 
 $(function(e) {
     fit();
