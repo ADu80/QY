@@ -1,18 +1,20 @@
 ﻿<div ms-controller="#vmodel#" class="vmodel subagentlist">
     <div class="panel search">
         <div class="row">
-            <div class="col"><label class="md">账号：</label><input type="text" class="text-agents" ms-duplex-value="@condition.keyword" /></div>
-            <div class="col">
-                <label class="md">玩家范围：</label>
-                <select class="select-agents" ms-on-change="@changeStatus" name="status">
-                    <option value="-1">全部</option>
-                    <option value="1">冻结</option>
-                    <option value="0">未冻结</option>
-                </select>
+            <div class="row">
+                <div class="col"><label class="md">订单账号：</label><input type="text" class="text-agents" ms-duplex-value="@condition.keyword" /></div>
+                <div class="col">
+                    <label class="md">玩家范围：</label>
+                    <select class="select-agents" ms-on-change="@changeStatus" name="status">
+                        <option value="-1">全部</option>
+                        <option value="1">冻结</option>
+                        <option value="0">未冻结</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="row textcenter">
-            <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@reset()">重置</button>
+            <div class="row textcenter">
+                <button class="btn btn-search" ms-click="@find()">查询</button><button class="btn btn-reset" ms-click="@reset()">重置</button>
+            </div>
         </div>
     </div>
     <div class="panel table">

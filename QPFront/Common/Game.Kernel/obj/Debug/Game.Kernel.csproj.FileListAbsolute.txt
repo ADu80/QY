@@ -1,0 +1,7 @@
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Common\Game.Kernel\bin\Debug\Game.Kernel.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Common\Game.Kernel\bin\Debug\Game.Kernel.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Common\Game.Kernel\bin\Debug\Game.Utils.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Common\Game.Kernel\bin\Debug\Game.Utils.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Common\Game.Kernel\obj\Debug\Game.Kernel.csprojResolveAssemblyReference.cache
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Common\Game.Kernel\obj\Debug\Game.Kernel.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Common\Game.Kernel\obj\Debug\Game.Kernel.pdb

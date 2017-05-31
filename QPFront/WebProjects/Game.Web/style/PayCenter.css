@@ -1,0 +1,46 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body,div,span,table,td,tt,th,dd,dl,dt,p,h1,h2,h3,h4,h5,h6,a,ul,li,ol,form,fieldset,input,textarea,pre,blockquote,img{border: none;margin: 0;padding: 0;list-style: none;outline: none;}
+body{background: url(../images/bg.jpg);font-family: "微软雅黑";font-size: 14px;color:#555;}
+a{color:#555;text-decoration:none;}
+a:hover{color:#ff7800;}
+.color{color:#ff7800;}
+
+#PayCenter{width: 1000px;margin: 30px auto;overflow: hidden;}
+.PayCenterBox{margin-top: 40px;border: 1px solid #ccc;overflow: hidden;}
+.PayCenterBox .PayLeft{width: 298px;float: left;overflow: hidden;}
+.PayCenterBox .PayLeft{padding-top: 20px;}
+.PayCenterBox .Apay_pay,.PayCenterBox .Wechat_pay{height: 60px;line-height: 60px;border-top: 1px dashed #ccc;cursor: pointer;}
+.PayCenterBox .Apay_pay span,.PayCenterBox .Wechat_pay span{padding-left: 42px;font-size: 18px;background:url(../img/pay_apay.png) no-repeat left center ;margin-left: 80px;}
+.PayCenterBox .Wechat_pay span{background: url(../img/pay_wechat.png) no-repeat left center;}
+.PayCenterBox .Paycurrent{color:#ff7800;border-bottom:3px solid #ff7800;}
+
+.PayCenterBox .PayRight{width: 656px;float:left;padding-top:20px;padding-bottom: 100px;padding-left: 43px;overflow: hidden;border-left: 1px solid #ccc;}
+.PayRight .PayBox_wrap{overflow: hidden;}
+.PayRight .PayBox{width: 283px;height: 73px;border: 1px solid #ccc;background: #e8e3dd;float: left;margin-right: 43px;margin-bottom: 30px;cursor: pointer;}
+.PayRight .PayBox >*{float: left;margin:16px 0 0 16px;}
+.PayRight .PayBox span{display: block;}
+.PayRight .PayBox .money{font-size: 20px;line-height: 20px;}
+.PayRight .PayBox .integral{font-size: 12px;color:#999;line-height: 12px;margin-top: 10px;}
+.PayRight .PayBox.current{border: none;background: url(../img/paysuccess.jpg) no-repeat;width: 285px;height: 75px;}
+.PayRight .Paysub{background:url(../img/pay_button.png);width: 210px;height: 63px;margin: 0 auto;display: block;cursor: pointer;}
+
+/* -----------------------WeChatpay--------------------------- */
+.WeChat_Wrap,.Apay_Wrap{width: 100%;height: 100%;background:rgba(0,0,0,0.60);position:fixed;left: 0;top: 0;display: none;z-index:999;}
+.WeChat_in,.Apay_in{width: 700px;height: 400px;position: absolute;left: 50%;top: 50%;margin-left: -350px;margin-top: -200px;background: #fff url(../img/wechatpay_leader.jpg) no-repeat 395px center;overflow: hidden;}
+.WeChat_in .WeChatLeft,.Apay_in .ApayLeft{width: 350px;height: 380px;border-right: 1px dashed #f2f2f2;padding-top: 26px;}
+.WeChat_in .WeChatLeft h3,.Apay_in .ApayLeft h3{padding-left: 50px;background:url(../img/wechatpay_logo.jpg) no-repeat left center;height: 38px;line-height: 38px;font-size: 30px;color:#333;width: 125px;margin: 0 auto;}
+.WeChat_in .WeChatLeft .Wechat_paymoney,.Apay_in .ApayLeft .Apay_paymoney{font-size: 21px;text-align: center;line-height:75px;}
+.WeChat_in .WeChatLeft .Wechat_pic,.Apay_in .ApayLeft .Apay_pic{width: 183px;height: 183px;margin: 35px auto;margin-top: 0;}
+.WeChat_in .WeChatLeft .alertcolor,.Apay_in .ApayLeft .alertcolor{color:#cc0311;text-align: center;display: block;}
+
+/* -----------------------Apaypay--------------------------- */
+.Apay_Wrap.current,.WeChat_Wrap.current{display: block;}
+.Apay_in{background:#fff url(../img/apay_leader.jpg) no-repeat 370px center;}
+.Apay_in .ApayLeft{float: left;}
+.Apay_in .ApayLeft h3{background: url(../img/apay_logo.jpg) no-repeat left center;width:98px;}
+.Apay_in .ApayRight{width: 100px;height: 245px;background:#f3f2f2;padding:155px 10px 0 10px;float: right;}
+.Apay_in .ApayRight p{color:#666;font-size: 12px;text-align: center;}
+.Apay_in .ApayRight .btn{height: 36px;width: 100px;background:#00a9f3;color:#FFF;font-size: 16px;margin-top: 15px;display: block;line-height: 36px;border-radius:5px;cursor: pointer;}
+
+.WeChat_in .error,.Apay_in .error{width: 20px;height: 20px;display: block;position: absolute;top:10px;right:10px;background: url(../img/error.png);cursor: pointer;}

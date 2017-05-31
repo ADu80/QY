@@ -1,0 +1,17 @@
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Facade.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Facade.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Data.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Entity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.IData.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Kernel.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Utils.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Newtonsoft.Json.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Kernel.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Utils.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Data.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.Entity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Game.IData.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\bin\Release\Newtonsoft.Json.xml
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\obj\Release\Game.Facade.csprojResolveAssemblyReference.cache
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\obj\Release\Game.Facade.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Facade\obj\Release\Game.Facade.pdb

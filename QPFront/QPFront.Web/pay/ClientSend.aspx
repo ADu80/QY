@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClientSend.aspx.cs" Inherits="pay.uka.ClientSend" %>

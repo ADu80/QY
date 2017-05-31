@@ -1,0 +1,39 @@
+﻿*{padding:0;margin:0}
+body{font-size:12px;font-family:"Microsoft YaHei",Arial;color:#555}
+ol,ul{list-style:none;}
+
+.clearfix:after{content:".";display:block;height:0;visibility:hidden;clear:both}
+
+.whitefont{color:#f8f8f8}
+.blackfont{color:#555}
+.graybg{background:#888}
+.graybg-dark{background:#666}
+
+.content{width:100%}
+.content .banner{position:relative; width:100em;height:30em;margin:.5em auto}
+.content .banner h3 {text-align:center;}
+.content .banner h3 font{font-size:28px;vertical-align:middle;}
+.content .banner .a-more{position:absolute;display:inline-block;width:5em;left:90em;top:2em;}
+.content .banner .a-more{*display:inline;*zoom:1;}
+.content .banner .shoppinglist{width:100%;display:table;/* 调教webkit*/word-spacing:-1em;}
+.content .banner .shoppinglist li{display:inline-block;width:24em;height:24em;padding:1em;word-spacing:0;border-left:solid 1px #eee;border-top:solid 1px #eee;border-bottom:solid 1px #eee;
+        text-align:center}
+.content .banner .shoppinglist li{*display:inline;*zoom:1;*border:solid 1px #eee;*width:22.5em;*height:22.5em;}
+.content .banner .shoppinglist li:nth-of-type(4n){border-right:solid 1px #eee;}
+
+.content .banner .shoppinglist li img.goods-pic{height:13em}
+
+.content .banner-all{height:auto}
+.content .banner-all h3{font-size:12px;height:4em;margin-bottom:0;width:22.5em;color:#666;text-align:left;}
+
+.content .banner-games h3{font-size:12px;height:4em;line-height:4em;margin-bottom:0;background:#e75498;width:22.5em;color:#f8f8f8;}
+.content .banner-games .shoppinglist li{border-top:solid .2em #e75498;}
+
+.content .banner-gift h3{font-size:12px;height:4em;line-height:4em;margin-bottom:0;background:#f2513d;width:22.5em;color:#f8f8f8;}
+.content .banner-gift .shoppinglist li{border-top:solid .2em #f2513d;}
+
+/*底部*/
+.footer{margin:0 auto;height:12em;border-top:.1em solid #ccc;text-align:center;background:#ccc;padding:0;color:#333}
+.footer .main .footer-nav a{font-size:1.2em;padding:0 2em;margin-bottom:0}
+.footer .main ul li{margin-top:.2em}
+.footer .main ul li:first-of-type{margin-top:0}

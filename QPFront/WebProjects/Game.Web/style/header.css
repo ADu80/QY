@@ -1,0 +1,17 @@
+﻿/*头部*/
+.header{position:relative;width:100%;height:10em;background:#338352}
+.header .container{position:relative;width:100em;overflow:visible;background:#63a362}
+.header .container .login{position:absolute;width:auto;top:.5em;right:3em}
+.header .container .login a{font-size:1.2em;font-weight:700;margin-left:1em;color:#ddd;cursor:pointer;text-decoration:none}
+.header .container .logo{position:absolute;width:auto;top:1.5em;width:5em;height:2em}
+.header .container .logo img{width:15em;height:6em}
+
+/*头部菜单*/
+.header .container .nav{position:absolute;width:auto;top:3em;right:2em}
+.header .container .nav ul{font-size:1.5em;top:1em;right:2em;list-style:none}
+.header .container .nav ul li{display:inline-block;padding:.5em;margin-left:.2em;border-radius:.5em}
+.header .container .nav ul li{*display:inline;*zoom:1;}
+.header .container .nav ul li a{color:#f8f8f8;text-decoration:none}
+.header .container .nav ul li:hover{border:.1em #88c372;background:#52c362;cursor:pointer}
+.header .container .nav ul li span{color:#ddd}
+

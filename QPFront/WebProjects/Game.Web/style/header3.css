@@ -1,0 +1,20 @@
+﻿/*头部*/
+.header{font-family:"Microsoft YaHei",Arial;color:#555;font-size:12px;font-weight:normal;position:relative;width:100%;height:15em;background:#f4645f;background-attachment:scroll;}
+
+/*头部菜单*/
+.header .nav{height:auto;position:absolute;width:100%;padding:0;left:0;bottom:0;/*background:#f4645f;background:rgba(0,0,0,.5);*/}
+.header .navbar{background:#f4645f;}
+.header .nav ul{font-size:12px; width:80em;margin:0 auto;/*background:#f6b6b6*/}
+.header .nav ul:after{content:".";display:block;height:0;visibility:hidden;clear:both;}
+.header .nav ul li{float:left;height:4em;line-height:4em;text-align:center;margin:0 1px;padding:0 1.7em;}
+.header .nav ul li a{font-size:20px;text-decoration:none;color:#f8f8f8}
+.header .nav ul li:hover{background:#f68888;color:#f8f8f8;cursor:pointer}
+.header .nav ul li.active{background:#f68888;color:#f8f8f8;}
+.header .nav ul li span{font-size:20px;color:#ddd}
+
+.header .logo{position:absolute;top:20px;left:20px;width:350px;z-index:101}
+.header .logo h2,.logo h4,.logo span{margin:0;padding:0}
+.header .logo span{height:50px;padding-top:0;color:#f26262;font-size:42px}
+.header .logo h2,.logo span{display:block;float:left;background:0 0}
+.header .logo h2{height:30px;width:250px;color:#f2a233}
+.header .logo h4{display:block;float:left;height:20px;background:0 0;color:#f8f8f8}

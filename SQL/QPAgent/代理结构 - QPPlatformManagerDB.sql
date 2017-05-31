@@ -28,6 +28,7 @@ IF NOT EXISTS(SELECT 1 FROM dbo.SYSCOLUMNS WHERE OBJECT_ID('Base_Roles')=id AND 
 	ALTER TABLE [dbo].[Base_Roles]
 	ADD Created DATETIME
 GO
+
 IF NOT EXISTS(SELECT 1 FROM dbo.SYSCOLUMNS WHERE OBJECT_ID('Base_Roles')=id AND name = 'Modified')
 	ALTER TABLE [dbo].[Base_Roles]
 	ADD Modified DATETIME
@@ -52,7 +53,6 @@ IF NOT EXISTS(SELECT 1 FROM dbo.SYSCOLUMNS WHERE OBJECT_ID('SystemLog')=id AND n
 	ALTER TABLE SystemLog
 	ADD Module VARCHAR(30)
 GO
-
 
 
 IF NOT EXISTS(SELECT 1 FROM dbo.SYSOBJECTS WHERE xtype='U' AND OBJECT_ID('SystemLogOperation')=ID)
@@ -773,7 +773,7 @@ BEGIN
 			VALUES(@newCode,0,0,GETDATE())
 			--RETURN -1 --邀请码不存在！
 		END
-		IF NOT EXISTS(SELECT 1 FROM [QPPlatformDB].[dbo].[InviteCode] WHERE CodeID=@newCode AND IsLiang=1)
+		IF EXISTS(SELECT 1 FROM [QPPlatformDB].[dbo].[InviteCode] WHERE CodeID=@newCode AND IsLiang=1)
 		BEGIN
 			ROLLBACK TRAN;
 			RETURN -2 --邀请码已被占有！
@@ -1199,3 +1199,254 @@ END
 
 GO
 
+--后台订单列表
+IF EXISTS(SELECT 1 FROM dbo.SysObjects WHERE OBJECT_ID('EC_Get_Orders')=id AND type='P')
+	DROP PROC EC_Get_Orders
+GO
+ 
+CREATE PROCEDURE [dbo].[EC_Get_Orders]
+	@OrderNo VARCHAR(64),
+	@Accounts VARCHAR(31),
+	@startDate VARCHAR(30),
+	@endDate VARCHAR(30),
+	@UserID INT,
+	@GameID INT,
+	@pageIndex INT=1,
+	@pageSize INT=20
+AS
+BEGIN
+	DECLARE @SQL VARCHAR(MAX)=''
+	DECLARE @Where VARCHAR(1000)=''
+	DECLARE @tempTable VARCHAR(50)=''
+	SET @tempTable = Replace('##'+CONVERT(VARCHAR(50), NEWID()),'-','')
+
+	 
+	IF @OrderNo<>''
+	    SET @Where=@Where+' AND a.OrderNo  LIKE ''%'+@OrderNo+'%''' 
+
+    IF @GameID<>''
+	    SET @Where=@Where+' AND b.GameID  ='+Convert(VARCHAR(30),@GameID)
+
+    IF @UserID<>''
+	    SET @Where=@Where+' AND b.UserID  ='+Convert(VARCHAR(30),@UserID)
+
+    IF @Accounts<>''
+	    SET @Where=@Where+' AND b.Accounts  LIKE ''%'+@Accounts+'%''' 
+
+		
+
+
+	IF @startDate<>''
+		SET @Where=@Where+' AND a.Created >= '''+@startDate+''''
+	IF @endDate<>''
+		SET @Where=@Where+' AND a.Created < '''+@endDate+'  23:59:59'''
+
+	
+	SET @SQL=' 
+      select  a.[ID]   ,a.[OrderNo]   ,a.[GameID]
+      ,a.[Num]   ,a.[Amount]   ,a.[OrderDate]
+      ,case when a.PayType=1 then ''金币'' when a.PayType=2 then ''钻石'' when a.PayType=3 then ''积分'' end  PayType
+      ,d.Addr AddrID
+      ,case when a.Status=1 then ''已通过''   when a.Status=2 then ''已支付'' when a.Status=3 then ''已发货'' when a.Status=4 then ''已完成'' end  Status
+      ,a.[ExpressNo]  ,a.[Created]  ,a.[Modified]
+	  ,case when LEN(b.Accounts)=0 then ''无'' else isnull(b.Accounts,''无'') end Accounts  ,
+	  case when LEN( b.NickName)=0 then ''无'' else isnull( b.NickName,''无'') end  NickName  ,
+	  b.UserID,
+	  ROW_NUMBER() OVER(ORDER BY a.OrderNo DESC) RowNo
+	   INTO '+@tempTable+'
+	   from  [QPPlatformManagerDB].[dbo].[EC_Order] a 
+      left join [QPAccountsDB].[dbo].[AccountsInfo] b  on b.GameID =a.GameID 
+	  left join [QPPlatformManagerDB].[dbo].[EC_OrderAddr] d on d.ID= a.AddrID
+	  
+	WHERE 1=1  '	+@Where + '
+	SELECT totalCount=Count(1) FROM '+ @tempTable + ' 
+	SELECT * FROM ' + @tempTable + '
+	WHERE RowNo BETWEEN '+CONVERT(VARCHAR(10),(@pageIndex-1)*@pageSize+1)+' AND '+CONVERT(VARCHAR(10),@pageIndex*@pageSize)+'
+	ORDER BY RowNO  
+	DROP TABLE '+@tempTable 
+	--SELECT @SQL
+	EXEC(@SQL)
+END
+
+
+GO
+
+
+--后台订单详细表
+IF EXISTS(SELECT 1 FROM dbo.SysObjects WHERE OBJECT_ID('EC_Get_OrderDetails')=id AND type='P')
+	DROP PROC EC_Get_OrderDetails
+GO
+CREATE PROCEDURE  [dbo].[EC_Get_OrderDetails] 
+	@OrderID INT,
+	@pageIndex INT=1,
+	@pageSize INT=20
+AS
+BEGIN
+	DECLARE @SQL VARCHAR(MAX)=''
+	DECLARE @Where VARCHAR(1000)=''
+	DECLARE @tempTable VARCHAR(50)=''
+	SET @tempTable = Replace('##'+CONVERT(VARCHAR(50), NEWID()),'-','')
+
+	 
+	 
+    IF @OrderID<>''
+	    SET @Where=@Where+' AND a.OrderID  ='+Convert(VARCHAR(30),@OrderID)
+  
+	
+	SET @SQL='select 
+	 a.[ID]   ,a.[OrderID]   ,a.[GoodID]
+      ,a.[Num]  ,a.[Price]  ,a.[CostPrice]  ,  b.GoodName ,
+	  a.Num* a.Price as totalpri
+	   ,ROW_NUMBER() OVER(ORDER BY a.ID DESC) RowNo
+	  INTO '+@tempTable+'
+      FROM [QPPlatformManagerDB].[dbo].[EC_OrderDetail] a  
+	  left join [QPPlatformManagerDB].[dbo].[EC_Goods] b on b.ID =a.GoodID
+	WHERE 1=1  '	+@Where + '
+	SELECT totalCount=Count(1) FROM '+ @tempTable + '
+
+	SELECT * FROM ' + @tempTable + '
+	WHERE RowNo BETWEEN '+CONVERT(VARCHAR(10),(@pageIndex-1)*@pageSize+1)+' AND '+CONVERT(VARCHAR(10),@pageIndex*@pageSize)+'
+	ORDER BY RowNO 
+
+	DROP TABLE '+@tempTable
+
+	--SELECT @SQL
+	EXEC(@SQL)
+END
+
+
+GO
+
+----兑换商品列表
+IF EXISTS(SELECT 1 FROM dbo.SysObjects WHERE OBJECT_ID('EC_Get_Goods')=id AND type='P')
+	DROP PROC EC_Get_Goods
+GO
+
+CREATE PROCEDURE  [dbo].[EC_Get_Goods]
+	@CategoryID INT,
+	@GoodName VARCHAR(50),  
+	@pageIndex INT=1,
+	@pageSize INT=20
+AS
+BEGIN
+	DECLARE @SQL VARCHAR(MAX)=''
+	DECLARE @Where VARCHAR(1000)=''
+	DECLARE @tempTable VARCHAR(50)=''
+	SET @tempTable = Replace('##'+CONVERT(VARCHAR(50), NEWID()),'-','')
+
+	 
+	IF @GoodName<>''
+	    SET @Where=@Where+' AND a.GoodName  LIKE ''%'+@GoodName+'%''' 
+
+    IF @CategoryID<>''
+	    SET @Where=@Where+' AND a.CategoryID  ='+Convert(VARCHAR(30),@CategoryID)
+
+      
+	
+	SET @SQL=' 
+      select a.[ID]  ,a.[GoodNo]
+      ,a.[GoodName]   ,a.[CategoryID]     ,a.[PointPrice]  ,a.[ScorePrice]   ,a.[DiamondPrice]
+      ,a.[Intro]   ,a.[IntroImg]   ,a.[OffShelfDate]  ,a.[ShelfStatus]  ,a.[Created]   ,a.[Modified]
+	  ,c.Category  ,ROW_NUMBER() OVER(ORDER BY a.ID DESC) RowNo  
+      INTO '+@tempTable+'
+      FROM [QPPlatformManagerDB].[dbo].[EC_Goods] a
+      left join [QPPlatformManagerDB].[dbo].[EC_GoodsCategory] c on c.ID = a.CategoryID
+      where a.ShelfStatus =1  '	+@Where + '
+      SELECT totalCount=Count(1) FROM '+ @tempTable + '
+      
+      SELECT * FROM ' + @tempTable + '
+      WHERE RowNo BETWEEN '+CONVERT(VARCHAR(10),(@pageIndex-1)*@pageSize+1)+' AND '+CONVERT(VARCHAR(10),@pageIndex*@pageSize)+'
+      ORDER BY RowNO 
+
+      DROP TABLE '+@tempTable
+
+	--SELECT @SQL
+	EXEC(@SQL)
+END
+GO
+
+--更新兑换订单状态和物流号
+IF EXISTS(SELECT 1 FROM dbo.SysObjects WHERE OBJECT_ID('EC_P_UpdateOrder')=id AND type='P')
+	DROP PROC EC_P_UpdateOrder
+GO
+
+CREATE PROC [dbo].[EC_P_UpdateOrder]
+	@OrderID INT,
+	@ExpressNo VARCHAR(20),
+	@Status INT
+AS
+BEGIN
+	BEGIN TRAN
+	BEGIN TRY
+		IF NOT EXISTS(SELECT 1 FROM [QPPlatformManagerDB].[dbo].[EC_Order] WHERE ID=@OrderID)
+		BEGIN
+		     ROLLBACK TRAN;
+			 RETURN -1 --订单不存在！
+		END
+	 
+	    IF @Status<>'' 
+		BEGIN
+			UPDATE [QPPlatformManagerDB].[dbo].[EC_Order]
+			SET [Status]=@Status
+			WHERE ID=@OrderID
+		END
+ 
+	    IF @ExpressNo<>'' 
+		BEGIN
+			UPDATE [QPPlatformManagerDB].[dbo].[EC_Order]
+			SET ExpressNo=@ExpressNo
+			WHERE ID=@OrderID
+		END
+		 
+		 
+		COMMIT TRAN
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRAN;
+		THROW
+	END CATCH
+END
+
+
+GO
+
+--购物车列表
+IF EXISTS(SELECT 1 FROM dbo.SysObjects WHERE OBJECT_ID('EC_Get_ShopCar')=id AND type='P')
+	DROP PROC EC_Get_ShopCar
+GO
+create PROCEDURE  [dbo].[EC_Get_ShopCar] 
+	@GameID INT,
+	@pageIndex INT=1,
+	@pageSize INT=20
+AS
+BEGIN
+	DECLARE @SQL VARCHAR(MAX)=''
+	DECLARE @Where VARCHAR(1000)=''
+	DECLARE @tempTable VARCHAR(50)=''
+	SET @tempTable = Replace('##'+CONVERT(VARCHAR(50), NEWID()),'-','')
+
+	 
+	 
+    IF @GameID<>''
+	    SET @Where=@Where+' AND a.GameID  ='+Convert(VARCHAR(30),@GameID) 
+	
+	SET @SQL='select   a.[ID] ,a.[GameID]   ,a.[GoodID]   ,a.[Num]
+      ,a.[Created]  ,a.[Modified]  ,b.GoodName   ,b.PointPrice  ,b.ScorePrice    ,b.DiamondPrice
+	  ,b.IntroImg ,ROW_NUMBER() OVER(ORDER BY a.ID DESC) RowNo
+	  INTO '+@tempTable+'
+      FROM [QPPlatformManagerDB].[dbo].[EC_ShopCar] a
+      left join [QPPlatformManagerDB].[dbo].[EC_Goods] b
+      on a.GoodID = b.ID 
+	  WHERE 1=1  '	+@Where + '
+	  SELECT totalCount=Count(1) FROM '+ @tempTable + '
+
+	SELECT * FROM ' + @tempTable + '
+	WHERE RowNo BETWEEN '+CONVERT(VARCHAR(10),(@pageIndex-1)*@pageSize+1)+' AND '+CONVERT(VARCHAR(10),@pageIndex*@pageSize)+'
+	ORDER BY RowNO 
+
+	DROP TABLE '+@tempTable
+	EXEC(@SQL)
+END
+
+
+GO

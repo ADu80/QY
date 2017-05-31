@@ -1,0 +1,14 @@
+D:\棋游\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\ThoughtWorks.QRCode.Properties.Resources.resources
+D:\棋游\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\QRCodeLib.csproj.GenerateResource.Cache
+D:\棋游\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\ThoughtWorks.QRCode.dll
+D:\棋游\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\ThoughtWorks.QRCode.pdb
+D:\棋游\网站前端和后台\项目升级\QPFront\QRCodeLib\ThoughtWorks.QRCode.dll
+D:\棋游\网站前端和后台\项目升级\QPFront\QRCodeLib\ThoughtWorks.QRCode.pdb
+D:\棋游\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\QRCodeLib.csprojResolveAssemblyReference.cache
+D:\ChessHall\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\QRCodeLib.csprojResolveAssemblyReference.cache
+D:\ChessHall\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\ThoughtWorks.QRCode.Properties.Resources.resources
+D:\ChessHall\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\QRCodeLib.csproj.GenerateResource.Cache
+D:\ChessHall\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\ThoughtWorks.QRCode.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\QRCodeLib\obj\Release\ThoughtWorks.QRCode.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\QRCodeLib\ThoughtWorks.QRCode.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\QRCodeLib\ThoughtWorks.QRCode.pdb

@@ -1,0 +1,7 @@
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Entity\bin\Release\Game.Entity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Entity\bin\Release\Game.Entity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Entity\bin\Release\Newtonsoft.Json.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Entity\bin\Release\Newtonsoft.Json.xml
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Entity\obj\Release\Game.Entity.dll
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Entity\obj\Release\Game.Entity.pdb
+D:\ChessHall\网站前端和后台\项目升级\QPFront\Services\Game.Entity\obj\Release\Game.Entity.csprojResolveAssemblyReference.cache

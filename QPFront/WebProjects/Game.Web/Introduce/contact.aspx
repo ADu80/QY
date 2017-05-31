@@ -1,0 +1,64 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="contact.aspx.cs" Inherits="Game.Web.Introduce.contact" %>
+
+<%@ Register TagPrefix="qp" TagName="Footer" Src="~/Themes/Standard/Common_Footer.ascx" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>广州棋游-公司简介</title>
+    <link href="/style/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--<link href="/style/global_new.css" rel="stylesheet" />--%>
+    <link href="/style/company.css" rel="stylesheet" />
+    <script src="/style/Bootstrap/js/jquery-3.1.1.min.js"></script>
+    <script src="/style/Bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="header navbar navbar-inverse" role="navigation">
+        <div><a href="/Default.aspx" class="backwww">返回游戏官网</a></div>
+        <div class="container-fluid container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Introduce/Company.aspx">关于我们</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/Introduce/introduce.aspx">公司简介</a></li>
+                    <li><a href="/Introduce/events.aspx">活动风采</a></li>
+                    <li><a href="/Introduce/contact.aspx">联系我们</a></li>
+                    <li><a href="/Introduce/recruit.aspx">招聘信息</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="webpath">
+        <ol class="breadcrumb container">
+            <li><a href="/Introduce/Company.aspx">关于我们</a></li>
+            <li class="active">联系我们</li>
+        </ol>
+    </div>
+    <div class="content graybg">
+        <article class="container contact-article">
+            <figure>
+                <h3>服务理念</h3>
+                <p>让客户玩得开心，是我们的宗旨</p>
+                <p>如果您在体验游戏过程出现什么问题，或对游戏有良好的意见和建议，请与我们的客服人员联系。</p>
+            </figure>
+            <figure>
+                <h3>业务范围</h3>
+                <p>最专业的棋牌游戏</p>
+            </figure>
+            <figure>
+                <h3>联系我们</h3>
+                <p>联系电话：040-80008000<small>（服务时间从早上9点到凌晨2点）</small></p>
+                <p><a>在线客服</a><small>（服务时间从早上9点到凌晨2点）</small></p>
+                <p>客服QQ：445458556 | 445455232</p>
+                <p>邮箱：services@qy.com</p>
+            </figure>
+        </article>
+    </div>
+
+    <qp:Footer ID="sFooter" runat="server" />
+
+    <script src="/js/levan.introduce.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿/*关于我们首页*/
+ul,li{list-style:none;}
+.navbar{margin-bottom:0;border-radius:0}
+.container{width:80em;margin:0 auto;}
+.container-fluid{font-size:16px;width:60em;}
+
+.backwww{position: absolute; top: 1em; left: 1em; color: #fff; z-index: 1000;}
+.webpath{background:#f2f2f2}
+.breadcrumb{width:77em;}
+.graybg{background:#888;}
+
+.content{color:#f8f8f8;}
+.content h2{padding:0;margin:.5em 0;}
+.content h3{color:#f8f8f8;margin:.3em 0;color:#fe8456}
+.content a{cursor:pointer}
+.content small{color:#eee}
+.content article p{}
+.content article img{margin-left:2em;}
+
+.content .introduce{background:#666; height:20em;}
+
+.content .culture{background:#888;height:20em }
+.content .culture .carousel{height:30em;color:#f8f8f8}
+.content .culture .carousel img {width:60em;height:30em;margin:0 auto;color:#f8f8f8}
+
+.content .contact{background:#666; height:20em;}
+
+.content .recruit{background:#888; height:20em;}
+
+/*end*/
+
+
+/*公司简介*/
+.content  .adv-img{width:100%;height:20em;}
+
+/*活动风采*/
+.content .events-pic{width:10em;height:8em;}
+
+/*联系我们*/
+.content .contact-article h3{color:#fe8456}
+.content .contact-article p{margin-left:2em;}
+
+/*招聘信息*/
+
+
+
+/*底部*/
+.footer{margin:0 auto;height:12em;border-top:.1em solid #666;text-align:center;background:#666;padding:0;color:#eee}
+.footer .main .footer-nav a{font-size:1.2em;padding:0 2em;margin-bottom:0}
+.footer .main ul li{margin-top:.2em}
+.footer .main ul li:first-of-type{margin-top:0}

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0 auto; padding:0 auto; font-family:"Microsoft YaHei"; background-image:url(../images/bj.png); background-repeat:repeat-x;}
+ul,li{list-style: none; padding:0 0px; margin:0 0px;}
+.bj{width:906px; height:640px;margin:0 auto;}
+.main{margin:0 auto; width:859px; padding-top:80px;}
+.m_t{ width:100%; float:left; background-image:url(../images/m_t.png); height:81px;}
+.m_b{ width:100%; float:left; background-image:url(../images/m_b.png); height:311px;}
+.m_c{ width:100%; float:left; background-image:url(../images/m_c.png); height:311px;}
+.m_d{ width:100%; float:left; background-image:url(../images/m_d.png); height:24px;}
+.ts_b{ width:122px; height:143px; background-image:url(../images/ts.png); margin-left:190px; margin-top:60px;float:left;}
+.ts_z{ width:300px; font-size:22px;color:#ffd236; float:left;margin-left:30px; margin-top:80px;}
+.fp{ width:835px; float:left; margin-top:15px; margin-left:9px;}
+.fp ul{float:left;}
+.fp ul li{float:left;width:99px; padding-left:18px;}
+.zi{text-align:center; width:100%; float:left; color:#ffd236; line-height:40px; font-size:20px;}
+.tj{ width:100%; float:left; margin-top:20px; }
+.textput{ width:186px; height:74px; background-image:url(../images/button.png); border:0px; cursor:pointer; margin-left:339px; float:left;}
+.textput1{ width:186px; height:74px; background-image:url(../images/button1.png); border:0px;margin-left:339px; float:left;}
+.ts{float:left; width:260px; color:#ffcc41; font-size:18px; margin-left:30px; padding-top:13px;}
+.txtp2{width:99px; height:140px; background-image:url(../images/2day.png);border:0px; cursor:pointer; float:left;}
+.txtp1{width:99px; height:140px; background-image:url(../images/1day.png);border:0px; cursor:pointer;float:left;}
+.txtp3{width:99px; height:140px; background-image:url(../images/3day.png);border:0px; cursor:pointer;float:left;}
+.txtp4{width:99px; height:140px; background-image:url(../images/4day.png);border:0px; cursor:pointer;float:left;}
+.txtp5{width:99px; height:140px; background-image:url(../images/5day.png);border:0px; cursor:pointer;float:left;}
+.txtp6{width:99px; height:140px; background-image:url(../images/6day.png);border:0px; cursor:pointer;float:left;}
+.txtp7{width:99px; height:140px; background-image:url(../images/7day.png);border:0px; cursor:pointer;float:left;}
+.txtjb{width:99px; height:140px; background-image:url(../images/jb.png);border:0px; cursor:pointer;float:left;}
+
+.ttp2{width:99px; height:140px; background-image:url(../images/2nday.png);border:0px; cursor:pointer; float:left;}
+.ttp1{width:99px; height:140px; background-image:url(../images/1nday.png);border:0px; cursor:pointer;float:left;}
+.ttp3{width:99px; height:140px; background-image:url(../images/3nday.png);border:0px; cursor:pointer;float:left;}
+.ttp4{width:99px; height:140px; background-image:url(../images/4nday.png);border:0px; cursor:pointer;float:left;}
+.ttp5{width:99px; height:140px; background-image:url(../images/5nday.png);border:0px; cursor:pointer;float:left;}
+.ttp6{width:99px; height:140px; background-image:url(../images/6nday.png);border:0px; cursor:pointer;float:left;}
+.ttp7{width:99px; height:140px; background-image:url(../images/7nday.png);border:0px; cursor:pointer;float:left;}

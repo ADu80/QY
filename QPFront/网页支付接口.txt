@@ -1,0 +1,37 @@
+rtype=1004 微信 
+rtype=1003 支付宝
+rtype=0 银行卡
+paymoney=1 支付金额
+goodsname 购买类型 0 钻石 1房卡 
+Account 玩家游戏ID
+OrderID 订单号
+
+微信
+localhost:55555/pay/payapi.aspx?rtype=1004&paymoney=0.1&goodsname=1&account=100104&OrderID=2017042912072786&sign=4CD49EBCEA78E2F20415FFE51E9475CF
+
+支付宝
+localhost:55555/pay/payapi.aspx?rtype=1003&paymoney=0.1&goodsname=1&account=100104&OrderID=20170429120727866&sign=4CD49EBCEA78E2F20415FFE51E9475CF
+
+银行卡
+http://localhost:55555/pay/Default.aspx?rtype=0&paymoney=0.1&goodsname=0&account=100104&OrderID=20170429120727866&sign=4CD49EBCEA78E2F20415FFE51E9475CF
+
+获取订单状态
+http://localhost:55555/api/PayOrder/getStatus?orderno=238198301308132140
+返回{"status":"success","message":2} -1 订单不存在 1 充值中 2 充值完成 3 充值失败
+
+获取订单号
+http://localhost:55555/api/PayOrder/OrderNo
+返回{"status":"success","message":"2017042917433911"}
+
+ 
+签名sign
+sign值等于下面组装md5加密得到 （skey=qysopen8899 ）
+skey=qysopen8899&rtype=1003&paymoney=500&goodsname=0&account=100104&OrderID=201704291207278954
+
+
+测试
+localhost:55555/pay/payapi.aspx?rtype=1003&paymoney=500&goodsname=0&account=100104&OrderID=201704291207278954&sign=C7E463CE176AF99C02E60A5912C790B1
+ 
+
+
+ 

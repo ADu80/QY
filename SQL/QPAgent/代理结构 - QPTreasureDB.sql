@@ -878,3 +878,73 @@ END
 GO
 
 
+--玩家充值记录
+----------------------------------------------------------------------
+IF EXISTS(SELECT 1 FROM dbo.SysObjects WHERE id=OBJECT_ID('WEB_LIST_PayOrder') AND [type]='P')
+	DROP PROC WEB_LIST_PayOrder
+GO 
+CREATE  PROC  [dbo].[WEB_LIST_PayOrder]
+	@OrderID VARCHAR(64),
+	@Accounts VARCHAR(31),
+	@startDate VARCHAR(30),
+	@endDate VARCHAR(30),
+	@UserID INT,
+	@GameID INT,
+	@pageIndex INT=1,
+	@pageSize INT=20
+AS
+BEGIN
+	DECLARE @SQL VARCHAR(MAX)=''
+	DECLARE @Where VARCHAR(1000)=''
+	DECLARE @tempTable VARCHAR(50)=''
+	SET @tempTable = Replace('##'+CONVERT(VARCHAR(50), NEWID()),'-','')
+
+	 
+	IF @OrderID<>''
+	    SET @Where=@Where+' AND a.OrderID  LIKE ''%'+@OrderID+'%''' 
+
+    IF @GameID<>''
+	    SET @Where=@Where+' AND b.GameID  ='+Convert(VARCHAR(30),@GameID)
+
+    IF @UserID<>''
+	    SET @Where=@Where+' AND a.UserID  ='+Convert(VARCHAR(30),@UserID)
+
+    IF @Accounts<>''
+	    SET @Where=@Where+' AND b.Accounts  LIKE ''%'+@Accounts+'%''' 
+
+		
+
+
+	IF @startDate<>''
+		SET @Where=@Where+' AND a.CreateTime >= '''+@startDate+''''
+	IF @endDate<>''
+		SET @Where=@Where+' AND a.CreateTime < '''+@endDate+'  23:59:59'''
+
+	
+	SET @SQL='
+
+	select  a.OrderID
+      , case when LEN(a.ChannelOrderID)=0 then ''无'' else a.ChannelOrderID end ChannelOrderID 
+      , a.UserID   ,   b.GameID  , case when  a.GoodsType =0 then ''钻石'' when  a.GoodsType =1 then ''房卡'' else ''无'' end   GoodsType  ,
+	  case when  a.PayType =1 then ''苹果'' when  a.PayType =2 then ''微信'' when  a.PayType =3 then ''威富通'' when  a.PayType =4 then ''盾行天下'' end PayType   , a.[PayAmount]  , a.[BackCount]
+      ,  case when  a.PayState =0 then ''生成'' when  a.PayState =1 then ''充值中''  when  a.PayState =2 then ''充值成功''  when  a.PayState =3 then ''充值失败'' when  a.PayState =4 then ''订单过期'' end   PayState
+	   , a.UpdateTime  , a.CreateTime  , case when LEN(a.ErrorCode)=0 then ''无'' else isnull(a.ErrorCode,''无'') end ErrorCode , 
+	  case when LEN(b.Accounts)=0 then ''无'' else isnull(b.Accounts,''无'') end Accounts  ,
+	  case when LEN( b.NickName)=0 then ''无'' else isnull( b.NickName,''无'') end  NickName  ,
+	  ROW_NUMBER() OVER(ORDER BY a.OrderID DESC) RowNo
+	  INTO '+@tempTable+'
+	   from [QPTreasureDB].[dbo].[PayOrder] a 
+     left join [QPAccountsDB].[dbo].[AccountsInfo] b
+      on b.UserID =a.UserID 
+	WHERE 1=1  '	+@Where + '
+	SELECT totalCount=Count(1) FROM '+ @tempTable + '
+
+	SELECT * FROM ' + @tempTable + '
+	WHERE RowNo BETWEEN '+CONVERT(VARCHAR(10),(@pageIndex-1)*@pageSize+1)+' AND '+CONVERT(VARCHAR(10),@pageIndex*@pageSize)+'
+	ORDER BY RowNO 
+
+	DROP TABLE '+@tempTable
+
+	--SELECT @SQL
+	EXEC(@SQL)
+END

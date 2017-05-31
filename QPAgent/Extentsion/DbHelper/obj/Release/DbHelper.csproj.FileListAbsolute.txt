@@ -1,4 +1,0 @@
-D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbHelper\bin\Release\DbHelper.dll
-D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbHelper\bin\Release\DbHelper.pdb
-D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbHelper\obj\Release\DbHelper.dll
-D:\ChessHall\网站前端和后台\项目升级\QPAgent\Extentsion\DbHelper\obj\Release\DbHelper.pdb

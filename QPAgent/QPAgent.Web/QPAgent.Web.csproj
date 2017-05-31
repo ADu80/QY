@@ -62,18 +62,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="build\app\app886e47c9-5e83-4e18-a68d-470bb654a1b0.css" />
-    <Content Include="build\app\app886e47c9-5e83-4e18-a68d-470bb654a1b0.js" />
-    <Content Include="build\login\login886e47c9-5e83-4e18-a68d-470bb654a1b0.css" />
-    <Content Include="build\login\login886e47c9-5e83-4e18-a68d-470bb654a1b0.js" />
-    <Content Include="build\vendor\avalon\avalon-2.1.16.js" />
-    <Content Include="build\vendor\avalon\avalon-2.2.4.js" />
-    <Content Include="build\vendor\avalon\mmHistory.js" />
-    <Content Include="build\vendor\avalon\mmRouter.js" />
-    <Content Include="build\vendor\avalon\mmStorage.js" />
-    <Content Include="build\vendor\jquery\jquery-datepicker.min.css" />
-    <Content Include="build\vendor\jquery\jquery-extend.js" />
-    <Content Include="build\vendor\jquery\jquery.js" />
     <Content Include="favicon.ico" />
     <Content Include="Guid.js" />
     <Content Include="gulpfile.js" />
@@ -133,9 +121,6 @@
     <Content Include="src\app\js\vmodels\info.gamerlist.vm.js" />
     <Content Include="src\app\js\vmodels\info.subagentlist.vm.js" />
     <Content Include="Login.aspx" />
-    <Content Include="Properties\PublishProfiles\Web.config.pubxml.user">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="views\admin.html" />
     <Content Include="views\Default0.aspx" />
     <Content Include="views\info.html" />
@@ -186,9 +171,11 @@
     <Content Include="ajaxLogin.ashx" />
     <Content Include="src\app\js\app.init.js" />
     <Content Include="package.json" />
+    <None Include="Properties\PublishProfiles\admin.pubxml" />
     <None Include="Properties\PublishProfiles\Web.config.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -221,7 +208,9 @@
       <Name>Game.Facade</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -237,7 +226,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64400</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64480/</IISUrl>
+          <IISUrl>http://localhost:64481/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

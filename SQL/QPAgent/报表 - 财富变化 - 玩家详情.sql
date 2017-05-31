@@ -21,7 +21,11 @@ BEGIN
 	SET @tempTable = Replace('##'+CONVERT(VARCHAR(50), NEWID()),'-','')
 
 	--条件
+	IF @byUserID<>'' 
+	BEGIN
 	SET @Where=@Where+' AND s.UserID='+CONVERT(VARCHAR(15),@byUserID)
+	END 
+
 	IF @rType<>-1
 	BEGIN
 		IF @rType=1
@@ -41,7 +45,8 @@ BEGIN
 	--玩家游戏记录
 	SET @SQL='
 	SELECT DISTINCT s.UserID,s.LastTime RecordTime,CASE WHEN s.Reason IN (0,1) THEN ''普通游戏'' WHEN s.Reason=2 THEN ''购买/兑换'' WHEN s.Reason=3 THEN ''充值'' WHEN s.Reason=4 THEN ''每日幸运转盘抽取'' WHEN s.Reason=5 THEN ''邮件附件领取'' WHEN s.Reason=6 THEN ''每日签到'' WHEN s.Reason=7 THEN ''赠送'' WHEN s.Reason=8 THEN ''存款'' WHEN s.Reason=9 THEN ''取款'' END [Type],
-	''服务'' RType,g.GameName Game,IsNull(s.BeforeScore,0) BeforeScore,IsNull(s.ChangeScore,0) ChangeScore,IsNull(s.AfterScore,0) AfterScore,IsNull(s.Revenue,0) Revenue,r.ServerName Room,ROW_NUMBER() OVER(ORDER BY s.LastTime DESC) RowNo
+	''服务'' RType,g.GameName Game,IsNull(s.BeforeScore,0) BeforeScore,IsNull(s.ChangeScore,0) ChangeScore,IsNull(s.AfterScore,0) AfterScore,IsNull(s.Revenue,0) Revenue,r.ServerName Room,
+	a.UserID,a.GameID , a.Accounts,a.NickName,ROW_NUMBER() OVER(ORDER BY s.LastTime DESC) RowNo
 	INTO '+@tempTable+'
 	FROM [QPRecordDB].[dbo].[RecordRichChange] s
 	INNER JOIN QPAccountsDB.dbo.AccountsInfo a ON a.IsAndroid=0 AND s.UserID=a.UserID

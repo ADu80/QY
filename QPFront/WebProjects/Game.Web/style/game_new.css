@@ -1,0 +1,33 @@
+﻿
+/*********************Index.aspx********************************/
+.content{font-size:12px;width:80em;padding:0;}
+.content *{font-size:14px;padding:0;margin:0}
+
+.content .left{padding-right:10px;background:transparent;}
+
+.content .left .gametype li{color:#38e;cursor:pointer;width:5em;padding:0;}
+.content .left .gametype li.active{border-right:solid 2px #ffc820;}
+
+
+.content .right{}
+.content .right .game-mj{display:none;}
+.content .right .gamebox{margin:1em 0 2em 0;border-bottom:dashed 1px #ccc;padding-bottom:1em;}
+.content .right .gamebox .gamedes{display:inline-block;*display:inline;*zoom:1;}
+.content .right .gamebox .gamedes img{border:1px solid #ccc;height:12em;width:20em;vertical-align:top;}
+.content .right .gamebox .gamedes .game-intro{display:inline-block;*display:inline;*zoom:1;width:420px;vertical-align:top;}
+.content .right .gamebox .gamedes .game-intro h2{padding:5px;}
+.content .right .gamebox .gamedes .game-intro h2 a{font-size:1.5em;}
+.content .right .gamebox .gamedes .game-intro a{padding:5px;}
+.content .right .gamebox .gamedes .game-intro p{font-size:12px;}
+.content .right .gamebox .gamebox-detail{display:inline-block;*display:inline;height:12em;}
+
+.content .right .gamebox .gameimg img{width:20em;height:12em;}
+
+
+.footer{position:absolute;width:100%;}
+/******************************************************************/
+
+
+/************************GameRules.aspx*******************************/
+
+/*********************************************************************/

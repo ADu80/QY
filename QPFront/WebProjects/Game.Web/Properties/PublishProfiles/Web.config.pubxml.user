@@ -1,0 +1,2707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\www\QPFront</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ads/ClosePlaza.aspx">
+      <publishTime>11/04/2016 15:21:59</publishTime>
+    </File>
+    <File Include="ads/GameFrame.aspx">
+      <publishTime>11/04/2016 15:22:03</publishTime>
+    </File>
+    <File Include="ads/GameRoom.aspx">
+      <publishTime>11/04/2016 15:22:20</publishTime>
+    </File>
+    <File Include="ads/Images/ad.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/ads.css">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/ClosePlaza.bmp">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/ClosePlaza.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/game.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/GameFrame.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/GameRoom.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/LogonLogo.bmp">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/LogonLogo.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/platformTop.bmp">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/platformTop.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/Title1.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/Title2.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/Title3.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Images/Title4.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/LogonLogo.aspx">
+      <publishTime>11/04/2016 15:22:27</publishTime>
+    </File>
+    <File Include="ads/MatchInfo.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="ads/Match_Template.html">
+      <publishTime>11/04/2016 15:20:30</publishTime>
+    </File>
+    <File Include="ads/Platform.aspx">
+      <publishTime>11/04/2016 15:22:44</publishTime>
+    </File>
+    <File Include="ads/Script/gameflash.js">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="adv/p1.jpg">
+      <publishTime>10/14/2016 10:10:46</publishTime>
+    </File>
+    <File Include="adv/p2.jpg">
+      <publishTime>10/14/2016 10:10:46</publishTime>
+    </File>
+    <File Include="adv/p3.jpg">
+      <publishTime>10/14/2016 10:10:46</publishTime>
+    </File>
+    <File Include="Agreement.aspx">
+      <publishTime>12/09/2016 14:38:31</publishTime>
+    </File>
+    <File Include="AppPay/CheckReceipt.aspx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="AppPay/ProductList.aspx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="AppStorePay.ashx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="AppStorePay.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="bin/AspNetPager.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.bank.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.model.BuyBankDirectConnectResult.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.model.BuyCallbackResult.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.model.BuyQueryOrdDetailResult.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.model.BuyRefundOrdResult.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.utils.Buy.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.utils.Digest.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.utils.FormatQueryString.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.utils.HmacMD5.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/com.yeepay.utils.HttpUtils.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="bin/Game.Data.dll">
+      <publishTime>12/24/2016 10:00:32</publishTime>
+    </File>
+    <File Include="bin/Game.Entity.dll">
+      <publishTime>12/24/2016 10:00:32</publishTime>
+    </File>
+    <File Include="bin/Game.Facade.dll">
+      <publishTime>12/24/2016 10:00:32</publishTime>
+    </File>
+    <File Include="bin/Game.IData.dll">
+      <publishTime>12/24/2016 10:00:32</publishTime>
+    </File>
+    <File Include="bin/Game.Kernel.dll">
+      <publishTime>12/24/2016 10:00:32</publishTime>
+    </File>
+    <File Include="bin/Game.Utils.dll">
+      <publishTime>12/24/2016 10:00:32</publishTime>
+    </File>
+    <File Include="bin/Game.Web.dll">
+      <publishTime>12/24/2016 10:00:32</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/20/2016 10:07:58</publishTime>
+    </File>
+    <File Include="config/pm.config">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="config/protection.xml">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="CustomFace.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>12/24/2016 09:57:56</publishTime>
+    </File>
+    <File Include="DownLoad.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="FaceList.aspx">
+      <publishTime>11/04/2016 15:22:53</publishTime>
+    </File>
+    <File Include="flash/01.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="flash/02.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="flash/03.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="flash/focus.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="GameChart.aspx">
+      <publishTime>11/04/2016 15:22:56</publishTime>
+    </File>
+    <File Include="GamePage.aspx">
+      <publishTime>11/04/2016 15:23:17</publishTime>
+    </File>
+    <File Include="gamepic/face0.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face1.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face10.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face100.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face101.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face102.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face103.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face104.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face105.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face106.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face107.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face108.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face109.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face11.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face110.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face111.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face112.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face113.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face114.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face115.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face116.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face117.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face118.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face119.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face12.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face120.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face121.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face122.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face123.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face124.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face125.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face126.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face127.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face128.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face129.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face13.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face130.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face131.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face132.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face133.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face134.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face135.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face136.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face137.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face138.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face139.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face14.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face140.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face141.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face142.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face143.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face144.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face145.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face146.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face147.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face148.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face149.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face15.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face150.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face151.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face152.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face153.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face154.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face155.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face156.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face157.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face158.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face159.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face16.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face160.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face161.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face162.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face163.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face164.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face165.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face166.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face167.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face168.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face169.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face17.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face170.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face171.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face172.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face173.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face174.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face175.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face176.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face177.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face178.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face179.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face18.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face180.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face181.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face182.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face183.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face184.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face185.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face186.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face187.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face188.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face189.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face19.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face190.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face191.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face192.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face193.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face194.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face195.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face196.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face197.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face198.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face199.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face2.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face20.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face21.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face22.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face23.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face24.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face25.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face26.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face27.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face28.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face29.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face3.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face30.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face31.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face32.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face33.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face34.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face35.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face36.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face37.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face38.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face39.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face4.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face40.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face41.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face42.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face43.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face44.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face45.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face46.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face47.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face48.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face49.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face5.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face50.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face51.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face52.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face53.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face54.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face55.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face56.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face57.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face58.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face59.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face6.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face60.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face61.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face62.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face63.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face64.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face65.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face66.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face67.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face68.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face69.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face7.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face70.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face71.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face72.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face73.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face74.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face75.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face76.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face77.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face78.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face79.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face8.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face80.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face81.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face82.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face83.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face84.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face85.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face86.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face87.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face88.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face89.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face9.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face90.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face91.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face92.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face93.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face94.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face95.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face96.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face97.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face98.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="gamepic/face99.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="GameRule.aspx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="GameRules.aspx">
+      <publishTime>12/09/2016 12:29:39</publishTime>
+    </File>
+    <File Include="Games/dzpk.jpg">
+      <publishTime>11/14/2016 17:19:50</publishTime>
+    </File>
+    <File Include="Games/gbmj.jpg">
+      <publishTime>11/14/2016 17:19:50</publishTime>
+    </File>
+    <File Include="Games/hlddz.png">
+      <publishTime>11/14/2016 17:19:50</publishTime>
+    </File>
+    <File Include="Games/Index.aspx">
+      <publishTime>12/09/2016 14:38:52</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="images/99bill.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/arr.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/bg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/bg_0609.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/bm.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/bottomBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/btn.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/btn_calendar.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/buy.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/card1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/card2.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/card3.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/card4.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/cardBg.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/1day.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/1nday.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/2day.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/2nday.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/3day.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/3nday.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/4day.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/4nday.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/5day.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/5nday.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/6day.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/6nday.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/7day.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/7nday.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/bj.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/button.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/button1.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/iPhone_bj.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/iPhone_bj.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/jb.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/m_b.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/m_c.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/m_d.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/m_t.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CheckIn/ts.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/client/bg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/client/btn.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/client/CzPic.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/contestBanner.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/contestBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/contestBg.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/contestBg1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/contestBg1.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/contestBg1.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/contestBg2.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/copyright.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/customerBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/customerBg.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CzBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/CzPic.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/down.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/down.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/down1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/error.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameBanner.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameBb.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/10.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/11.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/12.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/13.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/14.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/15.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/16.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/17.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/18.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/19.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/2.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/20.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/21.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/22.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/23.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/24.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/25.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/26.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/27.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/28.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/29.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/3.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/30.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/31.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/32.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/33.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/34.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/35.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/36.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/4.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/5.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/6.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/7.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/8.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/9.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/bank_icon.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/Chess.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/download.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/Game.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/gameCenter_icon.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/gameType1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/gameType2.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/gameType3.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/gameType4.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/game_icons.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/Home.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/intro_icon.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/Mahjong.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/No1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/No2.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/No3.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/No4.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/No5.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/No6.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/No7.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/Poker.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/RankDown.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/RankNo1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/RankNo2.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/RankNo3.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/RankUp.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/Room.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/userArrow.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/vip_icon.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/gameIcons/icons/Wealth.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/game_icon.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/home_pic.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/hot.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/introduction_pic.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/introduction_picBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/js.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/KFbg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/KFbtn.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/KFtext.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/KFtext1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/kq.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login01.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login02.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login03.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login04.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login05.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login06.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login07.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/login1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/logo.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/logo_0609.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/map.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/match.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/mlink.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/nav.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/navBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/new.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/payBg.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/PayVB.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/pay_bgimages.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/present.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/publicityViewer.swf">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/QpIndex.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/QpIndex[1].png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/QpIndex_0601.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/reg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/reg1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/regBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/regBg.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/rese.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/right.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/right1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/safe.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/SCleft.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/SCright.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/shopBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/shopBg[1].gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/shopBottom.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/shopBottom[1].gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/shopTitle.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/shopTitle[1].gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/sideRightBg1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/stepBg.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/tel.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/tel[1].gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/tgyxt.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/tip.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/tips.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/tips1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/up1.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/userBg.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/userRightBg.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/userTD.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/viewInfo.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/viewInfo[1].gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_down.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_down2.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_gamestart.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_intall_ico.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_list.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_logon.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_logout.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_table.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/xsrm/xsrm_toolbar.jpg">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="images/yb.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="img/apay_erweima.jpg">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/apay_leader.jpg">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/apay_logo.jpg">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/bs.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/bs[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/cd.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/cd[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/error.png">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/g1.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/g2.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/g3.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/g4.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/g5.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/g6.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/gz.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/gz[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/h1.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/h2.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/h3.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/h4.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/i1.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/money.png">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/p1.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/p2.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/p3.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/p4.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/PasswordBlack.jpg">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/paysuccess.jpg">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/pay_apay.png">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/pay_button.png">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/pay_wechat.png">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/pj.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/pj[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_01.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_01[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_02.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_02[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_03.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_03[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_04.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_04[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_05.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_05[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_06.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_06[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_07.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_07[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_08.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_08[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_09.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_09[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_10.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_10[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_11.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/prop_11[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/qc.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/qc[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/t1.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/t3.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/wechatpay_erweima.jpg">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/wechatpay_leader.jpg">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/wechatpay_logo.jpg">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="img/xh.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/xh[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/xw.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/xw[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/xy.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/xy[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/zd.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/zd[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/zj.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/zj[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/zt.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img/zt[1].gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="img2/android.png">
+      <publishTime>10/10/2016 10:38:25</publishTime>
+    </File>
+    <File Include="img2/arrow.png">
+      <publishTime>10/11/2016 15:47:21</publishTime>
+    </File>
+    <File Include="img2/qq.png">
+      <publishTime>10/12/2016 14:12:07</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>11/04/2016 15:28:55</publishTime>
+    </File>
+    <File Include="Introduce/Company.aspx">
+      <publishTime>11/04/2016 15:28:55</publishTime>
+    </File>
+    <File Include="Introduce/contact.aspx">
+      <publishTime>11/04/2016 15:19:57</publishTime>
+    </File>
+    <File Include="Introduce/events.aspx">
+      <publishTime>11/04/2016 15:23:55</publishTime>
+    </File>
+    <File Include="Introduce/introduce.aspx">
+      <publishTime>11/04/2016 15:24:01</publishTime>
+    </File>
+    <File Include="Introduce/recruit.aspx">
+      <publishTime>11/04/2016 15:24:08</publishTime>
+    </File>
+    <File Include="js/Check.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/Common.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/flash.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/formValidator.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/formValidatorRegex.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/inputCheck.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/jquery-1.10.2.min.js">
+      <publishTime>10/19/2016 17:13:28</publishTime>
+    </File>
+    <File Include="js/jquery-1.5.2.min.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/jquery-2.0.3.min.js">
+      <publishTime>10/19/2016 17:04:04</publishTime>
+    </File>
+    <File Include="js/levan.header.js">
+      <publishTime>10/25/2016 15:58:28</publishTime>
+    </File>
+    <File Include="js/levan.introduce.js">
+      <publishTime>10/13/2016 12:32:37</publishTime>
+    </File>
+    <File Include="js/levan.news.js">
+      <publishTime>10/19/2016 11:26:47</publishTime>
+    </File>
+    <File Include="js/lhgdialog/lhgcore.lhgdialog.min.js">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/lhgdialog.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/lhgdialog.min.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/blue_s.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/blue_s2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/blue_titbtn.gif">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_b.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_l.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_lb.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_lt.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_lt2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_r.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_rb.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_rt.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_rt2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_t.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/blue/ie6/ui_t2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/chrome.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/chrome/chrome_s.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/chrome/chrome_s2.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/chrome/chrome_s3.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/default.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/discuz.css">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/iblack_s.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/iblack_s2.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_b.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_l.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_lb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_lt.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_lt2.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_r.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_rb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_rt.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_rt2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_t.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblack/ie6/ui_t2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue.css">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/iblue_s.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/iblue_s2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_b.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_l.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_lb.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_lt.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_lt2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_r.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_rb.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_rt.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_rt2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_t.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/iblue/ie6/ui_t2.png">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/32X32/fail.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/32X32/hits.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/32X32/i.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/32X32/succ.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/alert.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/confirm.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/discuz_bg.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/error.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/face-sad.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/face-smile.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/gb_tip_layer.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/gb_tip_layer_ie6.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/lhgcore.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/loading.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/prompt.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/success.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/icons/tips.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog.css">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/idialog_s.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/idialog_s2.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_b.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_close.hover.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_close.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_l.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_lb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_lt.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_r.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_rb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_rt.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/idialog/ie6/ui_t.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen.css">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_b.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_l.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_lb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_lt.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_r.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_rb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_rt.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/ie6/ui_t.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/igreen_s.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/igreen/igreen_s2.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/jtop.css">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/lhgdialog/skins/mac.css">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="js/MSClass.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/calendar.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/config.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/lang/en.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/lang/zh-cn.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/lang/zh-tw.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/My97DatePicker.htm">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/blueFresh/datepicker.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/blueFresh/img.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/client/bg.jpg">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/client/datepicker.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/client/img.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/datePicker.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/default/datepicker.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/default/img.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/datepicker.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/dateselect.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/glass-bg.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/hd-sprite.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/img.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/left-btn.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/left-btn2.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/right-btn.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/ext/right-btn2.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/WdatePicker.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/whyGreen/bg.jpg">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/whyGreen/datepicker.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/skin/whyGreen/img.gif">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/My97DatePicker/WdatePicker.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/passwordStrength.js">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="js/utils.js">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>12/09/2016 14:39:03</publishTime>
+    </File>
+    <File Include="LogonLink1.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="LogonLink2.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="LogonLink3.aspx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="LogonLink4.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="LoveLiness.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="Match/Index.aspx">
+      <publishTime>12/09/2016 12:30:55</publishTime>
+    </File>
+    <File Include="Match/MatchApply.aspx">
+      <publishTime>12/09/2016 12:31:04</publishTime>
+    </File>
+    <File Include="Match/MatchOrder.aspx">
+      <publishTime>12/09/2016 12:31:09</publishTime>
+    </File>
+    <File Include="Match/MatchQuery.aspx">
+      <publishTime>12/09/2016 12:31:15</publishTime>
+    </File>
+    <File Include="Match/MatchView.aspx">
+      <publishTime>12/09/2016 12:31:21</publishTime>
+    </File>
+    <File Include="Member/ApplyPasswordCard.aspx">
+      <publishTime>12/09/2016 12:31:29</publishTime>
+    </File>
+    <File Include="Member/ApplyProtect.aspx">
+      <publishTime>12/09/2016 12:31:35</publishTime>
+    </File>
+    <File Include="Member/CheckIn.aspx">
+      <publishTime>12/09/2016 12:31:41</publishTime>
+    </File>
+    <File Include="Member/ClearFlee.aspx">
+      <publishTime>12/09/2016 12:31:48</publishTime>
+    </File>
+    <File Include="Member/ClearScore.aspx">
+      <publishTime>12/09/2016 12:31:56</publishTime>
+    </File>
+    <File Include="Member/ConvertMedal.aspx">
+      <publishTime>12/09/2016 12:32:01</publishTime>
+    </File>
+    <File Include="Member/ConvertMedalRecord.aspx">
+      <publishTime>12/09/2016 12:32:09</publishTime>
+    </File>
+    <File Include="Member/ConvertPresent.aspx">
+      <publishTime>12/09/2016 12:32:13</publishTime>
+    </File>
+    <File Include="Member/ConvertRecord.aspx">
+      <publishTime>12/09/2016 12:32:17</publishTime>
+    </File>
+    <File Include="Member/ExitPasswordCard.aspx">
+      <publishTime>12/09/2016 12:32:21</publishTime>
+    </File>
+    <File Include="Member/GameRecord.aspx">
+      <publishTime>12/09/2016 12:32:27</publishTime>
+    </File>
+    <File Include="Member/InsureIn.aspx">
+      <publishTime>12/09/2016 12:32:32</publishTime>
+    </File>
+    <File Include="Member/InsureOut.aspx">
+      <publishTime>12/09/2016 12:32:38</publishTime>
+    </File>
+    <File Include="Member/InsureRecord.aspx">
+      <publishTime>12/09/2016 12:32:45</publishTime>
+    </File>
+    <File Include="Member/InsureTransfer.aspx">
+      <publishTime>12/09/2016 12:33:14</publishTime>
+    </File>
+    <File Include="Member/MIndex.aspx">
+      <publishTime>12/09/2016 14:55:28</publishTime>
+    </File>
+    <File Include="Member/ModifyFace.aspx">
+      <publishTime>12/09/2016 12:33:19</publishTime>
+    </File>
+    <File Include="Member/ModifyInsurePass.aspx">
+      <publishTime>12/09/2016 12:33:24</publishTime>
+    </File>
+    <File Include="Member/ModifyLogonPass.aspx">
+      <publishTime>12/09/2016 12:28:57</publishTime>
+    </File>
+    <File Include="Member/ModifyNikeName.aspx">
+      <publishTime>12/09/2016 12:33:28</publishTime>
+    </File>
+    <File Include="Member/ModifyProtect.aspx">
+      <publishTime>12/09/2016 12:33:32</publishTime>
+    </File>
+    <File Include="Member/ModifyUserInfo.aspx">
+      <publishTime>12/09/2016 12:33:37</publishTime>
+    </File>
+    <File Include="Member/MoorMachine.aspx">
+      <publishTime>12/09/2016 12:33:42</publishTime>
+    </File>
+    <File Include="Member/PayRecord.aspx">
+      <publishTime>12/09/2016 12:33:46</publishTime>
+    </File>
+    <File Include="Member/ReInsurePass.aspx">
+      <publishTime>12/09/2016 12:33:53</publishTime>
+    </File>
+    <File Include="Member/ReLogonPass.aspx">
+      <publishTime>12/09/2016 11:41:42</publishTime>
+    </File>
+    <File Include="Member/SpreadBalance.aspx">
+      <publishTime>12/09/2016 12:34:00</publishTime>
+    </File>
+    <File Include="Member/SpreadIn.aspx">
+      <publishTime>12/09/2016 12:34:05</publishTime>
+    </File>
+    <File Include="Member/SpreadInfo.aspx">
+      <publishTime>12/09/2016 12:34:10</publishTime>
+    </File>
+    <File Include="Member/SpreadOut.aspx">
+      <publishTime>12/09/2016 12:34:14</publishTime>
+    </File>
+    <File Include="Navigation1.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Navigation2.aspx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="Navigation3.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Navigation4.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Navigation5.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Navigation6.aspx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="News/NewsList.aspx">
+      <publishTime>12/09/2016 12:34:22</publishTime>
+    </File>
+    <File Include="News/NewsView.aspx">
+      <publishTime>12/09/2016 10:34:52</publishTime>
+    </File>
+    <File Include="Pay/PayCardFill.aspx">
+      <publishTime>12/09/2016 12:34:34</publishTime>
+    </File>
+    <File Include="Pay/PayCenter.aspx">
+      <publishTime>12/22/2016 09:52:49</publishTime>
+    </File>
+    <File Include="Pay/PayGame.aspx">
+      <publishTime>12/09/2016 12:34:41</publishTime>
+    </File>
+    <File Include="Pay/PayGameReceive.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Pay/PayIndex.aspx">
+      <publishTime>12/09/2016 12:34:58</publishTime>
+    </File>
+    <File Include="Pay/PayMobile.aspx">
+      <publishTime>12/09/2016 12:35:10</publishTime>
+    </File>
+    <File Include="Pay/PayMobileReceive.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Pay/PayOnLine.aspx">
+      <publishTime>12/09/2016 12:35:16</publishTime>
+    </File>
+    <File Include="Pay/PayReceive.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Pay/PayShow.aspx">
+      <publishTime>12/09/2016 12:35:21</publishTime>
+    </File>
+    <File Include="Pay/PayVB.aspx">
+      <publishTime>12/09/2016 12:35:25</publishTime>
+    </File>
+    <File Include="Pay/PayVBReceive.aspx">
+      <publishTime>12/09/2016 12:35:30</publishTime>
+    </File>
+    <File Include="Pay/PayYB.aspx">
+      <publishTime>12/09/2016 14:40:05</publishTime>
+    </File>
+    <File Include="Pay/PayYBReceive.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/CheckInInfo.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/css/css.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/Error.htm">
+      <publishTime>11/04/2016 15:19:57</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/1day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/2day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/3day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/4day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/5day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/6day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/7day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/bj.jpg">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/bj.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/button.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/button1.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/jb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/m_b.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/m_c.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/m_d.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/m_t.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPad/images/ts.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/CheckInInfo.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/css/css.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/Error.htm">
+      <publishTime>11/04/2016 15:19:57</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/1day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/1nday.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/2day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/2nday.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/3day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/3nday.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/4day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/4nday.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/5day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/5nday.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/6day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/6nday.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/7day.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/7nday.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/bj.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/button.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/button1.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/iPhone_bj.jpg">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/iPhone_bj.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/jb.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/m_b.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/m_c.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/m_d.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/m_t.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/images/ts.png">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/CheckIn/iPhone/Test.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="PhoneService/Feedback/FeedbackInfo.aspx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/Notice/Images/phoneBanner.jpg">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="PhoneService/Notice/NoticeInfo.htm">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="Register.aspx">
+      <publishTime>12/09/2016 14:40:29</publishTime>
+    </File>
+    <File Include="Service/Customer.aspx">
+      <publishTime>12/09/2016 12:29:25</publishTime>
+    </File>
+    <File Include="Service/FeedbackList.aspx">
+      <publishTime>12/09/2016 11:49:32</publishTime>
+    </File>
+    <File Include="Service/Index.aspx">
+      <publishTime>12/09/2016 12:29:12</publishTime>
+    </File>
+    <File Include="Service/IssueList.aspx">
+      <publishTime>12/09/2016 11:47:47</publishTime>
+    </File>
+    <File Include="Service/IssueView.aspx">
+      <publishTime>12/09/2016 14:40:37</publishTime>
+    </File>
+    <File Include="Shop/ShopIndex.aspx">
+      <publishTime>12/09/2016 14:41:05</publishTime>
+    </File>
+    <File Include="Sitemap.aspx">
+      <publishTime>12/09/2016 12:07:50</publishTime>
+    </File>
+    <File Include="Spread/SpreadIndex.aspx">
+      <publishTime>12/09/2016 12:21:15</publishTime>
+    </File>
+    <File Include="style/Bootstrap/css/bootstrap-theme.css">
+      <publishTime>10/29/2014 12:11:40</publishTime>
+    </File>
+    <File Include="style/Bootstrap/css/bootstrap-theme.css.map">
+      <publishTime>10/29/2014 11:55:44</publishTime>
+    </File>
+    <File Include="style/Bootstrap/css/bootstrap-theme.min.css">
+      <publishTime>10/29/2014 12:11:40</publishTime>
+    </File>
+    <File Include="style/Bootstrap/css/bootstrap.css">
+      <publishTime>10/29/2014 12:11:40</publishTime>
+    </File>
+    <File Include="style/Bootstrap/css/bootstrap.css.map">
+      <publishTime>10/29/2014 11:55:44</publishTime>
+    </File>
+    <File Include="style/Bootstrap/css/bootstrap.min.css">
+      <publishTime>10/29/2014 12:11:40</publishTime>
+    </File>
+    <File Include="style/Bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/27/2014 15:59:44</publishTime>
+    </File>
+    <File Include="style/Bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/27/2014 15:59:44</publishTime>
+    </File>
+    <File Include="style/Bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/27/2014 15:59:44</publishTime>
+    </File>
+    <File Include="style/Bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/27/2014 15:59:44</publishTime>
+    </File>
+    <File Include="style/Bootstrap/js/bootstrap.js">
+      <publishTime>10/29/2014 12:11:40</publishTime>
+    </File>
+    <File Include="style/Bootstrap/js/bootstrap.min.js">
+      <publishTime>10/29/2014 12:11:40</publishTime>
+    </File>
+    <File Include="style/Bootstrap/js/jquery-3.1.1.min.js">
+      <publishTime>10/09/2016 16:57:15</publishTime>
+    </File>
+    <File Include="style/Bootstrap/js/npm.js">
+      <publishTime>10/29/2014 11:55:46</publishTime>
+    </File>
+    <File Include="style/check_in.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/client.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/company.css">
+      <publishTime>10/26/2016 14:40:01</publishTime>
+    </File>
+    <File Include="style/contest_layout.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/customer_layout.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/cz_layout.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/default.css">
+      <publishTime>11/04/2016 15:45:25</publishTime>
+    </File>
+    <File Include="style/default1.css">
+      <publishTime>10/11/2016 16:13:09</publishTime>
+    </File>
+    <File Include="style/game_layout.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/game_new.css">
+      <publishTime>11/14/2016 19:19:43</publishTime>
+    </File>
+    <File Include="style/global.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/global_new.css">
+      <publishTime>11/14/2016 17:58:02</publishTime>
+    </File>
+    <File Include="style/header.css">
+      <publishTime>10/14/2016 17:03:44</publishTime>
+    </File>
+    <File Include="style/header2.css">
+      <publishTime>10/25/2016 16:27:59</publishTime>
+    </File>
+    <File Include="style/header3.css">
+      <publishTime>11/14/2016 16:59:19</publishTime>
+    </File>
+    <File Include="style/Iconfont/iconfont.css">
+      <publishTime>10/26/2016 11:24:44</publishTime>
+    </File>
+    <File Include="style/Iconfont/iconfont.eot">
+      <publishTime>10/26/2016 11:24:44</publishTime>
+    </File>
+    <File Include="style/Iconfont/iconfont.svg">
+      <publishTime>10/26/2016 11:24:44</publishTime>
+    </File>
+    <File Include="style/Iconfont/iconfont.ttf">
+      <publishTime>10/26/2016 11:24:44</publishTime>
+    </File>
+    <File Include="style/Iconfont/iconfont.woff">
+      <publishTime>10/26/2016 11:24:44</publishTime>
+    </File>
+    <File Include="style/layout.css">
+      <publishTime>12/09/2016 14:49:03</publishTime>
+    </File>
+    <File Include="style/news.css">
+      <publishTime>10/17/2016 10:11:40</publishTime>
+    </File>
+    <File Include="style/news_layout.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/PayCenter.css">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="style/pay_layout.css">
+      <publishTime>10/26/2016 17:38:39</publishTime>
+    </File>
+    <File Include="style/reg_layout.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/shop.css">
+      <publishTime>10/26/2016 14:59:06</publishTime>
+    </File>
+    <File Include="style/user_layout.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="style/validator.css">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="test.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Advice.ascx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Btn.ascx">
+      <publishTime>12/09/2016 10:56:08</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Footer.ascx">
+      <publishTime>12/09/2016 12:12:25</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Header.ascx">
+      <publishTime>12/24/2016 09:58:06</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Header2.ascx">
+      <publishTime>10/25/2016 16:25:33</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Header_News.ascx">
+      <publishTime>12/21/2016 11:31:27</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Left.ascx">
+      <publishTime>11/14/2016 17:09:08</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Question.ascx">
+      <publishTime>12/09/2016 12:23:34</publishTime>
+    </File>
+    <File Include="Themes/Standard/Common_Service.ascx">
+      <publishTime>11/14/2016 17:04:42</publishTime>
+    </File>
+    <File Include="Themes/Standard/Game_Rank.ascx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Themes/Standard/Game_Sidebar.ascx">
+      <publishTime>10/26/2016 11:57:48</publishTime>
+    </File>
+    <File Include="Themes/Standard/Index_Links.ascx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Themes/Standard/Index_Service.ascx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Themes/Standard/Ranking.ascx">
+      <publishTime>10/11/2016 12:32:32</publishTime>
+    </File>
+    <File Include="Themes/Standard/User_Info.ascx">
+      <publishTime>12/09/2016 11:32:50</publishTime>
+    </File>
+    <File Include="Themes/Standard/User_Logon.ascx">
+      <publishTime>12/09/2016 11:32:16</publishTime>
+    </File>
+    <File Include="Themes/Standard/User_Sidebar.ascx">
+      <publishTime>12/09/2016 14:57:51</publishTime>
+    </File>
+    <File Include="UserMedal.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="UserService/InsureTransferRecord.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="UserService/USClearFlee.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="UserService/USClearScore.aspx">
+      <publishTime>11/04/2016 15:19:58</publishTime>
+    </File>
+    <File Include="UserService/UserService1.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="UserService/UserService2.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="UserService/UserService3.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="UserService/UserService4.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="UserService/UserService5.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="UserService/UserService6.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="UserService/USGameRecord.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="UserService/USMemberGame.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="UserService/USPay.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="UserService/USPayRecord.aspx">
+      <publishTime>11/04/2016 15:20:25</publishTime>
+    </File>
+    <File Include="ValidateImage.aspx">
+      <publishTime>10/08/2016 10:31:19</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/04/2016 14:30:26</publishTime>
+    </File>
+    <File Include="WS/PhoneRank.ashx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="WS/WSAccount.asmx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="WS/WSNativeWeb.asmx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+    <File Include="WS/WSTreasure.asmx">
+      <publishTime>10/08/2016 10:31:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

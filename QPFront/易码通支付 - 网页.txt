@@ -1,0 +1,26 @@
+易码通支付
+
+rtype= 0:微信;1:支付宝
+paymoney=1 支付金额
+goodsname 购买类型 0 钻石 1房卡
+Account 玩家游戏ID
+OrderID 订单号
+ClientType 客户端类型 0苹果 1安卓
+
+http://117.78.50.249:8057/poleneer/webpay.aspx?rtype=1&paymoney=500&goodsname=0&account=100494&OrderID=20170429120727962&sign=2297F1B8B7DEED401D911846FB60097A
+
+
+获取订单状态
+http://117.78.50.249:8057/poleneer/getorder.aspx?orderid=20170429120727962
+返回{"status":"success","message":2} -1 订单不存在 1 充值中 2 充值完成 3 充值失败
+
+获取订单号
+Account 玩家游戏ID
+http://117.78.50.249:8057/api/PayOrder/OrderNo?Account=100494
+返回{"status":"success","message":"2017042917433911"}
+
+签名sign
+sign值等于下面组装MD5 32位加密得到（skey=qysopen8899是默认参数）  
+skey=qysopen8899&rtype=1&paymoney=500&goodsname=0&account=100494&OrderID=2017042912072786
+
+ 
